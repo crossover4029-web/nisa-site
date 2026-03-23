@@ -85,12 +85,19 @@
           <div class="comp-card taxed">
               <div class="comp-card-title">❌ 通常の課税口座</div>
               <div class="comp-card-content">利益100万 → 受取 <strong>約80万円</strong></div>
+              <div class="comp-card-footer">約20%は税金がかかります</div>
           </div>
           <div class="comp-card nisa">
               <div class="comp-card-title">✅ 新NISAの場合</div>
               <div class="comp-card-content">利益100万 → 受取 <strong>100万円</strong></div>
+              <div class="comp-card-footer">利益は100％受け取れます</div>
           </div>
       </div>
+
+      <figure class="nisa-1800-figure">
+          <img src="img/nisa-1800man-taxfree-vs-tax-account.png" alt="1800万円の枠の中で増えた利益はすべて非課税・課税口座との比較図">
+          <figcaption>新NISAは1,800万円を上限に投資でき、その枠内で生まれた運用益はいくら大きくなっても非課税。1,800万円を超える投資は課税口座となり、利益の約20%が税金として差し引かれます。</figcaption>
+      </figure>
 
       <h2>2. 新NISAにおける投資対象の選択肢</h2>
       <p>
@@ -132,7 +139,45 @@
       </table>
       </div>
 
-      <h2>3. NYSE FANG+ 指数について</h2>
+      <h2>3. 銀行の280倍？ NYSE FANG+ という選択肢</h2>
+
+      <!-- 橋渡し導入文 -->
+      <div class="fang-intro">
+          <div class="fang-intro-shock">
+              <div class="fang-intro-compare">
+                  <div class="fang-intro-item bank">
+                      <span class="fang-intro-label">銀行の普通預金金利</span>
+                      <span class="fang-intro-rate">約 0.1<small>%</small></span>
+                      <span class="fang-intro-note">100万円預けて1年で<strong>約1,000円</strong></span>
+                  </div>
+                  <div class="fang-intro-vs">VS</div>
+                  <div class="fang-intro-item fang">
+                      <span class="fang-intro-label">FANG+ 過去10年の年利</span>
+                      <span class="fang-intro-rate">約 28<small>%</small></span>
+                      <span class="fang-intro-note">100万円投資して1年で<strong>約28万円増</strong></span>
+                  </div>
+              </div>
+              <p class="fang-intro-comment">
+                  銀行に預けた場合と比べると、<strong>実に280倍以上の差</strong>です。<br>
+                  にわかには信じがたい数字ですが、これは過去の実績です。
+              </p>
+          </div>
+
+          <div class="fang-intro-bridge">
+              <p>
+                  なぜこれほどのリターンが出るのでしょうか？<br>
+                  答えは、<strong>構成銘柄の顔ぶれ</strong>を見ると一目でわかります。
+              </p>
+              <p>
+                  あなたが毎日使っているスマートフォン、検索エンジン、動画配信、ネットショッピング。<br>
+                  その裏側で世界中の富を集め続けている企業たちが、このFANG+を構成しています。
+              </p>
+              <p class="fang-intro-caution">
+                  ※ただし、過去の実績は将来を保証するものではありません。価格変動リスクも大きいため、長期投資を前提とした余裕資金での運用をおすすめします。
+              </p>
+          </div>
+      </div>
+
       <div class="fang-section">
           <div class="fang-title">NYSE FANG+ 指数の構成銘柄</div>
           <div class="fang-subtitle">米国の革新的テクノロジー企業トップ10社</div>
@@ -169,7 +214,7 @@
 
       <h2>4. 資産推移（積立シミュレーション）</h2>
       <div class="simulation-box">
-          <div class="sim-instruction">🎚️ スライダーを動かして、あなたの未来を確認しよう</div>
+          <div class="sim-instruction">あなたなら、いくら・何年・何％で投資しますか？<br>下のスライダーを動かして、あなただけの未来を描いてみましょう。</div>
 
           <div id="accumulation-suggestion" class="suggestion-box"></div>
 
@@ -215,6 +260,7 @@
               <div id="finalAmount" style="font-size: 26px; font-weight: bold; color: var(--nisa-green);"></div>
               <div id="finalAmountJa" style="font-size: 26px; font-weight: bold; color: var(--nisa-green); margin-top: 4px;"></div>
               <div id="breakdownText" style="font-size: 18px; margin-top: 8px; color: #4a5568;"></div>
+              <div class="nisa-limit-note">※新NISAの非課税投資枠は生涯1,800万円までです。枠を超えた運用益には通常通り約20%の税金がかかります。このシミュレーションは簡略化のため全額非課税として計算しています。</div>
           </div>
           <div class="chart-container"><canvas id="accumulationChart"></canvas></div>
           <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:20px;">
@@ -230,18 +276,50 @@
 
       <h2>5. 資金の受取計画（出口戦略）</h2>
       <div class="simulation-box">
-          <div class="sim-instruction">「資産総額」「毎月の取崩額」「想定年利」を入力して資産寿命を予測。</div>
-          <div class="control-panel">
-              <p class="input-instruction">※下記 数値は 自由に変更してみてください。</p>
-              <div class="input-group"><label>開始年齢 (歳)</label><input type="number" id="decStartAge"></div>
-              <div class="input-group"><label>金融資産 (万円)</label><input type="number" id="decAssets"></div>
-              <div class="input-group">
-                  <label>毎月の取崩額 (万円)</label>
-                  <input type="number" id="decMonthly">
-                  <div id="decInputError" class="input-error-msg">毎月に必要な額を入力</div>
+
+          <!-- 導入文言 -->
+          <div class="sim-instruction">家や車・教育資金としても活用できますが、<br>老後資金とするなら―<br><span class="sim-instruction-sub">65歳定年後、毎月いくら受け取りたいですか？<br>あなたの資産が何年持つか、計算してみましょう。</span></div>
+
+          <!-- ② 予想資産（積立シミュから連動・編集可能） -->
+          <div class="dec-assets-display">
+              <div class="dec-assets-label">あなたの予想資産</div>
+              <div class="dec-assets-row">
+                  <input type="number" id="decAssets" class="dec-assets-input" value="0" oninput="syncDecNumber('decAssets')">
+                  <span class="dec-assets-unit">万円</span>
               </div>
-              <div class="input-group"><label>想定リターン (%)</label><input type="number" id="decRate"></div>
+              <div class="dec-assets-note">※上の積立シミュレーションの結果が自動で入ります。直接変更もできます。</div>
           </div>
+
+          <div class="control-panel">
+
+              <!-- 開始年齢 -->
+              <div class="input-group">
+                  <label>開始年齢</label>
+                  <span class="input-val-badge" id="decStartAgeDisplay">65歳</span>
+                  <input type="range" id="decStartAgeSlider" min="50" max="80" step="1" value="65" oninput="syncDecSlider('decStartAge')">
+                  <input type="number" id="decStartAge" min="50" max="80" value="65" oninput="syncDecNumber('decStartAge')">
+              </div>
+
+              <!-- 毎月の取崩額 -->
+              <div class="input-group">
+                  <label>毎月の取崩額</label>
+                  <span class="input-val-badge" id="decMonthlyDisplay">─万円</span>
+                  <input type="range" id="decMonthlySlider" min="0" max="50" step="0.5" value="0" oninput="syncDecSlider('decMonthly')">
+                  <input type="number" id="decMonthly" min="0" max="50" step="0.5" oninput="syncDecNumber('decMonthly')">
+                  <div id="decInputError" class="input-error-msg">毎月に必要な額を入力してください</div>
+              </div>
+
+              <!-- 想定リターン -->
+              <div class="input-group">
+                  <label>想定リターン</label>
+                  <span class="input-val-badge" id="decRateDisplay">7%</span>
+                  <span class="input-sub">運用しながら取り崩す場合の年利</span>
+                  <input type="range" id="decRateSlider" min="0" max="20" step="0.5" value="7" oninput="syncDecSlider('decRate')">
+                  <input type="number" id="decRate" min="0" max="20" step="0.5" value="7" oninput="syncDecNumber('decRate')">
+              </div>
+
+          </div>
+
           <div class="summary-card">
               <div class="summary-item">
                   <span class="summary-label">資産を運用しながら取り崩した場合</span>
@@ -254,10 +332,10 @@
           </div>
 
           <div id="impactMessage" class="impact-banner"></div>
-          <div id="increaseAdvice" class="increase-advice" style="text-align:center;">月の取崩額（万円）の額をもっと増やしてみてください。</div>
+          <div id="increaseAdvice" class="increase-advice" style="text-align:center;">月の取崩額をもっと増やしてみてください。</div>
 
           <div class="chart-container" id="decChartContainer">
-              <div class="chart-placeholder">毎月の取崩額（必要額）を入力してください。</div>
+              <div class="chart-placeholder">毎月の取崩額を入力してください。</div>
           </div>
           <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:20px;">
               参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>

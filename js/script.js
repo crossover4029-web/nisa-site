@@ -204,6 +204,7 @@ function updateAccumulation() {
         Math.round(finalT - finalP).toLocaleString() + '円（※無税）</span>';
 
     document.getElementById('decAssets').value = Math.round(finalT / 10000);
+    updateDecumulation();
 
     if (accChart) accChart.destroy();
     accChart = new Chart(ctx, {
@@ -219,7 +220,37 @@ function updateAccumulation() {
     });
 }
 
-/* ── 取崩シミュレーション ── */
+/* ── dec系バッジ表示を更新 ── */
+function updateDecBadge(id, value) {
+    const el = document.getElementById(id + 'Display');
+    if (!el) return;
+    if (id === 'decStartAge') el.textContent = value + '歳';
+    else if (id === 'decMonthly') el.textContent = value > 0 ? value + '万円' : '─万円';
+    else if (id === 'decRate')    el.textContent = value + '%';
+}
+
+/* ── dec系スライダー → 数値入力 を同期 ── */
+function syncDecSlider(id) {
+    const slider = document.getElementById(id + 'Slider');
+    const number = document.getElementById(id);
+    if (!slider || !number) return;
+    number.value = slider.value;
+    updateDecBadge(id, slider.value);
+    updateDecumulation();
+}
+
+/* ── dec系数値入力 → スライダー を同期 ── */
+function syncDecNumber(id) {
+    const slider = document.getElementById(id + 'Slider');
+    const number = document.getElementById(id);
+    if (!number) return;
+    if (slider) {
+        const clamped = Math.min(Math.max(number.value, slider.min), slider.max);
+        slider.value = clamped;
+    }
+    updateDecBadge(id, number.value);
+    updateDecumulation();
+}
 function updateDecumulation() {
     const container      = document.getElementById('decChartContainer');
     const decMonthlyInput = document.getElementById('decMonthly');
@@ -311,16 +342,16 @@ function updateDecumulation() {
 
 /* ── 初期化 ── */
 document.addEventListener('DOMContentLoaded', () => {
-    /* 初期バッジ表示 */
+    /* 積立シミュのバッジ初期表示 */
     ['initial', 'monthly', 'years', 'rate'].forEach(id => {
         const el = document.getElementById(id + 'Input');
         if (el) updateBadge(id, el.value);
     });
 
-    /* dec系入力のリスナー */
-    ['decStartAge', 'decAssets', 'decMonthly', 'decRate'].forEach(id => {
+    /* dec系バッジ初期表示 */
+    ['decStartAge', 'decMonthly', 'decRate'].forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.addEventListener('input', updateDecumulation);
+        if (el) updateDecBadge(id, el.value);
     });
 
     /* ② デフォルトで30代を選択 */
