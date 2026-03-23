@@ -342,18 +342,146 @@ function updateDecumulation() {
 
 /* ── 初期化 ── */
 document.addEventListener('DOMContentLoaded', () => {
-    /* 積立シミュのバッジ初期表示 */
-    ['initial', 'monthly', 'years', 'rate'].forEach(id => {
-        const el = document.getElementById(id + 'Input');
-        if (el) updateBadge(id, el.value);
-    });
 
-    /* dec系バッジ初期表示 */
-    ['decStartAge', 'decMonthly', 'decRate'].forEach(id => {
-        const el = document.getElementById(id);
-        if (el) updateDecBadge(id, el.value);
-    });
-
-    /* ② デフォルトで30代を選択 */
+    /* setTarget('30') がスライダー・バッジ・グラフをすべて初期化する */
     setTarget('30');
+
+    /* dec系スライダーの初期同期 */
+    ['decStartAge', 'decMonthly', 'decRate'].forEach(id => {
+        const number = document.getElementById(id);
+        const slider = document.getElementById(id + 'Slider');
+        if (!number) return;
+        if (slider) slider.value = number.value;
+        updateDecBadge(id, number.value);
+    });
+
+    /* ── グラフ① S&P500 年間リターン（2000〜2024 実データ） ── */
+    const sp500El = document.getElementById('sp500Chart');
+    if (sp500El) {
+        const years   = ['2000','2001','2002','2003','2004','2005','2006','2007','2008',
+                         '2009','2010','2011','2012','2013','2014','2015','2016','2017',
+                         '2018','2019','2020','2021','2022','2023','2024'];
+        const returns = [-9.10,-11.89,-22.10,28.68,10.88,4.91,15.79,5.49,-37.00,
+                          26.46,15.06,2.11,16.00,32.39,13.69,1.38,11.96,21.83,
+                         -4.38,31.49,18.40,28.71,-18.11,26.29,25.02];
+        const colors  = returns.map(v => v >= 0 ? 'rgba(56,161,105,0.8)' : 'rgba(229,62,62,0.85)');
+        const borders = returns.map(v => v >= 0 ? '#2f9e58' : '#c53030');
+
+        new Chart(sp500El.getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: years,
+                datasets: [{
+                    label: '年間リターン(%)',
+                    data: returns,
+                    backgroundColor: colors,
+                    borderColor: borders,
+                    borderWidth: 1,
+                    borderRadius: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => (ctx.parsed.y > 0 ? '+' : '') + ctx.parsed.y.toFixed(2) + '%'
+                        }
+                    }
+                },
+                scales: {
+                    x: { ticks: { font: { size: 10 }, color: '#666' }, grid: { display: false } },
+                    y: {
+                        ticks: {
+                            callback: v => v + '%',
+                            font: { size: 11 }, color: '#666'
+                        },
+                        grid: { color: 'rgba(0,0,0,0.06)' }
+                    }
+                }
+            }
+        });
+    }
+
+    /* ── グラフ② 積立継続 vs 中断 比較（2007〜2016年・月1万円） ── */
+    const dcaEl = document.getElementById('dcaCompareChart');
+    if (dcaEl) {
+        /* S&P500年間リターン（月次換算係数） */
+        const annualReturns = {
+            2007:5.49, 2008:-37.00, 2009:26.46, 2010:15.06,
+            2011:2.11, 2012:16.00, 2013:32.39, 2014:13.69,
+            2015:1.38, 2016:11.96
+        };
+        const monthly = 10000; /* 月1万円 */
+        const labels = [], contData = [], stopData = [];
+        let contAsset = 0, stopAsset = 0;
+
+        for (let year = 2007; year <= 2016; year++) {
+            const mRate = Math.pow(1 + annualReturns[year] / 100, 1/12) - 1;
+            const isStop = (year >= 2008 && year <= 2010); /* 暴落で3年停止 */
+            for (let m = 0; m < 12; m++) {
+                contAsset = (contAsset + monthly) * (1 + mRate);
+                stopAsset = (stopAsset + (isStop ? 0 : monthly)) * (1 + mRate);
+                if (m === 11) {
+                    labels.push(year + '年末');
+                    contData.push(Math.round(contAsset / 10000));
+                    stopData.push(Math.round(stopAsset / 10000));
+                }
+            }
+        }
+
+        new Chart(dcaEl.getContext('2d'), {
+            type: 'line',
+            data: {
+                labels,
+                datasets: [
+                    {
+                        label: '積立継続',
+                        data: contData,
+                        borderColor: '#38a169',
+                        backgroundColor: 'rgba(56,161,105,0.08)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 3,
+                        pointRadius: 4
+                    },
+                    {
+                        label: '暴落時に中断',
+                        data: stopData,
+                        borderColor: '#e53e3e',
+                        backgroundColor: 'rgba(229,62,62,0.06)',
+                        fill: true,
+                        tension: 0.3,
+                        borderWidth: 2,
+                        borderDash: [5, 4],
+                        pointRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { display: false },
+                    tooltip: {
+                        callbacks: {
+                            label: ctx => ctx.dataset.label + ': ' + ctx.parsed.y.toLocaleString() + '万円'
+                        }
+                    }
+                },
+                scales: {
+                    x: { ticks: { font: { size: 10 }, color: '#666' }, grid: { display: false } },
+                    y: {
+                        ticks: {
+                            callback: v => v + '万円',
+                            font: { size: 11 }, color: '#666'
+                        },
+                        grid: { color: 'rgba(0,0,0,0.06)' }
+                    }
+                }
+            }
+        });
+    }
 });

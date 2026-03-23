@@ -3,7 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>新NISAを活用した資産形成の指針</title>
+
+  <!-- ── SEO ── -->
+  <title>新NISA完全ガイド｜SBI証券×OLIVEで資産形成を始める方法【50・60代向け】</title>
+  <meta name="description" content="新NISAをSBI証券で始める完全ガイド。非課税の仕組み・積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。50〜60代の投資初心者が口座開設から積立設定まで迷わず進めます。">
+  <meta name="keywords" content="新NISA,SBI証券,積立投資,OLIVE,Vポイント,投資初心者,50代,60代,ドルコスト平均法,インデックス投資">
+  <meta name="author" content="新NISA資産形成ガイド">
+  <link rel="canonical" href="https://crossover4029-web.github.io/nisa-site/">
+
+  <!-- ── OGP（SNSシェア対応） ── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="新NISA完全ガイド｜SBI証券×OLIVEで資産形成を始める方法">
+  <meta property="og:description" content="新NISAをSBI証券で始める完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。50〜60代の投資初心者向け。">
+  <meta property="og:url"         content="https://crossover4029-web.github.io/nisa-site/">
+  <meta property="og:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
+  <meta property="og:site_name"   content="新NISA資産形成ガイド">
+  <meta property="og:locale"      content="ja_JP">
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="新NISA完全ガイド｜SBI証券×OLIVEで資産形成を始める方法">
+  <meta name="twitter:description" content="新NISAをSBI証券で始める完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。">
+  <meta name="twitter:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
+
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -290,14 +312,13 @@
                   仕組みはシンプルです。
               </p>
 
-              <!-- プレースホルダー：ドルコスト法の図解 -->
-              <div class="dca-placeholder">
-                  <div class="dca-placeholder-icon">📊</div>
-                  <div class="dca-placeholder-text">
-                      【図解】ここにドルコスト法の仕組み図が入ります<br>
-                      <small>「価格が高い月は少なく買い、安い月は多く買う」イメージ図</small>
-                  </div>
-              </div>
+              <!-- ドルコスト平均法の図解 -->
+              <figure class="dca-figure">
+                  <img src="img/dollar-cost-averaging-japan-nisa-investment-growth.webp"
+                       alt="ドルコスト平均法の仕組み：毎月一定額投資で平均購入単価を下げる図解"
+                       loading="lazy">
+                  <figcaption>毎月一定額を積み立てることで、価格が高いときは少なく・安いときは多く買える。結果として平均購入単価が下がり、長期的に有利になる。</figcaption>
+              </figure>
 
               <div class="dca-merit-box">
                   <p>
@@ -364,13 +385,17 @@
                   特にコロナショックは、わずか5ヶ月で回復しました。
               </p>
 
-              <!-- プレースホルダー：S&P500長期チャート -->
-              <div class="dca-placeholder">
-                  <div class="dca-placeholder-icon">📈</div>
-                  <div class="dca-placeholder-text">
-                      【グラフ】ここにS&P500の長期推移グラフが入ります<br>
-                      <small>2000年〜現在。暴落箇所を赤帯でハイライト、「すべて回復・上昇」を視覚化</small>
+              <!-- S&P500 長期推移グラフ（実データ） -->
+              <div class="dca-chart-wrap">
+                  <div class="dca-chart-title">S&P500 年間リターン推移（2000〜2024年・実績値）</div>
+                  <div class="dca-chart-legend">
+                      <span class="legend-item positive">■ プラス年</span>
+                      <span class="legend-item negative">■ マイナス年（暴落）</span>
                   </div>
+                  <div style="position:relative; height:280px;">
+                      <canvas id="sp500Chart"></canvas>
+                  </div>
+                  <div class="dca-chart-note">※S&P500トータルリターン（配当再投資含む）。出典：Slickcharts</div>
               </div>
           </div>
 
@@ -386,13 +411,17 @@
                   そして相場が回復したとき、安く買った分が大きな利益に変わります。
               </p>
 
-              <!-- プレースホルダー：積立継続 vs 中断の比較グラフ -->
-              <div class="dca-placeholder">
-                  <div class="dca-placeholder-icon">📉→📈</div>
-                  <div class="dca-placeholder-text">
-                      【グラフ】ここに「積立継続した場合」vs「暴落で止めた場合」の比較グラフが入ります<br>
-                      <small>リーマンショックを例に、回復後の資産差を折れ線グラフで比較</small>
+              <!-- 積立継続 vs 中断 比較グラフ（リーマンショック実データ） -->
+              <div class="dca-chart-wrap">
+                  <div class="dca-chart-title">リーマンショックで「積立を止めた人」vs「続けた人」の資産推移</div>
+                  <div class="dca-chart-legend">
+                      <span class="legend-item continue">■ 積立継続（月1万円）</span>
+                      <span class="legend-item stop">■ 暴落時に積立中断（2008〜2010年停止）</span>
                   </div>
+                  <div style="position:relative; height:280px;">
+                      <canvas id="dcaCompareChart"></canvas>
+                  </div>
+                  <div class="dca-chart-note">※2007年1月から月1万円積立開始。S&P500連動と仮定した試算。</div>
               </div>
           </div>
 

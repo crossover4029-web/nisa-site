@@ -590,8 +590,62 @@ h2::before {
 .dca-table .highlight-row td { background: #f0fff4; }
 .drop-rate { color: var(--tax-red); font-weight: bold; font-size: 15px; }
 
-/* プレースホルダー */
-.dca-placeholder {
+/* DCAグラフ共通 */
+.dca-chart-wrap {
+    background: #fafafa;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+    margin: 1rem 0;
+}
+.dca-chart-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+.dca-chart-legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 10px;
+    font-size: 12px;
+    color: var(--text-muted);
+}
+.legend-item { display: flex; align-items: center; gap: 4px; }
+.legend-item.positive { color: #2f9e58; font-weight: 700; }
+.legend-item.negative { color: #c53030; font-weight: 700; }
+.legend-item.continue { color: #38a169; font-weight: 700; }
+.legend-item.stop     { color: #e53e3e; font-weight: 700; }
+.dca-chart-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    margin-top: 8px;
+    line-height: 1.5;
+}
+
+.dca-figure {
+    margin: 1rem 0;
+    text-align: center;
+}
+.dca-figure img {
+    width: 100%;
+    max-width: 640px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+.dca-figure figcaption {
+    margin-top: 8px;
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.7;
+    max-width: 640px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+}
     background: var(--bg-light);
     border: 2px dashed var(--border);
     border-radius: 10px;
