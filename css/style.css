@@ -286,7 +286,7 @@ h2::before {
 .invest-item.fund   { border-color: #8b5cf6; background: linear-gradient(135deg, #f5f3ff 0%, #ffffff 100%); }
 .invest-icon { font-size: 40px; margin-bottom: 10px; }
 .invest-item strong { display: block; color: var(--primary-dark); margin-bottom: 5px; font-size: 17px; }
-.invest-item p { margin: 0; font-size: 14px; line-height: 1.6; color: #4b5563; }
+.invest-item p { margin: 0; font-size: 15px; line-height: 1.7; color: #4b5563; }
 
 /* ============================================================
    NISAの比較カード
@@ -522,7 +522,7 @@ h2::before {
     border: 1px solid rgba(255,255,255,0.2);
 }
 .fang-description h4 { font-size: 20px; margin-bottom: 15px; color: #fff; }
-.fang-description p  { font-size: 14px; line-height: 1.6; margin-bottom: 15px; opacity: 0.9; }
+.fang-description p  { font-size: 15px; line-height: 1.75; margin-bottom: 15px; opacity: 0.9; }
 .fang-highlight {
     background: rgba(255,255,255,0.2);
     padding: 15px;
@@ -530,6 +530,120 @@ h2::before {
     border-left: 4px solid #ffd700;
     font-weight: bold;
     text-align: center;
+}
+
+/* ============================================================
+   4-2. ドルコスト平均法・暴落セクション
+   ============================================================ */
+.dca-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.dca-block {
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    padding: 28px 32px;
+}
+.dca-block p {
+    font-size: 16px;
+    line-height: 1.9;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+.dca-block p:last-child { margin-bottom: 0; }
+.dca-block strong { color: var(--primary-dark); }
+
+.dca-title {
+    font-family: var(--sans, sans-serif);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 1rem;
+    padding-left: 12px;
+    border-left: 4px solid var(--nisa-green);
+}
+
+/* メリットボックス */
+.dca-merit-box {
+    background: var(--green-light, #e8f5ee);
+    border-radius: 10px;
+    padding: 20px 24px;
+    margin-top: 1rem;
+    border-left: 4px solid var(--nisa-green);
+}
+.dca-merit-box p {
+    font-size: 16px;
+    color: #1a4a35;
+    margin-bottom: .75rem;
+}
+.dca-merit-box p:last-child { margin-bottom: 0; }
+
+/* 暴落テーブル */
+.dca-table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 1rem 0; }
+.dca-table thead tr { background: var(--primary-dark); }
+.dca-table thead th { color: #fff; padding: 10px 14px; text-align: left; font-weight: 500; }
+.dca-table tbody td { padding: 10px 14px; border-bottom: 1px solid #e8e8e4; }
+.dca-table tbody tr:nth-child(even) td { background: var(--bg-light); }
+.dca-table .highlight-row td { background: #f0fff4; }
+.drop-rate { color: var(--tax-red); font-weight: bold; font-size: 15px; }
+
+/* プレースホルダー */
+.dca-placeholder {
+    background: var(--bg-light);
+    border: 2px dashed var(--border);
+    border-radius: 10px;
+    padding: 28px 20px;
+    margin: 1.25rem 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    text-align: center;
+}
+.dca-placeholder-icon { font-size: 36px; }
+.dca-placeholder-text {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+.dca-placeholder-text small {
+    display: block;
+    font-size: 12px;
+    margin-top: 4px;
+    opacity: .8;
+}
+
+/* 締めメッセージ */
+.dca-conclusion {
+    background: var(--primary-dark);
+    border-radius: 12px;
+    padding: 32px;
+    text-align: center;
+    color: #fff;
+}
+.dca-conclusion-main {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--accent-gold);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+.dca-conclusion-sub {
+    font-size: 15px;
+    line-height: 1.9;
+    opacity: .9;
+}
+
+@media (max-width: 768px) {
+    .dca-block { padding: 20px 16px; }
+    .dca-title { font-size: 16px; }
+    .dca-block p { font-size: 15px; }
+    .dca-conclusion { padding: 24px 16px; }
+    .dca-conclusion-main { font-size: 20px; }
+    .dca-conclusion-sub { font-size: 14px; }
 }
 
 /* ============================================================
@@ -855,6 +969,248 @@ h2::before {
 .cta-subtext { display: block; margin-top: 10px; font-size: 13px; color: var(--text-muted); }
 
 /* ============================================================
+   他社比較セクション
+   ============================================================ */
+.compare-section {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 28px 32px;
+    margin-top: 1.5rem;
+}
+
+/* ヘッダー */
+.compare-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 2px solid var(--bg-light);
+}
+.compare-header-icon { font-size: 28px; flex-shrink: 0; line-height: 1; }
+.compare-header-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+}
+.compare-header-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+/* 比較テーブル */
+.compare-table { width: 100%; border-collapse: collapse; font-size: 14px; margin-bottom: 20px; }
+.compare-table thead tr { background: var(--primary-dark); }
+.compare-table thead th { color: #fff; padding: 10px 14px; text-align: left; font-weight: 500; }
+.compare-table tbody td { padding: 12px 14px; border-bottom: 1px solid #e8e8e4; vertical-align: middle; }
+.compare-table tbody tr:hover td { background: var(--bg-light); }
+
+/* 推奨行 */
+.compare-recommend td {
+    background: #f0fff4;
+    border-left: 3px solid var(--nisa-green);
+}
+.compare-recommend td:first-child { border-left: 3px solid var(--nisa-green); }
+
+/* トップ還元率行 */
+.compare-top td { background: #fffdf0; }
+
+/* バッジ */
+.compare-badge {
+    display: inline-block;
+    background: var(--nisa-green); color: #fff;
+    font-size: 10px; font-weight: 700;
+    padding: 2px 8px; border-radius: 10px;
+    margin-left: 6px; vertical-align: middle;
+}
+
+/* 還元率 */
+.compare-rate { font-weight: 700; font-size: 15px; color: var(--primary-dark); }
+.compare-rate.top { color: var(--tax-red); }
+
+/* 結論ブロック */
+.compare-conclusion {
+    background: var(--bg-light);
+    border-radius: 10px;
+    padding: 20px 24px;
+}
+.compare-conclusion p {
+    font-size: 15px;
+    line-height: 1.85;
+    color: var(--text-main);
+    margin-bottom: 14px;
+}
+.compare-conclusion p:last-child { margin-bottom: 0; }
+.compare-conclusion strong { color: var(--primary-dark); }
+
+/* 3つの理由 */
+.compare-reasons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 14px 0;
+}
+.compare-reason {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    background: #fff;
+    border-radius: 8px;
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+}
+.compare-reason-num {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--nisa-green); color: #fff;
+    font-size: 13px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.compare-reason strong {
+    display: block;
+    font-size: 15px;
+    margin-bottom: 3px;
+}
+.compare-reason p {
+    margin: 0 !important;
+    font-size: 13px !important;
+    color: var(--text-muted) !important;
+    line-height: 1.6 !important;
+}
+
+/* 免責テキスト */
+.compare-honest {
+    font-size: 12px !important;
+    color: var(--text-muted) !important;
+    background: #edf2f7;
+    border-radius: 6px;
+    padding: 8px 12px;
+    margin-top: 8px !important;
+}
+
+@media (max-width: 768px) {
+    .compare-section { padding: 20px 16px; }
+    .compare-header-title { font-size: 16px; }
+    .compare-table { font-size: 13px; }
+    .compare-conclusion { padding: 16px; }
+}
+
+/* ============================================================
+   6. OLIVEサイクルセクション
+   ============================================================ */
+.cycle-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.cycle-lead {
+    font-size: 17px;
+    line-height: 1.9;
+    color: var(--text-main);
+}
+.cycle-lead strong { color: var(--primary-dark); }
+
+/* 画像 */
+.cycle-figure {
+    margin: 0;
+    text-align: center;
+}
+.cycle-figure img {
+    width: 100%;
+    max-width: 680px;
+    border-radius: 16px;
+    display: block;
+    margin: 0 auto;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+}
+
+/* 4ステップ */
+.cycle-steps {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.cycle-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 16px 20px;
+}
+.cycle-num {
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: var(--nisa-green);
+    color: #fff;
+    font-size: 16px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+.cycle-step-body { flex: 1; }
+.cycle-step-body strong {
+    display: block;
+    font-size: 16px;
+    color: var(--primary-dark);
+    margin-bottom: 4px;
+}
+.cycle-step-body p {
+    margin: 0;
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.75;
+}
+.cycle-step-body p strong { display: inline; color: var(--nisa-green); }
+
+/* 最終ゴールボックス */
+.cycle-goal {
+    background: var(--primary-dark);
+    border-radius: 12px;
+    padding: 28px 32px;
+    text-align: center;
+    color: #fff;
+}
+.cycle-goal-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--accent-gold);
+    margin-bottom: 12px;
+    line-height: 1.5;
+}
+.cycle-goal p {
+    font-size: 15px;
+    line-height: 1.9;
+    opacity: .9;
+    margin: 0;
+}
+
+/* 補足ノート */
+.cycle-note {
+    background: #fffdf0;
+    border: 1px solid #feebc8;
+    border-left: 4px solid var(--accent-gold);
+    border-radius: 8px;
+    padding: 16px 20px;
+    font-size: 14px;
+    line-height: 1.8;
+    color: var(--text-main);
+}
+.cycle-note strong { color: var(--primary-dark); }
+
+@media (max-width: 768px) {
+    .cycle-goal { padding: 20px 16px; }
+    .cycle-goal-title { font-size: 17px; }
+    .cycle-step { padding: 14px 14px; }
+    .cycle-step-body strong { font-size: 15px; }
+}
+
+/* ============================================================
    ステップカード
    ============================================================ */
 .step-card {
@@ -869,7 +1225,7 @@ h2::before {
     font-weight: bold; flex-shrink: 0;
 }
 .step-content h4 { margin: 0 0 10px 0; font-size: 18px; color: var(--primary-dark); }
-.step-content p  { margin: 0; font-size: 14px; color: #4a5568; }
+.step-content p  { margin: 0; font-size: 16px; color: #4a5568; line-height: 1.8; }
 .highlight-red { color: var(--tax-red); font-weight: bold; }
 
 /* ============================================================
