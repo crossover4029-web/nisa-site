@@ -488,3 +488,87 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+/* ── ほっとけ投資：世代別満額達成グラフ ── */
+(function() {
+    const ctx = document.getElementById('hottokeChart');
+    if (!ctx) return;
+
+    const monthly = 3;       // 月3万円
+    const rate    = 0.07;    // 年利7%
+    const target  = 1800;    // 満額1800万円
+    const maxYear = 40;
+
+    // 世代ごとの開始年齢と色
+    const generations = [
+        { label: '20代（25歳〜）', color: '#38a169', startAge: 25 },
+        { label: '30代（35歳〜）', color: '#3b82f6', startAge: 35 },
+        { label: '40代（45歳〜）', color: '#f59e0b', startAge: 45 },
+        { label: '50代（55歳〜）', color: '#e53e3e', startAge: 55 },
+        { label: '60代（61歳〜）', color: '#718096', startAge: 61 },
+    ];
+
+    // 各年の資産額を計算（月複利）
+    function calcData(startAge) {
+        const data = [];
+        let asset = 0;
+        const mr = rate / 12;
+        for (let y = 0; y <= maxYear; y++) {
+            data.push(Math.min(Math.round(asset), target));
+            if (asset >= target) break;
+            for (let m = 0; m < 12; m++) {
+                asset = asset * (1 + mr) + monthly;
+            }
+        }
+        return data;
+    }
+
+    const labels = Array.from({ length: maxYear + 1 }, (_, i) => i + '年後');
+
+    new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels,
+            datasets: generations.map(g => ({
+                label: g.label,
+                data: calcData(g.startAge),
+                borderColor: g.color,
+                backgroundColor: g.color + '18',
+                borderWidth: 2.5,
+                pointRadius: 0,
+                tension: 0.3,
+                fill: false,
+            }))
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { position: 'bottom', labels: { font: { size: 12 }, padding: 16 } },
+                tooltip: {
+                    callbacks: {
+                        label: ctx => ctx.dataset.label + '：' + ctx.parsed.y.toLocaleString() + '万円'
+                    }
+                },
+                annotation: {}
+            },
+            scales: {
+                x: {
+                    ticks: {
+                        callback: (v, i) => i % 5 === 0 ? i + '年後' : '',
+                        font: { size: 11 }, color: '#666'
+                    },
+                    grid: { color: 'rgba(0,0,0,0.05)' }
+                },
+                y: {
+                    min: 0, max: 2000,
+                    ticks: {
+                        callback: v => v.toLocaleString() + '万',
+                        font: { size: 11 }, color: '#666'
+                    },
+                    grid: { color: 'rgba(0,0,0,0.06)' }
+                }
+            }
+        }
+    });
+})();

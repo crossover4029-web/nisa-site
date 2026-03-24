@@ -12,6 +12,8 @@
     --white:        #ffffff;
     --nisa-green:   #38a169;
     --tax-red:      #e53e3e;
+    --border:       #e2e8f0;
+    --green-light:  #e8f5ee;
 
     /* ── アドバイスボックス 世代別カラー ── */
     --adv-kid-bg:    #fff8e1;  /* 子供  : 温かいアンバー系   */
@@ -90,48 +92,50 @@ body {
     z-index: 10;
 }
 
-/* ── 「私について」導線バナー ── */
-.about-link-banner {
+/* ── 「私について」カード ── */
+.about-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid var(--nisa-green);
+    border-radius: 30px;
+    padding: 8px 16px 8px 8px;
+    position: absolute;
+    top: 20px;
+    right: 60px;
+    z-index: 20;
+}
+.about-card-icon {
+    width: 36px;
+    height: 36px;
+    min-width: 36px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+.about-card-body {
     display: flex;
     align-items: center;
-    gap: 14px;
-    background: var(--green-light, #e8f5ee);
-    border: 2px solid var(--nisa-green);
-    border-radius: 10px;
-    padding: 14px 20px;
-    margin-bottom: 2rem;
-    text-decoration: none;
-    transition: background .2s;
+    gap: 12px;
+    flex-wrap: wrap;
 }
-.about-link-banner:hover { background: #d1f0e0; }
-.about-link-icon {
-    font-size: 26px;
-    flex-shrink: 0;
+.about-card-name {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--text-muted);
 }
-.about-link-text {
-    flex: 1;
-}
-.about-link-text strong {
-    display: block;
-    font-size: 15px;
+.about-card-link {
+    display: inline-block;
+    font-size: 13px;
     font-weight: 700;
     color: var(--nisa-green);
-    margin-bottom: 2px;
+    text-decoration: none;
+    white-space: nowrap;
 }
-.about-link-text small {
-    font-size: 12px;
-    color: var(--text-muted);
-    line-height: 1.5;
-}
-.about-link-arrow {
-    font-size: 22px;
-    color: var(--nisa-green);
-    flex-shrink: 0;
-}
-
+.about-card-link:hover { text-decoration: underline; }
 @media (max-width: 768px) {
-    .about-link-banner { padding: 12px 14px; gap: 10px; }
-    .about-link-text strong { font-size: 14px; }
+    .about-card { position: static; display: inline-flex; float: right; margin-bottom: 1rem; }
 }
 
 /* ============================================================
@@ -144,11 +148,27 @@ body {
     margin-bottom: 30px;
 }
 
+/* ── 見出し行 ── */
+.age-input-heading {
+    font-size: 20px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 6px;
+    display: block;
+    line-height: 1.4;
+}
+.age-input-sub {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 12px;
+    display: block;
+}
+
 /* ── ラベル行 ── */
 .age-input-label {
-    font-size: 17px;
+    font-size: 15px;
     font-weight: bold;
-    color: var(--primary-dark);
+    color: var(--nisa-green);
     margin-bottom: 16px;
     display: block;
 }
@@ -1730,3 +1750,442 @@ h2::before {
 
 
 
+
+/* ============================================================
+   ほっとけ投資セクション
+   ============================================================ */
+.hottoke-section {
+    background: linear-gradient(135deg, #fffdf0 0%, #fff8e0 100%);
+    border-radius: 16px;
+    border: 1px solid #e8d87a;
+    padding: 40px 36px;
+    margin-bottom: 2.5rem;
+    contain: layout;
+}
+.hottoke-catchcopy {
+    font-size: clamp(1.4rem, 3.5vw, 2rem);
+    font-weight: 900;
+    color: var(--primary-dark);
+    text-align: center;
+    line-height: 1.4;
+    margin-bottom: .6rem;
+}
+.hottoke-subcopy {
+    font-size: 15px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 2rem;
+    letter-spacing: .04em;
+}
+.hottoke-body {
+    max-width: 680px;
+    margin: 0 auto;
+}
+.hottoke-body p {
+    font-size: 16px;
+    line-height: 1.95;
+    color: var(--text-main);
+    margin-bottom: .8rem;
+}
+.hottoke-target-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+    align-items: start;
+}
+.hottoke-target-item {
+    background: #fff;
+    border: 1px solid #e8d87a;
+    border-radius: 10px;
+    padding: 20px 16px;
+    text-align: center;
+}
+.hottoke-target-icon { font-size: 36px; margin-bottom: 10px; }
+.hottoke-target-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 8px;
+}
+.hottoke-target-text {
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+.hottoke-message {
+    border-left: 3px solid var(--accent-gold);
+    padding-left: 18px;
+    margin: 1.5rem 0;
+}
+.hottoke-message p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-main);
+    margin-bottom: .7rem;
+}
+.hottoke-message p:last-child { margin-bottom: 0; }
+.hottoke-cta-text {
+    text-align: center;
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #e8d87a;
+}
+.hottoke-graph-wrap {
+    margin-top: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    border: 1px solid #e8d87a;
+    padding: 20px;
+}
+.hottoke-graph-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: center;
+    margin-bottom: 4px;
+}
+.hottoke-graph-sub {
+    font-size: 12px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-bottom: 16px;
+}
+.hottoke-graph-note {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 10px;
+    line-height: 1.6;
+}
+@media (max-width: 768px) {
+    .hottoke-section { padding: 24px 18px; }
+    .hottoke-target-grid { grid-template-columns: 1fr; gap: 8px; }
+    .hottoke-catchcopy { font-size: 1.3rem; }
+}
+
+/* ── なぜほっとけるのか説明ボックス ── */
+.hottoke-reason-box {
+    background: var(--green-light, #e8f5ee);
+    border: 2px solid var(--nisa-green);
+    border-radius: 12px;
+    padding: 20px 24px;
+    margin: 20px 0;
+}
+.hottoke-reason-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--nisa-green);
+    margin-bottom: 12px;
+}
+.hottoke-reason-box p {
+    font-size: 15px;
+    line-height: 1.9;
+    color: var(--text-main);
+    margin-bottom: .7rem;
+}
+.hottoke-reason-box p:last-child { margin-bottom: 0; }
+
+/* ── ほっとけ投資：2カラムレイアウト ── */
+.hottoke-inner {
+    display: flex;
+    gap: 28px;
+    align-items: flex-start;
+}
+.hottoke-left { flex: 1; min-width: 0; }
+.hottoke-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+    width: 130px;
+    padding-top: 8px;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+.hottoke-chara {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--nisa-green);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.15);
+}
+.hottoke-chara-name {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+    line-height: 1.4;
+}
+.hottoke-chara-comment {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: center;
+    line-height: 1.6;
+    background: #fff;
+    border-radius: 8px;
+    padding: 8px 10px;
+    border: 1px solid #e8d87a;
+}
+.hottoke-chara-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--nisa-green);
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid var(--nisa-green);
+    padding: 5px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: background .2s, color .2s;
+}
+.hottoke-chara-link:hover {
+    background: var(--nisa-green);
+    color: #fff;
+}
+
+@media (max-width: 768px) {
+    .hottoke-inner { flex-direction: column; }
+    .hottoke-right {
+        flex-direction: row;
+        width: 100%;
+        justify-content: center;
+        position: static;
+        padding: 0;
+        border-top: 1px solid #e8d87a;
+        padding-top: 16px;
+        gap: 14px;
+    }
+    .hottoke-chara { width: 60px; height: 60px; }
+    .hottoke-chara-comment { font-size: 12px; }
+}
+
+/* ── ほっとけ投資：アイコンカード（4枚目） ── */
+.hottoke-chara-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    justify-content: flex-start;
+    background: #f0fdf4;
+    border: 2px solid var(--nisa-green) !important;
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
+}
+.hottoke-chara-card .hottoke-chara {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--nisa-green);
+    box-shadow: 0 3px 12px rgba(0,0,0,0.12);
+}
+.hottoke-chara-card .hottoke-chara-name {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-align: center;
+}
+.hottoke-chara-card .hottoke-chara-link {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--nisa-green);
+    text-decoration: none;
+    border: 1px solid var(--nisa-green);
+    padding: 4px 10px;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: background .2s, color .2s;
+}
+.hottoke-chara-card .hottoke-chara-link:hover {
+    background: var(--nisa-green);
+    color: #fff;
+}
+
+/* グリッドを4列に（3カード＋アイコン） */
+.hottoke-target-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    align-items: start;
+}
+
+@media (max-width: 768px) {
+    .hottoke-target-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    .hottoke-chara-card { position: static; }
+}
+
+/* ── メッセージ2カラム ── */
+.hottoke-message-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 24px;
+    margin: 1.5rem 0;
+}
+
+/* ── 私についてはこちら横長バナー ── */
+.hottoke-about-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: #fff;
+    border: 2px solid var(--nisa-green);
+    border-radius: 12px;
+    padding: 14px 20px;
+    margin: 1.2rem 0;
+    text-decoration: none;
+    transition: background .2s;
+}
+.hottoke-about-banner:hover { background: var(--green-light); }
+.hottoke-about-icon {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--nisa-green);
+    flex-shrink: 0;
+}
+.hottoke-about-text {
+    flex: 1;
+}
+.hottoke-about-text strong {
+    display: block;
+    font-size: 14px;
+    color: var(--primary-dark);
+    margin-bottom: 3px;
+}
+.hottoke-about-text small {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+.hottoke-about-arrow {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--nisa-green);
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .hottoke-message-grid { grid-template-columns: 1fr; gap: 0; }
+    .hottoke-about-banner { flex-direction: column; text-align: center; }
+    .hottoke-about-arrow { margin-top: 6px; }
+}
+
+/* ── ターゲット1行テキスト ── */
+.hottoke-target-row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px 12px;
+    margin: 1.2rem 0;
+    padding: 14px 18px;
+    background: #fff;
+    border-radius: 10px;
+    border: 1px solid #e8d87a;
+}
+.hottoke-target-pill {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--primary-dark);
+    white-space: nowrap;
+}
+.hottoke-target-sep {
+    color: #ccc;
+    font-size: 18px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .hottoke-target-sep { display: none; }
+    .hottoke-target-pill { font-size: 14px; }
+}
+
+/* ── メッセージ角丸ボックス ── */
+.hottoke-message-box {
+    background: #fff;
+    border: 2px solid var(--accent-gold);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin: 1.2rem 0;
+    line-height: 2;
+}
+.hottoke-message-box p {
+    font-size: 16px;
+    color: var(--text-main);
+    margin-bottom: 1rem;
+}
+.hottoke-message-box p:last-child { margin-bottom: 0; }
+.hottoke-strong {
+    color: var(--primary-dark);
+    font-size: 1.05em;
+}
+
+@media (max-width: 768px) {
+    .hottoke-message-box { padding: 18px 16px; }
+    .hottoke-message-box p { font-size: 15px; }
+}
+
+/* ── メッセージ＋右吹き出しレイアウト ── */
+.hottoke-msg-wrap {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin: 1.2rem 0;
+}
+.hottoke-msg-wrap .hottoke-message-box {
+    flex: 1;
+    margin: 0;
+}
+.hottoke-side-balloons {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding-top: 8px;
+    flex-shrink: 0;
+    width: 130px;
+}
+.hottoke-side-balloon {
+    position: relative;
+    background: #fffdf0;
+    border: 1px solid var(--accent-gold);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 12px;
+    line-height: 1.7;
+    color: var(--text-main);
+}
+.hottoke-side-balloon p { margin: 0; }
+.hottoke-side-balloon-arrow {
+    position: absolute;
+    left: -10px;
+    top: 14px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 10px 6px 0;
+    border-color: transparent var(--accent-gold) transparent transparent;
+}
+.hottoke-side-balloon-arrow::after {
+    content: '';
+    position: absolute;
+    left: 2px;
+    top: -5px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 8px 5px 0;
+    border-color: transparent #fffdf0 transparent transparent;
+}
+
+@media (max-width: 768px) {
+    .hottoke-msg-wrap { flex-direction: column; }
+    .hottoke-side-balloons { flex-direction: row; width: 100%; gap: 10px; }
+    .hottoke-side-balloon { flex: 1; }
+    .hottoke-side-balloon-arrow { display: none; }
+}
