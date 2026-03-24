@@ -90,6 +90,50 @@ body {
     z-index: 10;
 }
 
+/* ── 「私について」導線バナー ── */
+.about-link-banner {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    background: var(--green-light, #e8f5ee);
+    border: 2px solid var(--nisa-green);
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    transition: background .2s;
+}
+.about-link-banner:hover { background: #d1f0e0; }
+.about-link-icon {
+    font-size: 26px;
+    flex-shrink: 0;
+}
+.about-link-text {
+    flex: 1;
+}
+.about-link-text strong {
+    display: block;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--nisa-green);
+    margin-bottom: 2px;
+}
+.about-link-text small {
+    font-size: 12px;
+    color: var(--text-muted);
+    line-height: 1.5;
+}
+.about-link-arrow {
+    font-size: 22px;
+    color: var(--nisa-green);
+    flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+    .about-link-banner { padding: 12px 14px; gap: 10px; }
+    .about-link-text strong { font-size: 14px; }
+}
+
 /* ============================================================
    ① 年齢入力UI — 刷新版
    方針：年代ボタンを主役、数字入力は補助
@@ -558,7 +602,7 @@ h2::before {
 
 .dca-title {
     font-family: var(--sans, sans-serif);
-    font-size: 18px;
+    font-size: 20px;
     font-weight: 700;
     color: var(--primary-dark);
     margin-bottom: 1rem;
@@ -582,10 +626,15 @@ h2::before {
 .dca-merit-box p:last-child { margin-bottom: 0; }
 
 /* 暴落テーブル */
-.dca-table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 1rem 0; }
+.dca-table { width: 100%; border-collapse: collapse; font-size: 15px; margin: 1rem 0; table-layout: fixed; }
 .dca-table thead tr { background: var(--primary-dark); }
-.dca-table thead th { color: #fff; padding: 10px 14px; text-align: left; font-weight: 500; }
-.dca-table tbody td { padding: 10px 14px; border-bottom: 1px solid #e8e8e4; }
+.dca-table thead th { color: #fff; padding: 10px 14px; text-align: left; font-weight: 500; white-space: nowrap; }
+.dca-table tbody td { padding: 10px 14px; border-bottom: 1px solid #e8e8e4; vertical-align: middle; }
+.dca-table tbody td:nth-child(1) { font-weight: bold; width: 22%; }
+.dca-table tbody td:nth-child(2) { white-space: nowrap; width: 18%; }
+.dca-table tbody td:nth-child(3) { white-space: nowrap; width: 14%; }
+.dca-table tbody td:nth-child(4) { white-space: nowrap; width: 18%; }
+.dca-table tbody td:nth-child(5) { width: 28%; }
 .dca-table tbody tr:nth-child(even) td { background: var(--bg-light); }
 .dca-table .highlight-row td { background: #f0fff4; }
 .drop-rate { color: var(--tax-red); font-weight: bold; font-size: 15px; }
@@ -693,7 +742,7 @@ h2::before {
 
 @media (max-width: 768px) {
     .dca-block { padding: 20px 16px; }
-    .dca-title { font-size: 16px; }
+    .dca-title { font-size: 18px; }
     .dca-block p { font-size: 15px; }
     .dca-conclusion { padding: 24px 16px; }
     .dca-conclusion-main { font-size: 20px; }
@@ -723,21 +772,21 @@ h2::before {
     line-height: 1.7;
 }
 
-/* ② 予想資産表示ボックス */
+/* ② 予想資産表示ボックス（白地・金ボーダー） */
 .dec-assets-display {
-    background: var(--primary-dark);
+    background: #fff;
+    border: 2px solid var(--accent-gold);
     border-radius: 12px;
     padding: 20px 24px;
-    margin-bottom: 24px;
+    margin-bottom: 20px;
     text-align: center;
-    color: #fff;
 }
 .dec-assets-label {
-    font-size: 15px;
-    opacity: 0.75;
+    font-size: 14px;
+    color: var(--text-muted);
     margin-bottom: 8px;
     font-weight: bold;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.03em;
 }
 .dec-assets-row {
     display: flex;
@@ -749,7 +798,7 @@ h2::before {
     background: transparent;
     border: none;
     border-bottom: 2px solid var(--accent-gold);
-    color: var(--accent-gold);
+    color: var(--primary-dark);
     font-size: 42px;
     font-weight: bold;
     text-align: right;
@@ -759,8 +808,8 @@ h2::before {
     padding: 0 4px;
 }
 .dec-assets-input:focus {
-    border-bottom-color: #fff;
-    color: #fff;
+    border-bottom-color: var(--nisa-green);
+    color: var(--primary-dark);
 }
 .dec-assets-unit {
     font-size: 24px;
@@ -769,13 +818,134 @@ h2::before {
 }
 .dec-assets-note {
     font-size: 12px;
-    opacity: 0.6;
+    color: var(--text-muted);
     margin-top: 8px;
     line-height: 1.5;
 }
 
-/* decMonthlyDisplay の初期表示 */
-#decMonthlyDisplay { min-width: 72px; }
+/* ① 毎月取崩額ヒーロー（最上部・大きく目立たせる） */
+.dec-monthly-hero {
+    background: var(--green-light, #e8f5ee);
+    border: 2px solid var(--nisa-green);
+    border-radius: 14px;
+    padding: 24px 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+.dec-monthly-hero-label {
+    font-size: 17px;
+    font-weight: bold;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+    line-height: 1.5;
+}
+.dec-monthly-hero-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.dec-monthly-hero-prefix {
+    font-size: 22px;
+    font-weight: bold;
+    color: var(--nisa-green);
+}
+.dec-monthly-hero-input {
+    font-size: 52px;
+    font-weight: bold;
+    color: var(--nisa-green);
+    background: transparent;
+    border: none;
+    border-bottom: 3px solid var(--nisa-green);
+    text-align: center;
+    width: 160px;
+    outline: none;
+    font-family: inherit;
+    padding: 0 4px;
+    line-height: 1;
+}
+.dec-monthly-hero-input::placeholder { color: #a0d4b8; }
+.dec-monthly-hero-input:focus { border-bottom-color: var(--primary-dark); }
+.dec-monthly-hero-unit {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--nisa-green);
+}
+.dec-monthly-hero-slider {
+    width: 100%;
+    max-width: 400px;
+    height: 8px;
+    accent-color: var(--nisa-green);
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: #cbd5e0;
+    border-radius: 4px;
+    outline: none;
+    padding: 0;
+    border: none;
+    display: block;
+    margin: 0 auto;
+}
+.dec-monthly-hero-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    background: var(--nisa-green);
+    cursor: pointer;
+    box-shadow: 0 2px 8px rgba(56,161,105,0.4);
+}
+
+@media (max-width: 768px) {
+    .dec-monthly-hero { padding: 18px 16px; }
+    .dec-monthly-hero-input { font-size: 40px; width: 120px; }
+    .dec-monthly-hero-unit  { font-size: 20px; }
+    .dec-assets-input { font-size: 32px; width: 180px; }
+    .dec-assets-unit  { font-size: 18px; }
+}
+
+/* 入力パネル統合枠 */
+.dec-input-panel {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+/* 区切り線 */
+.dec-panel-divider {
+    height: 1px;
+    background: var(--border);
+    margin: 0;
+}
+
+/* 枠内の毎月取崩額：パディング縮小 */
+.dec-input-panel .dec-monthly-hero {
+    background: transparent;
+    border: none;
+    border-radius: 0;
+    padding: 18px 24px 14px;
+    margin-bottom: 0;
+}
+.dec-input-panel .dec-monthly-hero-label { font-size: 15px; margin-bottom: 10px; }
+.dec-input-panel .dec-monthly-hero-input { font-size: 44px; }
+.dec-input-panel .dec-monthly-hero-row   { margin-bottom: 10px; }
+
+/* 枠内のスライダー群：パディング縮小 */
+.dec-control-compact {
+    background: transparent !important;
+    padding: 14px 24px 16px !important;
+    gap: 12px !important;
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .dec-input-panel .dec-monthly-hero { padding: 14px 16px 12px; }
+    .dec-control-compact { padding: 12px 16px 14px !important; }
+    .dec-input-panel .dec-monthly-hero-input { font-size: 36px; }
+}
 
 /* 世代別提案ボックス */
 .suggestion-box {
@@ -954,13 +1124,13 @@ h2::before {
 }
 .summary-card {
     display: flex; justify-content: space-around; margin-top: 15px;
-    background: #fff; padding: 20px; border-radius: 8px;
-    border: 1px solid #e2e8f0; flex-wrap: wrap; gap: 10px;
+    background: var(--primary-dark); padding: 24px 20px; border-radius: 12px;
+    border: none; flex-wrap: wrap; gap: 10px;
 }
 .summary-item { text-align: center; flex: 1; min-width: 250px; }
-.summary-label { font-size: 14px; color: var(--text-muted); display: block; margin-bottom: 8px; }
-.summary-value { font-size: 24px; font-weight: bold; color: var(--tax-red); line-height: 1.2; }
-.summary-age   { font-size: 19px; color: var(--primary-dark); display: block; margin-top: 6px; font-weight: bold; }
+.summary-label { font-size: 14px; color: rgba(255,255,255,0.6); display: block; margin-bottom: 8px; }
+.summary-value { font-size: 24px; font-weight: bold; color: var(--accent-gold); line-height: 1.2; }
+.summary-age   { font-size: 19px; color: rgba(255,255,255,0.85); display: block; margin-top: 6px; font-weight: bold; }
 
 .result-message {
     font-size: 15px; color: var(--primary-dark);
@@ -1224,23 +1394,23 @@ h2::before {
 
 /* 最終ゴールボックス */
 .cycle-goal {
-    background: var(--primary-dark);
+    background: #fff;
+    border: 2px solid var(--accent-gold);
     border-radius: 12px;
     padding: 28px 32px;
     text-align: center;
-    color: #fff;
 }
 .cycle-goal-title {
     font-size: 20px;
     font-weight: 700;
-    color: var(--accent-gold);
+    color: var(--primary-dark);
     margin-bottom: 12px;
     line-height: 1.5;
 }
 .cycle-goal p {
     font-size: 15px;
     line-height: 1.9;
-    opacity: .9;
+    color: var(--text-muted);
     margin: 0;
 }
 
@@ -1424,4 +1594,117 @@ h2::before {
 
     /* comp-card の横幅確保 */
     .comp-card-title { font-size: 14px; padding: 6px 14px; }
+}
+
+/* ============================================================
+   キャラクター吹き出しコンポーネント
+   ============================================================ */
+
+/* 共通ラッパー */
+.chara-balloon {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    margin: 24px 0;
+}
+
+/* 右向き（キャラ左・吹き出し右） */
+.chara-balloon.right { flex-direction: row; }
+/* 左向き（吹き出し左・キャラ右） */
+.chara-balloon.left  { flex-direction: row-reverse; }
+
+/* キャラアイコン */
+.chara-balloon-icon {
+    width: 72px;
+    height: 72px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+}
+
+/* 吹き出し本体 */
+.chara-balloon-body {
+    position: relative;
+    background: #fff;
+    border: 2px solid var(--nisa-green);
+    border-radius: 16px;
+    padding: 14px 18px;
+    font-size: 15px;
+    line-height: 1.8;
+    color: var(--text-main);
+    flex: 1;
+}
+
+/* 吹き出しの三角（右向き） */
+.chara-balloon.right .chara-balloon-body::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: -12px;
+    border: 6px solid transparent;
+    border-right-color: var(--nisa-green);
+}
+.chara-balloon.right .chara-balloon-body::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    left: -9px;
+    border: 5px solid transparent;
+    border-right-color: #fff;
+}
+
+/* 吹き出しの三角（左向き） */
+.chara-balloon.left .chara-balloon-body::before {
+    content: '';
+    position: absolute;
+    top: 20px;
+    right: -12px;
+    border: 6px solid transparent;
+    border-left-color: var(--nisa-green);
+}
+.chara-balloon.left .chara-balloon-body::after {
+    content: '';
+    position: absolute;
+    top: 21px;
+    right: -9px;
+    border: 5px solid transparent;
+    border-left-color: #fff;
+}
+
+/* 吹き出しタイプ別ボーダー色 */
+.chara-balloon.type-point   .chara-balloon-body { border-color: var(--nisa-green); }
+.chara-balloon.type-idea    .chara-balloon-body { border-color: var(--accent-gold); }
+.chara-balloon.type-worry   .chara-balloon-body { border-color: var(--tax-red); }
+.chara-balloon.type-question .chara-balloon-body { border-color: #3b82f6; }
+
+.chara-balloon.type-idea    .chara-balloon-body::before { border-right-color: var(--accent-gold); }
+.chara-balloon.type-idea    .chara-balloon-body::after  { border-right-color: #fff; }
+.chara-balloon.type-worry   .chara-balloon-body::before { border-right-color: var(--tax-red); }
+.chara-balloon.type-worry   .chara-balloon-body::after  { border-right-color: #fff; }
+.chara-balloon.type-question .chara-balloon-body::before { border-right-color: #3b82f6; }
+.chara-balloon.type-question .chara-balloon-body::after  { border-right-color: #fff; }
+
+/* 吹き出し内の強調 */
+.chara-balloon-body strong { color: var(--primary-dark); }
+.chara-balloon-body .balloon-label {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .06em;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-bottom: 6px;
+    background: var(--nisa-green);
+    color: #fff;
+}
+.chara-balloon.type-idea     .balloon-label { background: var(--accent-gold); }
+.chara-balloon.type-worry    .balloon-label { background: var(--tax-red); }
+.chara-balloon.type-question .balloon-label { background: #3b82f6; }
+
+/* スマホ対応 */
+@media (max-width: 768px) {
+    .chara-balloon-icon { width: 56px; height: 56px; }
+    .chara-balloon-body { font-size: 14px; padding: 12px 14px; }
+    .chara-balloon { gap: 12px; }
 }

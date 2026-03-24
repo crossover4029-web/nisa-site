@@ -191,19 +191,22 @@ function updateAccumulation() {
     const finalT = tData[tData.length - 1] * 10000;
     const finalP = initial + monthly * years * 12;
 
-    document.getElementById('finalAmount').innerText =
-        years + '年後の予想資産額: ' + Math.round(finalT).toLocaleString() + '円';
+    const finalT_man = Math.round(finalT / 10000);
+    const finalP_man = Math.round(finalP / 10000);
 
-    /* 日本語金額表示 */
-    const jaEl = document.getElementById('finalAmountJa');
-    if (jaEl) jaEl.innerText = toJapaneseAmount(Math.round(finalT));
+    document.getElementById('finalAmount').innerText =
+        years + '年後の予想資産額: ' + finalT_man.toLocaleString() + '万円';
 
     document.getElementById('breakdownText').innerHTML =
-        '投資元本: ' + Math.round(finalP).toLocaleString() +
-        '円 / <span style="color:var(--tax-red); font-weight:bold;">収益: ' +
-        Math.round(finalT - finalP).toLocaleString() + '円（※無税）</span>';
+        '投資元本: ' + finalP_man.toLocaleString() +
+        '万円 / <span style="color:var(--tax-red); font-weight:bold;">収益: ' +
+        (finalT_man - finalP_man).toLocaleString() + '万円（※無税）</span>';
 
-    document.getElementById('decAssets').value = Math.round(finalT / 10000);
+    /* ② dec-assets-display のラベルを連動更新 */
+    const labelEl = document.getElementById('decAssetsLabel');
+    if (labelEl) labelEl.textContent = 'あなたの ' + years + '年後の予想資産額: ' + finalT_man.toLocaleString() + '万円';
+
+    document.getElementById('decAssets').value = finalT_man;
     updateDecumulation();
 
     if (accChart) accChart.destroy();

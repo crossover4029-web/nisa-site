@@ -39,6 +39,16 @@
   <div class="container">
       <h1><span>Strategy for Asset Building</span>新NISAを活用した資産形成の指針</h1>
 
+      <!-- 「私について」への導線 -->
+      <a href="./about.html" class="about-link-banner">
+          <span class="about-link-icon">👤</span>
+          <span class="about-link-text">
+              <strong>▶ 私について</strong>
+              <small>60歳からのリアルな投資の話 ─ このサイトを作った人間の話を読む</small>
+          </span>
+          <span class="about-link-arrow">›</span>
+      </a>
+
       <div class="age-input-section">
           <span class="age-input-label">あなたの世代を選んでください</span>
           <div class="target-selector">
@@ -68,6 +78,15 @@
           むしろ物価上昇（インフレ）が続けば、お金の価値は相対的に下がり、<strong style="color: var(--tax-red); font-size: 1.1em;">実質的なマイナス</strong>となってしまうリスクがあります。<br>
           <span class="emphasis">ただ貯金しているだけでは資産を守れない時代です。</span>
       </p>
+
+      <!-- キャラ吹き出し：ポイント -->
+      <div class="chara-balloon right type-point">
+          <img src="img/chara-point.png" alt="キャラクター" class="chara-balloon-icon">
+          <div class="chara-balloon-body">
+              <span class="balloon-label">ポイント</span><br>
+              銀行にお金を置いておくだけでは、<strong>インフレで実質的に目減り</strong>しています。これが「貯金だけでは老後が不安」な本当の理由です。
+          </div>
+      </div>
 
       <p style="font-size: 16px; font-weight: bold; color: var(--primary-dark); margin: 30px 0 20px;">
           資産運用には様々な形がありますが、代表的な例として以下のものが挙げられます：
@@ -238,6 +257,15 @@
       <div class="simulation-box">
           <div class="sim-instruction">あなたなら、いくら・何年・何％で投資しますか？<br>下のスライダーを動かして、あなただけの未来を描いてみましょう。</div>
 
+          <!-- キャラ吹き出し：アイデア -->
+          <div class="chara-balloon right type-idea">
+              <img src="img/chara-idea.png" alt="キャラクター" class="chara-balloon-icon">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">アドバイス</span><br>
+                  スライダーを動かして、<strong>「もし月3万円積み立てたら？」「年利10%なら？」</strong>と色々試してみてください。数字が変わるたびに未来が見えてきます。
+              </div>
+          </div>
+
           <div id="accumulation-suggestion" class="suggestion-box"></div>
 
           <div class="control-panel">
@@ -280,7 +308,6 @@
 
           <div class="result-display">
               <div id="finalAmount" style="font-size: 26px; font-weight: bold; color: var(--nisa-green);"></div>
-              <div id="finalAmountJa" style="font-size: 26px; font-weight: bold; color: var(--nisa-green); margin-top: 4px;"></div>
               <div id="breakdownText" style="font-size: 18px; margin-top: 8px; color: #4a5568;"></div>
               <div class="nisa-limit-note">※新NISAの非課税投資枠は生涯1,800万円までです。枠を超えた運用益には通常通り約20%の税金がかかります。このシミュレーションは簡略化のため全額非課税として計算しています。</div>
           </div>
@@ -341,6 +368,15 @@
                   確かに、過去には何度も大きな暴落がありました。
               </p>
 
+              <!-- キャラ吹き出し：注意 -->
+              <div class="chara-balloon right type-worry">
+                  <img src="img/chara-worry.png" alt="キャラクター" class="chara-balloon-icon">
+                  <div class="chara-balloon-body">
+                      <span class="balloon-label">気になる点</span><br>
+                      「暴落したら怖い…」と思うのは当然です。でも、<strong>データを見ると暴落は必ず回復しています。</strong>むしろチャンスになった理由を見てください。
+                  </div>
+              </div>
+
               <!-- 暴落事例テーブル -->
               <div class="table-scroll">
                   <table class="dca-table">
@@ -357,21 +393,21 @@
                           <tr>
                               <td><strong>ITバブル崩壊</strong></td>
                               <td>2000〜2002年</td>
-                              <td class="drop-rate">約 −49%</td>
+                              <td class="drop-rate" style="white-space:nowrap;">約−49%</td>
                               <td>約5年</td>
                               <td>積立継続で全額回復</td>
                           </tr>
                           <tr>
                               <td><strong>リーマンショック</strong></td>
                               <td>2008〜2009年</td>
-                              <td class="drop-rate">約 −57%</td>
+                              <td class="drop-rate" style="white-space:nowrap;">約−57%</td>
                               <td>約4年</td>
                               <td>底値で多く買えた人が最大の恩恵</td>
                           </tr>
                           <tr class="highlight-row">
                               <td><strong>コロナショック</strong></td>
                               <td>2020年3月</td>
-                              <td class="drop-rate">約 −34%</td>
+                              <td class="drop-rate" style="white-space:nowrap;">約−34%</td>
                               <td><strong style="color:var(--nisa-green);">わずか5ヶ月</strong></td>
                               <td>積立を止めなかった人が勝者</td>
                           </tr>
@@ -436,17 +472,36 @@
               </p>
           </div>
 
+          <!-- キャラ吹き出し：笑顔 -->
+          <div class="chara-balloon right type-point">
+              <img src="img/chara-smile.png" alt="キャラクター" class="chara-balloon-icon">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">まとめ</span><br>
+                  私自身も毎月積み立て続けています。<strong>難しく考えずに、まず始めること。</strong>それだけで10年後・20年後は大きく変わります。一緒にやりましょう！
+              </div>
+          </div>
+
       </div>
 
+      <!-- キャラ吹き出し：疑問 -->
       <h2>5. 資金の受取計画（出口戦略）</h2>
       <div class="simulation-box">
 
           <!-- 導入文言 -->
-          <div class="sim-instruction">家や車・教育資金としても活用できますが、<br>老後資金とするなら―<br><span class="sim-instruction-sub">65歳定年後、毎月いくら受け取りたいですか？<br>あなたの資産が何年持つか、計算してみましょう。</span></div>
+          <div class="sim-instruction">家や車・教育資金としても活用できますが、<br>老後資金とするなら―<br><span class="sim-instruction-sub">あなたの資産が何年持つか、計算してみましょう。</span></div>
 
-          <!-- ② 予想資産（積立シミュから連動・編集可能） -->
+          <!-- キャラ吹き出し：疑問 -->
+          <div class="chara-balloon right type-question">
+              <img src="img/chara-question.png" alt="キャラクター" class="chara-balloon-icon">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">よくある疑問</span><br>
+                  「積み立てた後、どうやって使うの？」という疑問、実は多いんです。<strong>運用しながら取り崩す</strong>と、現金だけの場合と比べて資産寿命が大きく変わります。
+              </div>
+          </div>
+
+          <!-- ① 予想資産（最上部） -->
           <div class="dec-assets-display">
-              <div class="dec-assets-label">あなたの予想資産</div>
+              <div class="dec-assets-label" id="decAssetsLabel">あなたの予想資産</div>
               <div class="dec-assets-row">
                   <input type="number" id="decAssets" class="dec-assets-input" value="0" oninput="syncDecNumber('decAssets')">
                   <span class="dec-assets-unit">万円</span>
@@ -454,34 +509,50 @@
               <div class="dec-assets-note">※上の積立シミュレーションの結果が自動で入ります。直接変更もできます。</div>
           </div>
 
-          <div class="control-panel">
+          <!-- 入力パネル（1枠にまとめる） -->
+          <div class="dec-input-panel">
 
-              <!-- 開始年齢 -->
-              <div class="input-group">
-                  <label>開始年齢</label>
-                  <span class="input-val-badge" id="decStartAgeDisplay">65歳</span>
-                  <input type="range" id="decStartAgeSlider" min="50" max="80" step="1" value="65" oninput="syncDecSlider('decStartAge')">
-                  <input type="number" id="decStartAge" min="50" max="80" value="65" oninput="syncDecNumber('decStartAge')">
+              <!-- 毎月いくらほしいか -->
+              <div class="dec-monthly-hero">
+                  <div class="dec-monthly-hero-label">老後、毎月いくら受け取りたいですか？</div>
+                  <div class="dec-monthly-hero-row">
+                      <span class="dec-monthly-hero-prefix">月</span>
+                      <input type="number" id="decMonthly" min="0" max="50" step="0.5"
+                             class="dec-monthly-hero-input" placeholder="0"
+                             oninput="syncDecNumber('decMonthly')">
+                      <span class="dec-monthly-hero-unit">万円</span>
+                  </div>
+                  <input type="range" id="decMonthlySlider" min="0" max="50" step="0.5" value="0"
+                         class="dec-monthly-hero-slider" oninput="syncDecSlider('decMonthly')">
+                  <div id="decInputError" class="input-error-msg" style="text-align:center; margin-top:4px;">毎月に必要な額を入力してください</div>
               </div>
 
-              <!-- 毎月の取崩額 -->
-              <div class="input-group">
-                  <label>毎月の取崩額</label>
-                  <span class="input-val-badge" id="decMonthlyDisplay">─万円</span>
-                  <input type="range" id="decMonthlySlider" min="0" max="50" step="0.5" value="0" oninput="syncDecSlider('decMonthly')">
-                  <input type="number" id="decMonthly" min="0" max="50" step="0.5" oninput="syncDecNumber('decMonthly')">
-                  <div id="decInputError" class="input-error-msg">毎月に必要な額を入力してください</div>
+              <div class="dec-panel-divider"></div>
+
+              <!-- 開始年齢・想定リターン -->
+              <div class="control-panel dec-control-compact">
+                  <div class="input-group">
+                      <label>開始年齢</label>
+                      <span class="input-val-badge" id="decStartAgeDisplay">65歳</span>
+                      <input type="range" id="decStartAgeSlider" min="50" max="80" step="1" value="65" oninput="syncDecSlider('decStartAge')">
+                      <input type="number" id="decStartAge" min="50" max="80" value="65" oninput="syncDecNumber('decStartAge')">
+                  </div>
+                  <div class="input-group">
+                      <label>想定リターン</label>
+                      <span class="input-val-badge" id="decRateDisplay">7%</span>
+                      <span class="input-sub">運用しながら取り崩す場合の年利</span>
+                      <input type="range" id="decRateSlider" min="0" max="20" step="0.5" value="7" oninput="syncDecSlider('decRate')">
+                      <input type="number" id="decRate" min="0" max="20" step="0.5" value="7" oninput="syncDecNumber('decRate')">
+                  </div>
               </div>
 
-              <!-- 想定リターン -->
-              <div class="input-group">
-                  <label>想定リターン</label>
-                  <span class="input-val-badge" id="decRateDisplay">7%</span>
-                  <span class="input-sub">運用しながら取り崩す場合の年利</span>
-                  <input type="range" id="decRateSlider" min="0" max="20" step="0.5" value="7" oninput="syncDecSlider('decRate')">
-                  <input type="number" id="decRate" min="0" max="20" step="0.5" value="7" oninput="syncDecNumber('decRate')">
-              </div>
+          </div>
 
+          <div id="impactMessage" class="impact-banner"></div>
+          <div id="increaseAdvice" class="increase-advice" style="text-align:center;">月の取崩額をもっと増やしてみてください。</div>
+
+          <div class="chart-container" id="decChartContainer">
+              <div class="chart-placeholder">毎月の取崩額を入力してください。</div>
           </div>
 
           <div class="summary-card">
@@ -493,13 +564,6 @@
                   <span class="summary-label">現金のみ（運用なし）の場合</span>
                   <div id="lifeWithCash" class="summary-value">計算中...</div>
               </div>
-          </div>
-
-          <div id="impactMessage" class="impact-banner"></div>
-          <div id="increaseAdvice" class="increase-advice" style="text-align:center;">月の取崩額をもっと増やしてみてください。</div>
-
-          <div class="chart-container" id="decChartContainer">
-              <div class="chart-placeholder">毎月の取崩額を入力してください。</div>
           </div>
           <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:20px;">
               参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>
@@ -530,6 +594,15 @@
           <figure class="cycle-figure">
               <img src="img/nisa-olive-sbi-vpoint-tsumitate-cycle.png" alt="OLIVE口座＋SBI証券口座でVポイントが貯まるサイクル図">
           </figure>
+
+          <!-- キャラ吹き出し：私の理想形 -->
+          <div class="chara-balloon right type-point">
+              <img src="img/chara-smile.png" alt="キャラクター" class="chara-balloon-icon">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">私が考える理想形</span><br>
+                  正直に言います。<strong>これが私自身が構築しようとしているサイクルです。</strong>毎月の積立がVポイントを生み、そのポイントがまた投資に回る。人生で一番早く始めればよかったと思っている仕組みです。<strong>一度作るだけで、自動的に回り続けます。</strong>
+              </div>
+          </div>
 
           <div class="cycle-steps">
               <div class="cycle-step">
