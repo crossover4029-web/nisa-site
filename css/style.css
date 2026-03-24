@@ -1602,91 +1602,110 @@ h2::before {
 
 /* 共通ラッパー */
 .chara-balloon {
+    display: -webkit-flex;
     display: flex;
+    -webkit-align-items: flex-start;
     align-items: flex-start;
     gap: 16px;
     margin: 24px 0;
+    width: 100%;
 }
 
 /* 右向き（キャラ左・吹き出し右） */
-.chara-balloon.right { flex-direction: row; }
+.chara-balloon.right { -webkit-flex-direction: row; flex-direction: row; }
 /* 左向き（吹き出し左・キャラ右） */
-.chara-balloon.left  { flex-direction: row-reverse; }
+.chara-balloon.left  { -webkit-flex-direction: row-reverse; flex-direction: row-reverse; }
 
 /* キャラアイコン */
 .chara-balloon-icon {
     width: 72px;
     height: 72px;
+    min-width: 72px;
     border-radius: 50%;
     object-fit: cover;
+    -webkit-flex-shrink: 0;
     flex-shrink: 0;
     box-shadow: 0 3px 10px rgba(0,0,0,0.12);
+    display: block;
 }
 
 /* 吹き出し本体 */
 .chara-balloon-body {
     position: relative;
-    background: #fff;
-    border: 2px solid var(--nisa-green);
+    background: #ffffff;
+    border: 2px solid #38a169;
     border-radius: 16px;
     padding: 14px 18px;
     font-size: 15px;
     line-height: 1.8;
-    color: var(--text-main);
-    flex: 1;
+    color: #2d3748;
+    -webkit-flex: 1 1 auto;
+    flex: 1 1 auto;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 /* 吹き出しの三角（右向き） */
 .chara-balloon.right .chara-balloon-body::before {
     content: '';
     position: absolute;
-    top: 20px;
-    left: -12px;
-    border: 6px solid transparent;
-    border-right-color: var(--nisa-green);
+    top: 18px;
+    left: -13px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 13px 7px 0;
+    border-color: transparent #38a169 transparent transparent;
 }
 .chara-balloon.right .chara-balloon-body::after {
     content: '';
     position: absolute;
-    top: 21px;
+    top: 20px;
     left: -9px;
-    border: 5px solid transparent;
-    border-right-color: #fff;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 5px 0;
+    border-color: transparent #ffffff transparent transparent;
 }
 
 /* 吹き出しの三角（左向き） */
 .chara-balloon.left .chara-balloon-body::before {
     content: '';
     position: absolute;
-    top: 20px;
-    right: -12px;
-    border: 6px solid transparent;
-    border-left-color: var(--nisa-green);
+    top: 18px;
+    right: -13px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 7px 0 7px 13px;
+    border-color: transparent transparent transparent #38a169;
 }
 .chara-balloon.left .chara-balloon-body::after {
     content: '';
     position: absolute;
-    top: 21px;
+    top: 20px;
     right: -9px;
-    border: 5px solid transparent;
-    border-left-color: #fff;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 0 5px 10px;
+    border-color: transparent transparent transparent #ffffff;
 }
 
 /* 吹き出しタイプ別ボーダー色 */
-.chara-balloon.type-point   .chara-balloon-body { border-color: var(--nisa-green); }
-.chara-balloon.type-idea    .chara-balloon-body { border-color: var(--accent-gold); }
-.chara-balloon.type-worry   .chara-balloon-body { border-color: var(--tax-red); }
+.chara-balloon.type-point   .chara-balloon-body { border-color: #38a169; }
+.chara-balloon.type-idea    .chara-balloon-body { border-color: #d4af37; }
+.chara-balloon.type-worry   .chara-balloon-body { border-color: #e53e3e; }
 .chara-balloon.type-question .chara-balloon-body { border-color: #3b82f6; }
 
-.chara-balloon.type-idea    .chara-balloon-body::before { border-right-color: var(--accent-gold); }
-.chara-balloon.type-idea    .chara-balloon-body::after  { border-right-color: #fff; }
-.chara-balloon.type-worry   .chara-balloon-body::before { border-right-color: var(--tax-red); }
-.chara-balloon.type-worry   .chara-balloon-body::after  { border-right-color: #fff; }
-.chara-balloon.type-question .chara-balloon-body::before { border-right-color: #3b82f6; }
-.chara-balloon.type-question .chara-balloon-body::after  { border-right-color: #fff; }
+.chara-balloon.type-point   .chara-balloon-body::before { border-color: transparent #38a169 transparent transparent; }
+.chara-balloon.type-idea    .chara-balloon-body::before { border-color: transparent #d4af37 transparent transparent; }
+.chara-balloon.type-worry   .chara-balloon-body::before { border-color: transparent #e53e3e transparent transparent; }
+.chara-balloon.type-question .chara-balloon-body::before { border-color: transparent #3b82f6 transparent transparent; }
 
 /* 吹き出し内の強調 */
-.chara-balloon-body strong { color: var(--primary-dark); }
+.chara-balloon-body strong { color: #1a202c; }
 .chara-balloon-body .balloon-label {
     display: inline-block;
     font-size: 11px;
@@ -1695,16 +1714,19 @@ h2::before {
     padding: 2px 10px;
     border-radius: 20px;
     margin-bottom: 6px;
-    background: var(--nisa-green);
+    background: #38a169;
     color: #fff;
 }
-.chara-balloon.type-idea     .balloon-label { background: var(--accent-gold); }
-.chara-balloon.type-worry    .balloon-label { background: var(--tax-red); }
+.chara-balloon.type-idea     .balloon-label { background: #d4af37; }
+.chara-balloon.type-worry    .balloon-label { background: #e53e3e; }
 .chara-balloon.type-question .balloon-label { background: #3b82f6; }
 
 /* スマホ対応 */
 @media (max-width: 768px) {
-    .chara-balloon-icon { width: 56px; height: 56px; }
+    .chara-balloon-icon { width: 56px; height: 56px; min-width: 56px; }
     .chara-balloon-body { font-size: 14px; padding: 12px 14px; }
     .chara-balloon { gap: 12px; }
 }
+
+
+
