@@ -582,6 +582,7 @@ h2::before {
     background: rgba(255,255,255,0.1);
     border-radius: 12px;
     padding: 25px;
+    -webkit-backdrop-filter: blur(10px);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255,255,255,0.2);
 }
@@ -1760,9 +1761,11 @@ h2::before {
     border: 1px solid #e8d87a;
     padding: 40px 36px;
     margin-bottom: 2.5rem;
-    contain: layout;
+    position: relative;
+    overflow: hidden;
 }
 .hottoke-catchcopy {
+    font-size: 28px;
     font-size: clamp(1.4rem, 3.5vw, 2rem);
     font-weight: 900;
     color: var(--primary-dark);
