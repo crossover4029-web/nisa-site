@@ -80,7 +80,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 8px;
-      padding-top: 133%;
+      padding-top: 75%;
       background: #1a202c;
     }
     .photo-wrap img {
@@ -445,10 +445,10 @@
         <div class="episode-body">
           <div class="episode-label">🪖 自衛隊時代</div>
           <p>新隊員時代、同期の中で射撃No.1を取りました。オリンピック候補生への道もありましたが、1任期2年で満期除隊を選択。わが青春の一ページです。<br>
-          当時は一部屋8人、年齢もバラバラ。18歳の新兵がその部屋にひとりで配属される縦社会の完全寮生活。起床・カーテン開け・灰皿の用意まで新兵の仕事でした。後から聞いたＰ〇学園よりはマシだったかな？（笑）</p>
+          当時は一部屋8人、年齢もバラバラ。18歳の新兵がその部屋にひとりで配属される縦社会の完全寮生活。起床・カーテン開け・灰皿の用意まで新兵の仕事でした。</p>
 
           <!-- 写真ギャラリー -->
-          <div class="episode-photos">
+          <div class="episode-photos" style="grid-template-columns: repeat(2, 1fr);">
             <div class="episode-photo-item">
               <div class="photo-wrap">
                 <img src="img/jgsdf-youth-truck-operation-1980s.jpg" alt="自衛隊時代・若き日">
@@ -457,22 +457,9 @@
             </div>
             <div class="episode-photo-item">
               <div class="photo-wrap">
-                <img src="img/youth-sunglasses-portrait-1980s.jpg" alt="若き日のポートレート">
-                <!-- サングラスのため目線隠し不要 -->
-              </div>
-              <div class="photo-caption">当時のお気に入りの一枚</div>
-            </div>
-            <div class="episode-photo-item">
-              <div class="photo-wrap">
                 <img src="img/jgsdf-rifle-training-prone-position.jpg" alt="射撃訓練">
               </div>
               <div class="photo-caption">射撃訓練中。この年、同期No.1に。</div>
-            </div>
-            <div class="episode-photo-item">
-              <div class="photo-wrap">
-                <img src="img/jgsdf-barracks-friends-offduty.jpg" alt="宿舎での仲間との写真">
-              </div>
-              <div class="photo-caption">宿舎での仲間たちと。今も忘れられない顔ぶれ。</div>
             </div>
           </div>
         </div>
@@ -542,12 +529,14 @@
 
     <div class="about-body">
 
-      <p>60歳。定年を迎えたとき、私は「このままではダメだ」と感じました。</p>
-      <p>継続雇用という選択肢もありました。しかし、そこは私が想像していた環境とは違っていました。</p>
+      <p>60歳で定年を迎えたとき、私は部署移動を願い出て、後進育成も視野に65歳までの継続雇用を選択しました。</p>
+      <p>しかし、希望した環境とは大きく異なっていました。</p>
 
       <div class="about-failure">
-        年収は約75％に減少。それにもかかわらず、仕事量は増える。<br>
-        さらに、仕事の進め方にも納得がいかない。<br>
+        年収は約75％に減少。それにもかかわらず、仕事量は増える一方でした。<br>
+        複数のプロジェクトのPMに推されながら、メンバー配置は予算ありき。<br>
+        適材適所には程遠く、プロジェクト開始前からメンバーの疲弊が手に取るようにわかる。<br>
+        仕事の進め方にも納得がいかない。<br>
         「このままここで働き続けるのか？」
       </div>
 
@@ -560,24 +549,42 @@
       <p>東京では長年仕事をしてきました。次は、違う環境で働きたい。<br>
       地方、そしてできれば海外。</p>
       <p>英語は得意ではありませんが、フィリピンやマレーシアよりもベトナムの方が自分にはハードルが低く感じました。</p>
-      <p>そして、何より大きかったのは──</p>
+      <p>そして、ベトナムを真剣に考えた理由が3つありました。</p>
 
       <div class="about-emphasis">
-        <strong>ベトナムなら、日本と同等の年収を得ながら、生活コストを大きく抑えられること。</strong><br>
-        さらに、将来的には年金を受給しながらその全額を投資に回すこともできる。<br>
-        そうすれば、老後の不安を大きく減らせる。
+        <ul style="list-style:none; padding:0; margin:0; line-height:2.2;">
+          <li>① <strong>生活コストを大きく抑えられる。</strong><br>
+          <span style="font-size:14px; opacity:.85;">日本と同等の年収を得ながら、支出を半分以下にできる可能性がある。</span></li>
+          <li>② <strong>日系企業・IT需要が高く、即戦力として働ける。</strong><br>
+          <span style="font-size:14px; opacity:.85;">PMとしての経験は現地でも十分に通用する。</span></li>
+          <li>③ <strong>年金を全額、投資に回せる可能性がある。</strong><br>
+          <span style="font-size:14px; opacity:.85;">
+            <span style="display:inline-block; background:rgba(252,211,77,0.15); border-bottom:2px solid #fcd34d; padding:2px 0; font-weight:700; color:#fff;">現地採用・現地企業であれば日本の在職老齢年金制度（給与＋年金が月51万円超で年金がカットされる制度）の対象外になる場合があります。物価の安い現地で給与だけで生活をし、年金をまるごと投資に回せれば、老後の資産形成が一気に加速します。</span><br>
+            ※就労形態によって異なります。詳細は年金事務所にご確認ください。
+          </span></li>
+        </ul>
+      </div>
+
+      <!-- キャラ吹き出し：在職老齢年金制度 -->
+      <div class="chara-balloon right type-point" style="margin: 1.5rem 0;">
+        <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
+        <div class="chara-balloon-body">
+          <span class="balloon-label">ひとこと</span><br>
+          今回は海外（ベトナム）の話ですが、退職前後の方なら国内でも就労形態の選び方次第で話は変わります。<strong>在職老齢年金制度、知っていましたか？</strong>給与と年金の合計が月51万円を超えると、年金がカットされる制度です。年金を丸ごと手元に残し、投資に回す。老後資金の積み上げ方として、一度真剣に考えてみてください。
+        </div>
       </div>
 
       <p>実際にベトナム企業の選考も受けましたが、2次面接（英語）で不採用。<strong>（笑）</strong></p>
-      <p>結局、福岡希望から大阪勤務となりました。<br>
+      <p>結局、複数の会社との面談を経て、地方希望（福岡が有力でしたが）大阪勤務に落ち着きました。<strong>（笑）</strong><br>
       ただ、結果としては悪くありませんでした。給与は想定より良く、投資に回せる余力も増えました。</p>
 
       <hr class="about-divider">
 
       <p>そして、私は決めました。</p>
       <p><strong>年金はすぐには受け取らない。</strong><br>
-      70歳まで働き、その後に受給を開始する。<br>
-      そうすれば、年金は増える。そして、そのお金を投資に回す。</p>
+      70歳まで働き、その後に年金の受給を開始する。<br>
+      65歳から繰り下げると月0.7%ずつ増え、70歳受給開始なら最大42%増になる。<br>
+      年金を増やしながら、70歳までは給与で生活し、投資も全力で続ける。</p>
       <p>では、何に投資するのか。</p>
 
       <hr class="about-divider">
@@ -619,14 +626,13 @@
       <p class="closing-main">新NISAを満額にして、あとはほっとく。</p>
       <p>これだけです。</p>
       <p>
-        アメリカ企業、AI、クラウド。<br>
-        今後10年、衰退は考えられない。<br>
+        スマホ、AI、クラウド、動画配信。あなたの生活から消えることが想像できますか？<br>
+        今後10年、その企業の衰退は考えられない。<br>
         その成長のど真ん中に乗り、複利で増える。<br>
         しかも、税金ゼロ。<strong style="color:#fcd34d;">最強です。</strong>
       </p>
       <p>
-        FXで数百万円を失った私が、<br>
-        今これしかやっていない理由がそこにあります。
+        FXで数百万円を失った私が、自信をもって実践し、身の回りの友人にも勧める理由がそこにあります。
       </p>
       <p style="border-top:1px solid rgba(255,255,255,0.2); padding-top:1rem; margin-top:1rem;">
         このまま何もしなければ、<br>
@@ -634,7 +640,7 @@
         でも、<strong style="color:#fcd34d;">今日始めた人が、10年後に笑います。</strong>
       </p>
       <p>難しくない。怖くない。<br>
-        ただ、始めるだけでいい。
+        <strong style="color:#fcd34d;">ただ、始めるだけでいい。</strong>
       </p>
       <a href="./index.html" class="about-cta-btn">📖 ほっとけ投資をはじめる</a>
     </div>
@@ -644,6 +650,33 @@
     </div>
 
   </div>
+
+  <!-- フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <div class="site-footer-brand">
+          <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon">
+          <div>
+            <div class="site-footer-title">ほっとけ投資</div>
+            <div class="site-footer-sub">新NISAを満額にして、あとは放置。</div>
+          </div>
+        </div>
+        <nav class="site-footer-nav">
+          <a href="./index.html">トップ</a>
+          <a href="./about.html">私について</a>
+          <a href="./nisa-guide.html">口座開設ガイド</a>
+        </nav>
+      </div>
+      <div class="site-footer-disclaimer">
+        ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
+      </div>
+      <div class="site-footer-copy">
+        © 2025 ほっとけ投資 ／ 運営：CrossOver
+        <span class="site-footer-update">最終更新：2025年4月</span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

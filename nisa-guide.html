@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>はじめての新NISA口座開設ガイド｜SBI証券</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* ════════════════════════════════════════
+   ROOT VARIABLES
+════════════════════════════════════════ */
+:root {
+  --green:        #1a6b45;
+  --green-mid:    #2d8f5f;
+  --green-light:  #e8f5ee;
+  --green-pale:   #f4faf7;
+  --gold:         #b8860b;
+  --gold-light:   #fdf8e8;
+  --red:          #c0392b;
+  --red-light:    #fdf0ee;
+  --red-vivid:    #e74c3c;
+  --blue:         #1a4a8a;
+  --blue-light:   #eef3fb;
+  --orange:       #d4600a;
+  --gray:         #4a4a4a;
+  --gray-light:   #f5f5f3;
+  --gray-mid:     #e0deda;
+  --border:       #d0d0cc;
+  --text:         #1e1e1e;
+  --text-muted:   #666;
+  --serif:        'Noto Serif JP', serif;
+  --sans:         'Noto Sans JP', sans-serif;
+  --radius:       8px;
+  --radius-lg:    16px;
+  --container-w:  900px;
+  --container-px: 60px;  /* index.html と同値 */
+}
+
+/* ════════════════════════════════════════
+   RESET
+════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* ════════════════════════════════════════
+   PAGE BASE
+════════════════════════════════════════ */
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--text);
+  background: #f7f6f3;
+  line-height: 1.85;
+}
+
+/* ════════════════════════════════════════
+   STICKY SMARTPHONE BANNER
+   — 全幅。コンテナの外側
+════════════════════════════════════════ */
+.sp-banner {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  width: 100%;
+  background: #fff8e1;
+  border-bottom: 2px solid var(--gold);
+  padding: 0.55rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  font-size: 13px;
+  color: #5a3e00;
+}
+.sp-banner-icon { font-size: 17px; flex-shrink: 0; line-height: 1.5; }
+.sp-banner strong { font-weight: 700; }
+
+/* ════════════════════════════════════════
+   HERO (cover)
+   — index.html の .hero-section に相当
+   — 全幅背景 + 中でコンテナを overlap
+════════════════════════════════════════ */
+.hero {
+  width: 100%;
+  background: var(--green);
+  padding: 3rem 1.5rem 5rem;   /* 下を大きく取り container が食い込む */
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -80px; right: -60px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+.hero-inner {
+  max-width: var(--container-w);
+  margin: 0 auto;
+  color: #fff;
+}
+.hero-eyebrow {
+  font-size: 11px; letter-spacing: .12em;
+  background: rgba(255,255,255,.18);
+  display: inline-block;
+  padding: 3px 10px; border-radius: 2px; margin-bottom: .9rem;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2rem);
+  font-weight: 700; line-height: 1.4; margin-bottom: .9rem;
+}
+.hero-desc {
+  font-size: 13px; opacity: .88;
+  border-left: 3px solid rgba(255,255,255,.4);
+  padding-left: .85rem; line-height: 1.7;
+}
+.hero-meta {
+  margin-top: 1.4rem;
+  display: flex; flex-wrap: wrap; gap: .4rem 1.5rem;
+  font-size: 12px; opacity: .72;
+}
+.ad-note { margin-top: .7rem; font-size: 11px; opacity: .6; }
+
+/* ════════════════════════════════════════
+   CONTAINER
+   — index.html の .container と完全統一
+   — max-width: 900px / margin: auto
+   — 上にネガティブマージンで hero に食い込み
+════════════════════════════════════════ */
+.container {
+  max-width: var(--container-w);
+  margin: -60px auto 60px;
+  position: relative;
+  background: #fff;
+  padding: var(--container-px);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+/* ════════════════════════════════════════
+   INTRO BLOCK（コンテナ内）
+════════════════════════════════════════ */
+.intro-title {
+  font-size: 13px; font-weight: 700;
+  color: var(--green); margin-bottom: .5rem;
+}
+.device-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .75rem; margin: .6rem 0;
+}
+.device-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .75rem;
+  font-size: 13px;
+}
+.device-card .dc-head {
+  font-weight: 700; margin-bottom: .25rem;
+  display: flex; align-items: center; gap: .4rem;
+}
+.device-card.pc .dc-head { color: var(--blue); }
+.device-card.sp .dc-head {
+  color: var(--green);
+  border-left: 3px solid var(--green);
+  padding-left: .4rem;
+}
+.device-card p { color: var(--text-muted); line-height: 1.6; }
+
+.two-screen-tip {
+  background: var(--green-light);
+  border-radius: var(--radius);
+  padding: .65rem 1rem;
+  font-size: 13px; color: #1a4a35;
+  display: flex; gap: .5rem; align-items: flex-start;
+  margin-top: .5rem; margin-bottom: 1.5rem;
+}
+
+/* ════════════════════════════════════════
+   FLOW BAR（コンテナ内）
+════════════════════════════════════════ */
+.flow-wrap {
+  background: var(--gray-light);
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+}
+.flow-label {
+  font-size: 11px; letter-spacing: .1em;
+  color: var(--text-muted); margin-bottom: .7rem;
+}
+.flow-row {
+  display: flex; align-items: center;
+  overflow-x: auto; padding-bottom: 2px;
+}
+.flow-node {
+  display: flex; flex-direction: column;
+  align-items: center; min-width: 64px;
+}
+.flow-num {
+  width: 30px; height: 30px; border-radius: 50%;
+  background: var(--green); color: #fff;
+  font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.flow-num.key-num { background: var(--red-vivid); }
+.flow-text {
+  font-size: 9px; color: var(--gray);
+  margin-top: 4px; text-align: center; line-height: 1.25;
+}
+.flow-arrow {
+  flex: 1; height: 2px; background: var(--border);
+  min-width: 10px; margin-bottom: 18px;
+}
+
+/* ════════════════════════════════════════
+   CTA BUTTON — スマホで押しやすいサイズ
+════════════════════════════════════════ */
+.btn-primary {
+  display: block;              /* ブロックにして幅を確保 */
+  width: 100%;
+  text-align: center;
+  background: var(--green);
+  color: #fff;
+  font-weight: 700;
+  font-size: 16px;             /* 60代向けに大きめ */
+  padding: 1rem 1.5rem;        /* タップ領域 44px 以上 */
+  border-radius: var(--radius);
+  text-decoration: none;
+  border: none; cursor: pointer;
+  line-height: 1.4;
+  transition: background .2s;
+}
+.btn-primary:hover { background: var(--green-mid); }
+
+/* PCでは auto 幅に戻す */
+@media (min-width: 600px) {
+  .btn-primary {
+    display: inline-block;
+    width: auto;
+    padding: .75rem 2rem;
+    font-size: 15px;
+  }
+}
+
+.start-cta {
+  border: 2px solid var(--green);
+  border-radius: var(--radius);
+  padding: 1.1rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+.start-cta p { font-size: 13px; color: var(--text-muted); margin-bottom: .75rem; }
+.start-cta .cta-note {
+  font-size: 11px; color: var(--text-muted); margin-top: .5rem; margin-bottom: 0;
+}
+
+/* ════════════════════════════════════════
+   DIVIDER — スマホ作業開始の区切り
+════════════════════════════════════════ */
+.sp-divider {
+  display: flex; align-items: center; gap: .75rem;
+  margin: 1.5rem 0 .75rem;
+}
+.sp-divider::before, .sp-divider::after {
+  content: ''; flex: 1; height: 1px; background: var(--green-mid);
+}
+.sp-divider-text {
+  background: var(--green); color: #fff;
+  font-size: 12px; font-weight: 700;
+  padding: 4px 14px; border-radius: 20px; white-space: nowrap;
+}
+
+/* ════════════════════════════════════════
+   ACCORDION SECTION
+════════════════════════════════════════ */
+.section {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  margin-bottom: .85rem;
+  overflow: hidden;
+}
+.section.key-step { border: 2px solid var(--red-vivid); }
+
+.sec-header {
+  display: flex; align-items: center; gap: .75rem;
+  padding: 1rem 1.1rem;
+  cursor: pointer; user-select: none;
+  /* タップしやすい最小高さ */
+  min-height: 52px;
+}
+.sec-header:hover { background: var(--gray-light); }
+
+.step-badge {
+  font-size: 10px; font-weight: 700; letter-spacing: .06em;
+  padding: 3px 10px; border-radius: 2px; white-space: nowrap; flex-shrink: 0;
+}
+.step-badge.normal { background: var(--green);     color: #fff; }
+.step-badge.key    { background: var(--red-vivid); color: #fff; }
+.step-badge.post   { background: var(--blue);      color: #fff; }
+.step-badge.warn   { background: var(--orange);    color: #fff; }
+
+.sec-title {
+  font-family: var(--serif);
+  font-size: .97rem; font-weight: 600; flex: 1;
+}
+.key-step .sec-title { color: var(--red); }
+
+.sec-arrow {
+  font-size: 18px; color: var(--text-muted);
+  transition: transform .25s; line-height: 1; flex-shrink: 0;
+}
+.section.open .sec-arrow { transform: rotate(180deg); }
+
+.sec-body {
+  display: none;
+  padding: 0 1.25rem 1.25rem;
+  border-top: 1px solid var(--border);
+}
+.section.open .sec-body { display: block; }
+.key-step .sec-body { border-top-color: var(--red-vivid); }
+
+/* ════════════════════════════════════════
+   KEY-STEP INNER BANNER
+════════════════════════════════════════ */
+.key-banner {
+  background: var(--red-vivid); color: #fff;
+  font-size: 13px; font-weight: 700;
+  padding: .6rem 1rem;
+  margin: 0 -1.25rem .9rem;
+  text-align: center; letter-spacing: .05em;
+}
+
+/* ════════════════════════════════════════
+   CONTENT ELEMENTS
+════════════════════════════════════════ */
+h3.sub {
+  font-family: var(--serif);
+  font-size: .88rem; font-weight: 600;
+  color: var(--green);
+  margin: 1rem 0 .4rem;
+  padding-left: .6rem;
+  border-left: 3px solid var(--green-mid);
+}
+.key-step h3.sub { color: var(--red); border-left-color: var(--red); }
+
+/* numbered step list */
+.step-list { list-style: none; counter-reset: step; margin: .4rem 0; }
+.step-list li {
+  counter-increment: step;
+  display: flex; gap: .65rem; align-items: flex-start;
+  padding: .55rem 0;
+  border-bottom: 1px dashed #e0deda;
+  font-size: 14px;
+}
+.step-list li:last-child { border-bottom: none; }
+.step-list li::before {
+  content: counter(step);
+  min-width: 24px; height: 24px; border-radius: 50%;
+  background: var(--green); color: #fff;
+  font-size: 11px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0; margin-top: 2px;
+}
+.key-step .step-list li::before { background: var(--red-vivid); }
+
+/* bullet list */
+.bullet { list-style: none; margin: .4rem 0; }
+.bullet li {
+  font-size: 13.5px;
+  padding: .28rem 0 .28rem 1.1rem; position: relative;
+}
+.bullet li::before { content: '▸'; color: var(--green-mid); position: absolute; left: 0; }
+
+/* ════════════════════════════════════════
+   SCREENSHOT BLOCK
+════════════════════════════════════════ */
+.ss-block {
+  margin: .9rem 0;
+  border: 1px solid var(--gray-mid);
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #fafafa;
+}
+.ss-inner {
+  padding: .85rem 1rem;
+  display: flex;
+  gap: 1.1rem;
+  align-items: flex-start;
+}
+.ss-img-wrap { flex-shrink: 0; width: 130px; }
+.ss-img-wrap img {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid var(--gray-mid);
+  display: block;
+}
+.ss-content { flex: 1; font-size: 13px; }
+.ss-scene {
+  font-weight: 700; font-size: 13px;
+  color: var(--blue); margin-bottom: .35rem;
+}
+.ss-note {
+  background: var(--gray-light);
+  border-top: 1px solid var(--gray-mid);
+  padding: .45rem 1rem;
+  font-size: 11.5px; color: var(--text-muted);
+  display: flex; gap: .4rem; align-items: flex-start;
+}
+.ss-note::before { content: '📷'; flex-shrink: 0; }
+
+.key-check {
+  display: inline-block;
+  background: var(--red-vivid); color: #fff;
+  font-size: 11px; font-weight: 700;
+  padding: 1px 8px; border-radius: 3px; margin-bottom: .3rem;
+}
+
+/* ════════════════════════════════════════
+   CALLOUT BOXES
+════════════════════════════════════════ */
+.box {
+  border-radius: 4px;
+  padding: .7rem 1rem;
+  margin: .65rem 0;
+  font-size: 13px; line-height: 1.75;
+  display: flex; gap: .55rem; align-items: flex-start;
+}
+.box .bi { font-size: 15px; flex-shrink: 0; line-height: 1.55; }
+.box.warn { background: var(--red-light);   border-left: 3px solid var(--red);      color: #7a1a10; }
+.box.good { background: var(--green-light); border-left: 3px solid var(--green);    color: #1a5a35; }
+.box.info { background: var(--blue-light);  border-left: 3px solid var(--blue);     color: #1a3060; }
+.box.tip  { background: var(--gold-light);  border-left: 3px solid var(--gold);     color: #6b4b05; }
+.box.key  { background: #fff0f0;            border-left: 4px solid var(--red-vivid);color: #7a1a10; }
+
+/* ════════════════════════════════════════
+   TABLES
+════════════════════════════════════════ */
+table { width: 100%; border-collapse: collapse; font-size: 13px; margin: .65rem 0; }
+th { background: var(--green); color: #fff; padding: 8px 10px; text-align: left; font-weight: 500; }
+td { padding: 8px 10px; border-bottom: 1px solid #e8e8e4; vertical-align: top; }
+tr:nth-child(even) td { background: var(--gray-light); }
+.good-mark { color: var(--green); font-weight: 700; }
+.bad-mark  { color: var(--red); }
+.rec-badge {
+  display: inline-block;
+  background: var(--gold); color: #fff;
+  font-size: 10px; font-weight: 700;
+  padding: 1px 6px; border-radius: 2px; margin-left: 4px;
+}
+.key-step table th { background: var(--red-vivid); }
+
+/* ════════════════════════════════════════
+   NEXT STEPS
+════════════════════════════════════════ */
+.next-steps {
+  background: var(--green-pale);
+  border: 1px solid var(--green-mid);
+  border-radius: var(--radius);
+  padding: 1.25rem;
+  margin: 1.25rem 0;
+}
+.next-steps h2 {
+  font-family: var(--serif);
+  font-size: 1rem; font-weight: 700;
+  color: var(--green); margin-bottom: .65rem;
+}
+.next-row {
+  display: flex; gap: .6rem; flex-wrap: wrap;
+  margin-top: .5rem;
+}
+.next-item {
+  background: #fff;
+  border: 1px solid var(--green-mid);
+  border-radius: var(--radius);
+  padding: .6rem .9rem;
+  font-size: 13px; flex: 1; min-width: 150px;
+}
+.next-item strong { color: var(--green); display: block; font-size: 12px; }
+
+/* ════════════════════════════════════════
+   FINAL CTA
+════════════════════════════════════════ */
+.final-cta {
+  background: var(--green); color: #fff;
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  margin-top: 1.25rem; text-align: center;
+}
+.final-cta h2 {
+  font-family: var(--serif);
+  font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem;
+}
+.final-cta p { font-size: 13px; opacity: .9; margin-bottom: 1rem; }
+
+/* 最終CTAのボタン — 常にブロック表示・大きめ */
+.btn-final {
+  display: block;
+  background: #fff; color: var(--green);
+  font-weight: 700; font-size: 16px;
+  padding: 1rem 1.5rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  max-width: 360px;
+  margin: 0 auto;
+  line-height: 1.4;
+  transition: opacity .2s;
+}
+.btn-final:hover { opacity: .88; }
+
+.final-cta-sub {
+  font-size: 12px; opacity: .75; margin-top: .75rem;
+}
+
+/* ════════════════════════════════════════
+   RESPONSIVE ADJUSTMENTS
+════════════════════════════════════════ */
+@media (max-width: 720px) {
+  :root {
+    --container-px: 20px;   /* モバイルでは内側パディングを縮小 */
+  }
+  .container {
+    margin: -40px 12px 40px;  /* 左右に最低限の余白 */
+  }
+  .hero { padding-bottom: 4.5rem; }
+  .device-grid { grid-template-columns: 1fr; }
+  .ss-inner { flex-direction: column; }
+  .ss-img-wrap { width: 100%; max-width: 220px; }
+  .next-row { flex-direction: column; }
+  .flow-text { font-size: 8px; }
+  .flow-node { min-width: 52px; }
+}
+
+@media (max-width: 420px) {
+  .container { margin: -30px 8px 30px; }
+  .hero h1 { font-size: 1.3rem; }
+  .sec-title { font-size: .9rem; }
+}
+
+/* ════════════════════════════════════════
+   PRINT
+════════════════════════════════════════ */
+@media print {
+  .sp-banner { position: static; }
+  .hero { padding-bottom: 2rem; background: #1a6b45 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .container { margin: 0 auto; box-shadow: none; padding: 1.5rem; border-radius: 0; }
+  .sec-header { cursor: default; }
+  .sec-arrow { display: none; }
+  .sec-body { display: block !important; }
+  .section { break-inside: avoid; }
+  .key-banner, th, .step-badge { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .step-list li::before { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .btn-primary, .btn-final, .start-cta { display: none; }
+  a[href]::after { content: none; }
+}
+
+/* ── QRコード ── */
+.cta-qr-wrap {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-top: 12px;
+}
+.cta-qr-left { flex: 1; min-width: 200px; }
+.cta-qr-right {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+}
+.cta-qr-right .qr-target {
+    background: #fff;
+    padding: 8px;
+    border-radius: 8px;
+    border: 2px solid #1a6b45;
+}
+.qr-label {
+    font-size: 12px;
+    color: #5a3e00;
+    text-align: center;
+    line-height: 1.5;
+}
+/* PC：QR表示・スマホボタン非表示 */
+.sp-direct-btn { display: none; }
+.sp-guide-note { display: none; }
+.sp-guide-sub  { display: none; }
+
+@media (max-width: 600px) {
+    .cta-qr-right { display: none; }
+    .sp-guide-note {
+        display: block;
+        font-size: 13px;
+        color: #5a3e00;
+        background: #fff8e1;
+        border: 1px solid #e8d87a;
+        border-radius: 8px;
+        padding: 10px 14px;
+        margin-top: 12px;
+        line-height: 1.7;
+    }
+    .sp-direct-btn {
+        display: block;
+        width: 100%;
+        margin-top: 10px;
+        padding: 16px;
+        background: #1a6b45;
+        color: #fff;
+        font-size: 17px;
+        font-weight: 700;
+        text-align: center;
+        border-radius: 8px;
+        text-decoration: none;
+        letter-spacing: .04em;
+    }
+    .sp-guide-sub {
+        display: block;
+        font-size: 12px;
+        color: #666;
+        text-align: center;
+        margin-top: 6px;
+        line-height: 1.6;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── Sticky smartphone banner (全幅) ── -->
+<div class="sp-banner">
+  <span class="sp-banner-icon">📱</span>
+  <div>
+    <strong>このページはPCでもスマホでも読めます。</strong>
+    実際の口座開設作業は<strong>スマホで進めることをおすすめします</strong>（マイナンバーカードをその場でカメラ撮影できるためです）。
+  </div>
+</div>
+
+<!-- ── Hero (全幅背景) ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">SBI証券 ✦ 初心者向け完全手順書</div>
+    <h1>はじめての新NISA<br>口座開設ガイド</h1>
+    <div class="hero-desc">
+      スマホの実際の画面を見ながら、順番に進めるだけで<br>
+      新NISA口座の開設申込が完了します。
+    </div>
+    <div class="hero-meta">
+      <span>対象：50〜60代の投資未経験者</span>
+      <span>申込作業の目安：20〜30分</span>
+    </div>
+    <div class="ad-note">※このページには広告リンクを含む場合があります。</div>
+  </div>
+</div>
+
+<!-- ════════════════════════════════════════
+     CONTAINER（index.html の .container と同構造）
+════════════════════════════════════════ -->
+<div class="container">
+
+  <!-- ── このページの使い方 ── -->
+  <div class="intro-title">このページの使い方</div>
+  <div class="device-grid">
+    <div class="device-card pc">
+      <div class="dc-head">💻 PC・タブレット</div>
+      <p>このガイドを読む用に使います。全体の流れを確認してから作業を始めましょう。</p>
+    </div>
+    <div class="device-card sp">
+      <div class="dc-head">📱 スマホ（推奨）</div>
+      <p>実際の口座開設作業はスマホで行います。マイナンバーカードをその場で撮影できます。</p>
+    </div>
+  </div>
+  <div class="two-screen-tip">
+    💡 PCでこのページを見ながら、スマホで操作する「2画面スタイル」もおすすめです。
+  </div>
+
+  <!-- ── 全体フロー ── -->
+  <div class="flow-wrap">
+    <div class="flow-label">▸ 全体の流れ（STEP 0〜6）</div>
+    <div class="flow-row">
+      <div class="flow-node">
+        <div class="flow-num">0</div>
+        <div class="flow-text">申込<br>開始</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">1</div>
+        <div class="flow-text">メール<br>認証</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">2</div>
+        <div class="flow-text">個人情報<br>入力</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num key-num">3</div>
+        <div class="flow-text">特定口座<br>選択</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">4</div>
+        <div class="flow-text">NISA<br>選択</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">5</div>
+        <div class="flow-text">申込<br>完了</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">6</div>
+        <div class="flow-text">審査待ち<br>確認</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Start CTA ── -->
+  <div class="start-cta">
+    <p>まず全体の流れを確認してから、スマホで申込を始めましょう。</p>
+    <div class="cta-qr-wrap">
+      <div class="cta-qr-left">
+        <a class="btn-primary" href="https://www.sbisec.co.jp" target="_blank">
+          📱 SBI証券で口座開設を始める（無料）
+        </a>
+        <p class="cta-note">※リンク先はSBI証券公式サイトです。スマホで開くことをおすすめします。</p>
+      </div>
+      <div class="cta-qr-right">
+        <div class="qr-target"></div>
+        <div class="qr-label">📱 スマホで読み取って<br>そのまま開始</div>
+      </div>
+    </div>
+    <!-- スマホで見ている人向け -->
+    <div class="sp-guide-note">💡 このページをブックマークしてから始めると、手順を見ながら進められます。</div>
+    <a class="sp-direct-btn" href="https://www.sbisec.co.jp" target="_blank">📱 SBI証券を別タブで開いて申込を始める</a>
+    <div class="sp-guide-sub">↑ タップするとSBI証券が別タブで開きます。このページは開いたままにしておけます。</div>
+  </div>
+
+  <!-- ── スマホ作業開始 区切り ── -->
+  <div class="sp-divider">
+    <span class="sp-divider-text">📱 ここからの操作はスマホで進めましょう</span>
+  </div>
+
+  <!-- ════════════
+       STEP 0
+  ════════════ -->
+  <div class="section open" id="s0">
+    <div class="sec-header" onclick="toggle('s0')">
+      <span class="step-badge normal">STEP 0</span>
+      <span class="sec-title">申込を開始する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">SBI証券の口座開設ページにアクセスして、申込ボタンを押します。</p>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step00-start.png" alt="三井住友カードからSBI証券口座開設ページへの導線">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">申込開始画面（三井住友カード経由の場合）</div>
+            <ul class="bullet">
+              <li>三井住友カードをお持ちの方は、カードの会員ページからSBI証券の口座開設ができます。</li>
+              <li>Vポイントが貯まるクレカ積立を設定したい方は、この方法が便利です。</li>
+              <li>「口座開設にすすむ」ボタンをタップして申込を開始します。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。「口座開設」「申込む」という言葉を探してください。</div>
+      </div>
+
+      <div class="box warn"><span class="bi">⚠️</span><div>SBI証券の公式URL（<strong>www.sbisec.co.jp</strong>）を直接入力するか、信頼できるリンクからアクセスしてください。検索広告からのアクセスは偽サイトに誘導される危険があります。</div></div>
+
+      <h3 class="sub">事前に手元に用意するもの</h3>
+      <table>
+        <thead><tr><th>必要なもの</th><th>補足</th></tr></thead>
+        <tbody>
+          <tr><td><strong>マイナンバーカード</strong>（必須）</td><td>プラスチック製のカード。表・裏の両面が必要です。「通知カード（紙のみ）」は使用不可。</td></tr>
+          <tr><td><strong>メールアドレス</strong>（必須）</td><td>GmailなどのフリーメールでOK。</td></tr>
+          <tr><td><strong>スマートフォン</strong>（必須）</td><td>カメラ機能が使えることを確認してください。</td></tr>
+          <tr><td><strong>銀行口座</strong>（後で使用）</td><td>入出金の紐付けに使います。通帳やキャッシュカードで口座番号を確認してください。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ════════════
+       STEP 1
+  ════════════ -->
+  <div class="section" id="s1">
+    <div class="sec-header" onclick="toggle('s1')">
+      <span class="step-badge normal">STEP 1</span>
+      <span class="sec-title">メールアドレスを認証する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">メールアドレスを登録し、届いた認証コードを入力します。</p>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step01-auth-code.png" alt="認証コード入力画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">認証コードの入力画面</div>
+            <ul class="bullet">
+              <li>メールアドレスを登録すると、SBI証券から6桁の認証コードがメールで届きます。</li>
+              <li>届いた数字を「認証コード」欄に入力して「次へ」をタップします。</li>
+              <li>認証コードの有効期限は<strong>60分</strong>です。時間内に入力してください。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。「認証コード」や「確認コード」という言葉を探してください。</div>
+      </div>
+
+      <div class="box warn"><span class="bi">⚠️</span><div>メールが届かない場合は、<strong>迷惑メールフォルダ</strong>をご確認ください。送信元は <code><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="335a5d555c7340515a4056501d505c1d5943">[email&#160;protected]</a></code> です。</div></div>
+      <div class="box tip"><span class="bi">💡</span><div>GmailやYahooメールなど、普段よく使っているメールアドレスを登録するのがおすすめです。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════
+       STEP 2
+  ════════════ -->
+  <div class="section" id="s2">
+    <div class="sec-header" onclick="toggle('s2')">
+      <span class="step-badge normal">STEP 2</span>
+      <span class="sec-title">個人情報を入力する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">氏名・住所・生年月日・電話番号などを入力します。画面の案内に従って順番に進めてください。</p>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step02-user-info.png" alt="お客様情報設定画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">居住地国・お名前の入力（前半）</div>
+            <ul class="bullet">
+              <li>「居住地国は日本のみ」を選択します（日本在住の方はこちら）。</li>
+              <li>お名前は<strong>漢字とカタカナ（フリガナ）の両方</strong>を入力します。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。</div>
+      </div>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step03-user-detail.png" alt="生年月日・性別・電話番号の入力画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">生年月日・性別・電話番号の入力（後半）</div>
+            <ul class="bullet">
+              <li>生年月日は<strong>西暦8桁</strong>で入力します。例：1960年1月1日 → <code>19600101</code></li>
+              <li>電話番号は<strong>ご本人の連絡先</strong>を入力してください（ご家族の番号は不可）。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。</div>
+      </div>
+
+      <div class="box warn"><span class="bi">⚠️</span><div>住所は<strong>住民票に記載された表記</strong>と一致させてください。「1-2-3」と「1丁目2番3号」のような表記ゆれが原因で審査が差し戻されることがあります。</div></div>
+      <div class="box info"><span class="bi">ℹ️</span><div>画面下部に「未入力項目がN個あります」というバナーが表示されます。そこをタップすると、まだ入力していない項目に素早く移動できます。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════
+       STEP 3 ★最重要★
+  ════════════ -->
+  <div class="section key-step" id="s3">
+    <div class="sec-header" onclick="toggle('s3')">
+      <span class="step-badge key">⭐ STEP 3 最重要</span>
+      <span class="sec-title">特定口座の種類を選ぶ</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <div class="key-banner">🔴 ここが最も重要な画面です。必ず確認してから「次へ」を押してください。</div>
+
+      <div class="box key"><span class="bi">🔴</span><div><strong>「SBI証券に任せる（特定口座 源泉徴収あり）」を選んでください。</strong><br>これを選ぶと、税金の計算・納付をSBI証券が自動でやってくれます。確定申告（※）が原則不要になります。<br><small>※確定申告：1年間の収入・税金を自分で計算して税務署に申告する手続き</small></div></div>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step04-account-type.png" alt="納税方法の選択画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">納税方法の選択画面</div>
+            <span class="key-check">ここをチェック！</span>
+            <ul class="bullet">
+              <li>画面に3つの選択肢があります。</li>
+              <li>一番上の<strong>「SBI証券に任せる（特定口座 源泉徴収あり）」</strong>に「おすすめ」と表示されています。</li>
+              <li>この選択肢が選ばれている（青丸になっている）ことを確認して「次へ」をタップします。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。「SBI証券に任せる」「源泉徴収あり」という言葉を確認して選択してください。</div>
+      </div>
+
+      <h3 class="sub">3つの選択肢の違い</h3>
+      <table>
+        <thead><tr><th>選択肢</th><th>確定申告</th><th>初心者向き</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><strong>SBI証券に任せる（源泉徴収あり）</strong><span class="rec-badge">おすすめ</span></td>
+            <td class="good-mark">不要</td>
+            <td class="good-mark">◎</td>
+          </tr>
+          <tr>
+            <td>自分で申告する（源泉徴収なし）</td>
+            <td class="bad-mark">必要な場合あり</td>
+            <td class="bad-mark">△</td>
+          </tr>
+          <tr>
+            <td>自分で計算・申告する（一般口座）</td>
+            <td class="bad-mark">毎年必要</td>
+            <td class="bad-mark">✕</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="box warn"><span class="bi">⚠️</span><div>「一般口座」を選ぶと、毎年自分で税金の計算・申告が必要になります。後から変更もできますが手間がかかります。最初から「源泉徴収あり」を選びましょう。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════
+       STEP 4
+  ════════════ -->
+  <div class="section" id="s4">
+    <div class="sec-header" onclick="toggle('s4')">
+      <span class="step-badge normal">STEP 4</span>
+      <span class="sec-title">NISA口座を選択する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">NISA口座を同時に開設するかどうかを選びます。初めての方は「新規で開設する（無料）」を選びましょう。</p>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step05-nisa-select.png" alt="NISAの選択画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">NISAの選択画面</div>
+            <ul class="bullet">
+              <li>「おすすめ」と表示された<strong>「新規で開設する（無料）」</strong>を選びます。</li>
+              <li>他の銀行・証券会社にすでにNISA口座がある方は「他社から引っ越す」を選択してください。</li>
+              <li>選択したら「次へ」をタップします。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。「新規で開設する」「NISA」という言葉を確認して選択してください。</div>
+      </div>
+
+      <div class="box info"><span class="bi">ℹ️</span><div>NISA口座とは、運用で得た利益に<strong>税金がかからない専用の口座</strong>です（通常は利益の約20%が税金）。証券口座と同時に申込むと、後から手続きをする手間が省けます。</div></div>
+      <div class="box warn"><span class="bi">⚠️</span><div>NISA口座は<strong>同じ年に1つの金融機関にしか持てません。</strong>他の銀行や証券会社にすでに開設している場合、二重に開設することはできません。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════
+       STEP 5
+  ════════════ -->
+  <div class="section" id="s5">
+    <div class="sec-header" onclick="toggle('s5')">
+      <span class="step-badge normal">STEP 5</span>
+      <span class="sec-title">申込を完了する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">入力内容を確認し、マイナンバーカードを撮影してアップロードします。送信すれば申込完了です。</p>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step06-login.png" alt="口座開設状況の確認画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">口座開設状況の確認（申込完了後）</div>
+            <ul class="bullet">
+              <li>申込完了後、この「口座開設状況の確認」画面が表示されます。</li>
+              <li>ユーザーネームとログインパスワードが発行されます。<strong>必ず控えてください。</strong></li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。</div>
+      </div>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step07-complete.png" alt="申込完了画面">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">申込完了画面</div>
+            <ul class="bullet">
+              <li>「完了」と表示されれば、申込は無事に送信されました。</li>
+              <li>審査結果はメールと郵送（ハガキ）でご連絡があります。</li>
+              <li>「口座開設状況の確認」ボタンから審査の進捗を確認できます。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。</div>
+      </div>
+
+      <div class="box warn"><span class="bi">⚠️</span><div>マイナンバーカードの撮影は、<strong>明るい場所で文字がはっきり読めるよう</strong>撮影してください。写真がぼけていると再提出を求められます。</div></div>
+      <div class="box warn"><span class="bi">⚠️</span><div>「通知カード（薄い紙のカード）」ではなく、<strong>プラスチック製のマイナンバーカード</strong>が必要です。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════
+       STEP 6
+  ════════════ -->
+  <div class="section" id="s6">
+    <div class="sec-header" onclick="toggle('s6')">
+      <span class="step-badge post">STEP 6</span>
+      <span class="sec-title">審査を待つ〜口座開設状況を確認する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">申込が完了したら審査が始まります。審査結果を待ちながら、進捗を確認しましょう。</p>
+
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">
+            <img src="img_s/step08-review.png" alt="口座開設状況確認画面（審査中）">
+          </div>
+          <div class="ss-content">
+            <div class="ss-scene">口座開設状況の確認画面（審査中）</div>
+            <ul class="bullet">
+              <li>「口座開設お申し込み」「本人確認書類提出」にチェックが入り、現在<strong>「審査」</strong>中であることが確認できます。</li>
+              <li>審査には通常<strong>数日〜1週間程度</strong>かかります。</li>
+              <li>審査完了後、「取引パスワード設定」「初期設定」と進んでいきます。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。</div>
+      </div>
+
+      <div class="box info"><span class="bi">ℹ️</span><div>審査が完了すると、メールと<strong>ハガキ（郵便）</strong>でご連絡があります。ハガキにはログインIDと初期パスワードが記載されています。</div></div>
+      <div class="box good"><span class="bi">✅</span><div>審査中でも、積立投資の設定を先に予約しておくことができます。審査が通ったあと、自動的に積立が始まります。</div></div>
+    </div>
+  </div>
+
+  <!-- ── 次のステップ ── -->
+  <div class="next-steps">
+    <h2>✅ 口座開設が終わったら、次のステップへ</h2>
+    <p style="font-size:13px;color:var(--text-muted);">口座開設の申込が完了したら、以下の手順を順番に進めていきます。</p>
+    <div class="next-row">
+      <div class="next-item">
+        <strong>① 初期設定</strong>
+        ハガキが届いたらログインし、銀行口座の登録・パスワード設定・二段階認証の設定を行います。
+      </div>
+      <div class="next-item">
+        <strong>② NISA口座の有効化</strong>
+        マイナンバーを登録してNISA口座を正式に開設します（税務署審査：数日〜2週間）。
+      </div>
+      <div class="next-item">
+        <strong>③ 積立設定</strong>
+        商品を選んで毎月の積立金額を設定します。クレカ積立（三井住友カード）を使うとVポイントも貯まります。
+      </div>
+    </div>
+    <div class="box tip" style="margin-top:.85rem;">
+      <span class="bi">💡</span>
+      <div>積立設定が完了したら、あとは<strong>長期保有が基本</strong>です。価格の上下に一喜一憂せず、毎月コツコツ積み立てることが資産形成の王道です。</div>
+    </div>
+  </div>
+
+  <!-- ── Final CTA ── -->
+  <div class="final-cta">
+    <h2>さあ、今日から始めましょう</h2>
+    <p>口座開設は無料・スマホがあれば20〜30分で申込完了します。<br>まずこのガイドをひと通り確認してから、スマホで始めてみてください。</p>
+    <div class="cta-qr-wrap" style="justify-content:center;">
+      <div class="cta-qr-left">
+        <a class="btn-final" href="https://www.sbisec.co.jp" target="_blank">
+          📱 SBI証券で口座開設を始める（無料）
+        </a>
+        <div class="final-cta-sub">不安な方は、このページを印刷して手元に置いてから始めてみてください。</div>
+      </div>
+      <div class="cta-qr-right">
+        <div class="qr-target"></div>
+        <div class="qr-label">📱 スマホで読み取って<br>そのまま開始</div>
+      </div>
+    </div>
+    <!-- スマホで見ている人向け -->
+    <div class="sp-guide-note">💡 このページをブックマークしてから始めると、手順を見ながら進められます。</div>
+    <a class="sp-direct-btn" href="https://www.sbisec.co.jp" target="_blank">📱 SBI証券を別タブで開いて申込を始める</a>
+    <div class="sp-guide-sub">↑ タップするとSBI証券が別タブで開きます。このページは開いたままにしておけます。</div>
+  </div>
+
+</div><!-- /.container 
+</div><!-- /.container -->
+
+<!-- qrcode.js ライブラリ -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+// QRコードを生成
+window.addEventListener('DOMContentLoaded', function() {
+    var targets = document.querySelectorAll('.qr-target');
+    targets.forEach(function(el) {
+        new QRCode(el, {
+            text: 'https://www.sbisec.co.jp/ETGate/?_ControlID=WPLETsmR001Control&_PageID=WPLETsmR001Rlgn10&_DataStoreID=DSWPLETsmR001Control&_ActionID=login&getFlg=on',
+            width: 120,
+            height: 120,
+            colorDark: '#1a6b45',
+            colorLight: '#ffffff',
+            correctLevel: QRCode.CorrectLevel.M
+        });
+    });
+});
+</script>
+
+</body>
+</html>

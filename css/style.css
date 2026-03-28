@@ -297,6 +297,15 @@ h1 span {
     font-weight: bold;
     text-transform: uppercase;
 }
+.h1-sub {
+    display: block;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 700;
+    color: var(--nisa-green);
+    margin-top: 10px;
+    letter-spacing: .06em;
+}
 
 h2 {
     font-size: 24px;
@@ -1774,11 +1783,12 @@ h2::before {
     margin-bottom: .6rem;
 }
 .hottoke-subcopy {
-    font-size: 15px;
-    color: var(--text-muted);
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary-dark);
     text-align: center;
     margin-bottom: 2rem;
-    letter-spacing: .04em;
+    letter-spacing: .06em;
 }
 .hottoke-body {
     max-width: 680px;
@@ -2191,4 +2201,261 @@ h2::before {
     .hottoke-side-balloons { flex-direction: row; width: 100%; gap: 10px; }
     .hottoke-side-balloon { flex: 1; }
     .hottoke-side-balloon-arrow { display: none; }
+}
+
+/* ── ほっとけメッセージ内注釈 ── */
+.hottoke-note {
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: normal;
+    margin-left: 4px;
+}
+
+/* ── 世代ボタン下の誘導文 ── */
+
+/* ── 王道2択カード ── */
+.orthodox-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 1.5rem 0;
+}
+.orthodox-card {
+    background: #fff;
+    border: 2px solid var(--nisa-green);
+    border-radius: 12px;
+    padding: 20px;
+}
+.orthodox-badge {
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--nisa-green);
+    margin-bottom: 8px;
+}
+.orthodox-name {
+    font-size: 22px;
+    font-weight: 900;
+    color: var(--primary-dark);
+    margin-bottom: 10px;
+}
+.orthodox-desc {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 12px;
+}
+.orthodox-rate {
+    font-size: 13px;
+    color: var(--text-main);
+    background: var(--bg-light);
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+.orthodox-rate strong {
+    font-size: 18px;
+    color: var(--nisa-green);
+}
+.orthodox-note {
+    background: var(--green-light);
+    border-left: 4px solid var(--nisa-green);
+    border-radius: 0 8px 8px 0;
+    padding: 14px 18px;
+    font-size: 14px;
+    color: var(--text-main);
+    line-height: 1.8;
+    margin-bottom: 1rem;
+}
+
+@media (max-width: 768px) {
+    .orthodox-grid { grid-template-columns: 1fr; }
+}
+
+/* ── 誘導文（目立つ版） ── */
+.age-input-guide {
+    font-size: 14px;
+    color: var(--text-main);
+    margin-top: 12px;
+    line-height: 1.9;
+    background: #fff;
+    border-radius: 10px;
+    padding: 14px 18px;
+    border: 2px solid var(--nisa-green);
+    text-align: center;
+}
+.age-input-guide-link {
+    color: var(--nisa-green);
+    font-weight: 700;
+    font-size: 15px;
+    text-decoration: none;
+    display: block;
+    margin-top: 4px;
+}
+.age-input-guide-link:hover { text-decoration: underline; }
+
+/* ── 戻るリンク ── */
+.back-to-target {
+    text-align: right;
+    margin-bottom: 8px;
+}
+.back-to-target a {
+    font-size: 13px;
+    color: var(--text-muted);
+    text-decoration: none;
+    border: 1px solid var(--border);
+    padding: 4px 12px;
+    border-radius: 20px;
+    transition: background .2s, color .2s;
+}
+.back-to-target a:hover {
+    background: var(--bg-light);
+    color: var(--primary-dark);
+}
+
+/* ── CTA 背中を押す一文 ── */
+.cta-push {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    margin-bottom: 16px;
+    line-height: 1.8;
+    text-align: center;
+}
+
+/* ── ページ内目次 ── */
+.page-toc {
+    background: var(--bg-light);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 18px 24px;
+    margin-bottom: 2rem;
+}
+.page-toc-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+    letter-spacing: .06em;
+}
+.page-toc-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.page-toc-list li::before { display: none; }
+.page-toc-list a {
+    font-size: 14px;
+    color: var(--nisa-green);
+    text-decoration: none;
+    padding-left: 12px;
+    border-left: 2px solid transparent;
+    transition: border-color .2s, font-weight .2s;
+    display: block;
+    line-height: 1.6;
+}
+.page-toc-list a:hover {
+    border-left-color: var(--nisa-green);
+    font-weight: 700;
+}
+
+/* ── フッター ── */
+.site-footer {
+    background: var(--primary-dark);
+    color: rgba(255,255,255,0.75);
+    margin-top: 0;
+    padding: 40px 20px 24px;
+}
+.site-footer-inner {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.site-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+.site-footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.site-footer-icon {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(255,255,255,0.3);
+}
+.site-footer-title {
+    font-size: 16px;
+    font-weight: 700;
+    color: #fff;
+}
+.site-footer-sub {
+    font-size: 12px;
+    color: rgba(255,255,255,0.5);
+    margin-top: 2px;
+}
+.site-footer-nav {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+.site-footer-nav a {
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    text-decoration: none;
+    transition: color .2s;
+}
+.site-footer-nav a:hover { color: #fff; }
+.site-footer-disclaimer {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    line-height: 1.8;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+    margin-bottom: 12px;
+}
+.site-footer-copy {
+    font-size: 12px;
+    color: rgba(255,255,255,0.4);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+}
+.site-footer-update { font-size: 11px; }
+
+@media (max-width: 768px) {
+    .site-footer-top { flex-direction: column; }
+    .site-footer-copy { flex-direction: column; }
+    .page-toc { padding: 14px 16px; }
+}
+
+/* ── 無料告知ボックス ── */
+.free-notice {
+    background: #fff8e1;
+    border: 2px solid #f59e0b;
+    border-radius: 10px;
+    padding: 14px 18px;
+    font-size: 15px;
+    color: #5a3e00;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+}
+
+/* ── CTA subtext 目立つ版 ── */
+.cta-subtext-strong {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--primary-dark);
+    text-align: center;
 }

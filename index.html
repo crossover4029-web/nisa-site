@@ -37,13 +37,32 @@
   </div>
 
   <div class="container">
-      <h1><span>Strategy for Asset Building</span>新NISAを活用した資産形成の指針</h1>
+      <h1>
+        <span>Strategy for Asset Building</span>
+        新NISAを活用した資産形成の指針
+        <em class="h1-sub">「ほっとけ投資」で、10年後の自分を変える。</em>
+      </h1>
+
+      <!-- ⑥ ページ内目次 -->
+      <nav class="page-toc">
+        <div class="page-toc-title">📋 このページの内容</div>
+        <ul class="page-toc-list">
+          <li><a href="#section1">1. 新NISAをやるべき理由：非課税の利点</a></li>
+          <li><a href="#section2">2. 迷ったらこれ一択。王道のインデックス投資</a></li>
+          <li><a href="#section3">3. 銀行の280倍？ NYSE FANG+という選択肢</a></li>
+          <li><a href="#simulation">4. 資産推移（積立シミュレーション）</a></li>
+          <li><a href="#section42">4-2. 暴落が来ても、毎月積立が最強な理由</a></li>
+          <li><a href="#section5">5. 資金の受取計画（出口戦略）</a></li>
+          <li><a href="#section6">6. これが「お金が増えるサイクル」の完成形</a></li>
+          <li><a href="#section7">7. 開始までの手順</a></li>
+        </ul>
+      </nav>
 
       <!-- ほっとけ投資セクション -->
       <div class="hottoke-section">
 
         <div class="hottoke-catchcopy">
-          新NISAは、早く満額にして、あとは放置。
+          やるべきは満額にして、放置。
         </div>
         <div class="hottoke-subcopy">
           ドキドキしない。ハラハラしない。フルオートで資産を育てる。
@@ -55,9 +74,9 @@
           <!-- メッセージ：1つの角丸ボックス -->
           <div class="hottoke-message-box">
             <p>新NISA。運用益、すべて非課税。</p>
-            <p>アメリカ企業、AI、クラウド。<br>今後10年、衰退は考えられない。<br>その成長のど真ん中に、乗る。</p>
-            <p>でも、やり方はシンプル。<br>インデックスで、分散して持つだけ。<br>当てにいかない。外さない。<br>1社が潰れても、関係ない。<br>経済そのものを、丸ごと買う。</p>
-            <p>増える。複利で増える。<br>しかも、税金ゼロ。<br>これを、ほっとくだけ。<br><strong class="hottoke-strong">最強です。</strong></p>
+            <p>スマホ、AI、クラウド、動画配信。<br>生活から消えることが想像できますか？<br>今後10年、その企業の衰退は考えられない。<br>その成長のど真ん中に、乗る。<span class="hottoke-note">（※その企業の株を買います）</span></p>
+            <p>でも、やり方はシンプル。<br>インデックスで、分散して持つだけ。<br>当てにいかない。外さない。<br>1社が潰れても、関係ない。<br>経済そのものを、丸ごと買う。<span class="hottoke-note">（※これをインデックス投資と呼びます）</span></p>
+            <p>増える。複利で増える。<span class="hottoke-note">（※利息が利息を生み出します）</span><br>しかも、税金ゼロ。<span class="hottoke-note">（※国が作った、唯一の合法的な節税です）</span><br>これを、ほっとくだけ。<br><strong class="hottoke-strong">最強です。</strong></p>
             <p>このまま何もしなければ、<br>インフレがあなたのお金を静かに減らし続けます。<br>でも、<strong class="hottoke-strong">今日始めた人が、10年後に笑います。</strong></p>
             <p>難しくない。怖くない。<br><strong class="hottoke-strong">ただ、始めるだけでいい。</strong></p>
           </div>
@@ -79,7 +98,7 @@
 
       </div>
 
-      <div class="age-input-section">
+      <div class="age-input-section" id="target-section">
           <div class="age-input-heading">あなたに合った「ほっとけ投資」の始め方。</div>
           <div class="age-input-sub">世代別・新NISA活用プランを見てみましょう。</div>
           <span class="age-input-label">あなたの世代を選んでください。</span>
@@ -90,6 +109,10 @@
               <button id="btn-40"  class="target-btn" onclick="setTarget('40')"  data-age-group="40"><span class="btn-icon">💼</span>40代</button>
               <button id="btn-50"  class="target-btn" onclick="setTarget('50')"  data-age-group="50"><span class="btn-icon">🎯</span>50代</button>
               <button id="btn-60"  class="target-btn" onclick="setTarget('60')"  data-age-group="60"><span class="btn-icon">🏖️</span>60代以上</button>
+          </div>
+          <div class="age-input-guide">
+            世代を選ぶと、積立期間が自動で設定されます。<br>
+            <a href="#simulation" class="age-input-guide-link">👇 「4. 資産推移（積立シミュレーション）」で、あなたの未来の資産額を確認してみましょう。</a>
           </div>
       </div>
 
@@ -104,7 +127,7 @@
 
       <!-- ===================================================== -->
 
-      <h2>1. 新NISAをやるべき理由：非課税の利点</h2>
+      <h2 id="section1">1. 新NISAをやるべき理由：非課税の利点</h2>
       <p style="font-size: 16px; line-height: 1.9;">
           銀行に貯蓄をした場合、現在の超低金利下では<span class="emphasis">資産はほとんど増えません。</span><br>
           むしろ物価上昇（インフレ）が続けば、お金の価値は相対的に下がり、<strong style="color: var(--tax-red); font-size: 1.1em;">実質的なマイナス</strong>となってしまうリスクがあります。<br>
@@ -172,47 +195,47 @@
           <figcaption>新NISAは1,800万円を上限に投資でき、その枠内で生まれた運用益はいくら大きくなっても非課税。1,800万円を超える投資は課税口座となり、利益の約20%が税金として差し引かれます。</figcaption>
       </figure>
 
-      <h2>2. 新NISAにおける投資対象の選択肢</h2>
+      <h2 id="section2">2. 迷ったらこれ一択。王道のインデックス投資</h2>
       <p>
           投資には特定の1社に投資する「個別株」もありますが、予測が難しくリスクも高くなります。<br>
           そのため現在は、特定の指数に連動する<strong>「インデックス投資」</strong>が主流となっています。
       </p>
 
-      <p style="font-size: 14px; color: #4a5568; background: #edf2f7; padding: 15px; border-radius: 8px; margin-bottom: 30px;">
+      <p style="font-size: 14px; color: #4a5568; background: #edf2f7; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
           <strong>※インデックス投資とは</strong><br>
-          日経平均株価やS&P500といった「市場の平均値（指数）」と同じ値動きを目指す、分散投資の王道手法のことです。
+          日経平均株価やS&P500といった「市場の平均値（指数）」と同じ値動きを目指す、分散投資の王道手法のことです。1社が潰れても影響は軽微。経済そのものを丸ごと買うイメージです。
       </p>
 
-      <div class="table-scroll">
-      <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; text-align: center; font-size: 14px;">
-          <tr style="background: #f7fafc;">
-              <th style="padding:15px; border:1px solid #edf2f7;">投資事例</th>
-              <th style="padding:15px; border:1px solid #edf2f7;">範囲</th>
-              <th style="padding:15px; border:1px solid #edf2f7;">期待役割</th>
-              <th style="padding:15px; border:1px solid #edf2f7; background: #ebf8ff;">過去10年の年利</th>
-          </tr>
-          <tr>
-              <td style="padding: 15px; border: 1px solid #edf2f7;"><strong>オルカン</strong></td>
-              <td style="padding: 15px; border: 1px solid #edf2f7;">世界約2,800社</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7;">究極の分散</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7; font-weight: bold;">約12.8%</td>
-          </tr>
-          <tr>
-              <td style="padding: 15px; border: 1px solid #edf2f7;"><strong>S&P500</strong></td>
-              <td style="padding: 15px; border: 1px solid #edf2f7;">米国主要500社</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7;">安定成長</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7; font-weight: bold;">約16.3%</td>
-          </tr>
-          <tr style="background:#fffdf0; font-weight:bold;">
-              <td style="padding: 15px; border: 1px solid #edf2f7;">NYSE FANG+</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7;">米国精鋭10社</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7;">高い成長期待</td>
-              <td style="padding: 15px; border: 1px solid #edf2f7; font-weight: bold; color: var(--tax-red);">約28.0%以上</td>
-          </tr>
-      </table>
+      <!-- 王道2択カード -->
+      <div class="orthodox-grid">
+          <div class="orthodox-card recommended">
+              <div class="orthodox-badge">🌍 究極の分散</div>
+              <div class="orthodox-name">オルカン</div>
+              <div class="orthodox-desc">全世界約2,800社に分散投資。「どこの国が伸びるかわからない」という不安をまるごと解消。初心者に最もおすすめの一択。</div>
+              <div class="orthodox-rate">過去10年：約<strong>12.8</strong>%</div>
+          </div>
+          <div class="orthodox-card recommended">
+              <div class="orthodox-badge">🇺🇸 安定成長</div>
+              <div class="orthodox-name">S&P500</div>
+              <div class="orthodox-desc">米国主要500社に分散投資。アメリカ経済の成長にそのまま乗る。過去の実績は世界トップクラス。王道中の王道。</div>
+              <div class="orthodox-rate">過去10年：約<strong>16.3</strong>%</div>
+          </div>
       </div>
 
-      <h2>3. 銀行の280倍？ NYSE FANG+ という選択肢</h2>
+      <div class="orthodox-note">
+          💡 <strong>迷ったらS&P500かオルカンの一択です。</strong>どちらも長期積立に最適で、新NISAとの相性も抜群です。
+      </div>
+
+      <h2 id="section3">3. 銀行の280倍？「10年」と区切れる人へ。NYSE FANG+</h2>
+
+      <!-- 個人の主張として語る -->
+      <div class="chara-balloon right type-idea" style="margin-bottom:1.5rem;">
+          <img src="img/chara-smile.png" alt="キャラクター" class="chara-balloon-icon">
+          <div class="chara-balloon-body">
+              <span class="balloon-label">私の個人的な選択</span><br>
+              オルカン・S&P500が王道なのは間違いありません。でも私は61歳。長く積み立てる時間はない。<strong>「この10年」に区切るなら、FANG+が最強だと思っています。</strong>あくまで個人の考えです。
+          </div>
+      </div>
 
       <!-- 橋渡し導入文 -->
       <div class="fang-intro">
@@ -285,7 +308,10 @@
           </div>
       </div>
 
-      <h2>4. 資産推移（積立シミュレーション）</h2>
+      <h2 id="simulation">4. 資産推移（積立シミュレーション）</h2>
+      <div class="back-to-target">
+          <a href="#target-section">↑ 世代選択に戻る</a>
+      </div>
       <div class="simulation-box">
           <div class="sim-instruction">あなたなら、いくら・何年・何％で投資しますか？<br>下のスライダーを動かして、あなただけの未来を描いてみましょう。</div>
 
@@ -355,7 +381,7 @@
           </div>
       </div>
 
-      <h2>4-2. 暴落が来ても、毎月積立が最強な理由</h2>
+      <h2 id="section42">4-2. 暴落が来ても、毎月積立が最強な理由</h2>
 
       <div class="dca-section">
 
@@ -516,7 +542,7 @@
       </div>
 
       <!-- キャラ吹き出し：疑問 -->
-      <h2>5. 資金の受取計画（出口戦略）</h2>
+      <h2 id="section5">5. 資金の受取計画（出口戦略）</h2>
       <div class="simulation-box">
 
           <!-- 導入文言 -->
@@ -609,13 +635,14 @@
       </div>
 
       <div class="cta-container">
+          <p class="cta-push">口座開設は無料。利益は非課税。<br>貯金しているだけでは届かない未来が、ここにあります。</p>
           <a href="./nisa-guide.html" class="cta-button">
-              📋 口座開設の手順を確認する
+              🆓 無料で始める ｜ 口座開設の手順を確認する
           </a>
-          <span class="cta-subtext">SBI証券での口座開設を、画面を見ながら順番にご案内します</span>
+          <span class="cta-subtext-strong">SBI証券での口座開設を、画面を見ながら順番にご案内します</span>
       </div>
 
-      <h2>6. これが「お金が増えるサイクル」の完成形</h2>
+      <h2 id="section6">6. これが「お金が増えるサイクル」の完成形</h2>
 
       <div class="cycle-section">
 
@@ -788,7 +815,10 @@
 
       </div>
 
-      <h2>7. 開始までの手順</h2>
+      <h2 id="section7">7. 開始までの手順</h2>
+      <div class="free-notice">
+          🆓 <strong>SBI証券の口座開設は完全無料です。</strong>費用は一切かかりません。スマホで20〜30分で申込完了します。
+      </div>
       <div class="steps" style="margin-top: 30px;">
           <div class="step-card">
               <div class="step-number">1</div>
@@ -830,17 +860,42 @@
       </div>
 
       <div class="cta-container">
-          <p style="font-weight:bold; font-size:18px; color:var(--primary-dark); margin-bottom:15px;">
-              準備ができたら、手順ページへ進みましょう
-          </p>
+          <p class="cta-push">今日始めた人が、10年後に笑います。</p>
           <a href="./nisa-guide.html" class="cta-button">
-              📋 口座開設の手順を確認する
+              🆓 無料で始める ｜ 口座開設の手順を確認する
           </a>
-          <span class="cta-subtext">口座開設は無料・スマホで20〜30分で完了します</span>
+          <span class="cta-subtext-strong">スマホで20〜30分・完全無料で口座開設できます</span>
       </div>
 
-      <div style="height: 60px;"></div>
+      <div style="height: 40px;"></div>
   </div><!-- /.container -->
+
+  <!-- ⑤ フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <div class="site-footer-brand">
+          <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon">
+          <div>
+            <div class="site-footer-title">ほっとけ投資</div>
+            <div class="site-footer-sub">新NISAを満額にして、あとは放置。</div>
+          </div>
+        </div>
+        <nav class="site-footer-nav">
+          <a href="./index.html">トップ</a>
+          <a href="./about.html">私について</a>
+          <a href="./nisa-guide.html">口座開設ガイド</a>
+        </nav>
+      </div>
+      <div class="site-footer-disclaimer">
+        ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
+      </div>
+      <div class="site-footer-copy">
+        © 2025 ほっとけ投資 ／ 運営：CrossOver
+        <span class="site-footer-update">最終更新：2025年4月</span>
+      </div>
+    </div>
+  </footer>
 
   <script src="js/script.js"></script>
 </body>
