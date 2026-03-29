@@ -209,7 +209,8 @@ function updateAccumulation() {
     const labelEl = document.getElementById('decAssetsLabel');
     if (labelEl) labelEl.textContent = 'あなたの ' + years + '年後の予想資産額: ' + finalT_man.toLocaleString() + '万円';
 
-    document.getElementById('decAssets').value = finalT_man;
+    const decAssetsEl = document.getElementById('decAssets');
+    if (decAssetsEl) decAssetsEl.value = finalT_man;
     updateDecumulation();
 
     if (accChart) accChart.destroy();
@@ -260,6 +261,8 @@ function syncDecNumber(id) {
 function updateDecumulation() {
     const container      = document.getElementById('decChartContainer');
     const decMonthlyInput = document.getElementById('decMonthly');
+    /* dec要素がないページ（index.html等）では何もしない */
+    if (!container || !decMonthlyInput) return;
     const errorMsg       = document.getElementById('decInputError');
     const increaseMsg    = document.getElementById('increaseAdvice');
     const resultMsg      = document.getElementById('impactMessage');
