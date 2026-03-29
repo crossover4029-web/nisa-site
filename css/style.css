@@ -725,6 +725,7 @@ h2::before {
     margin-right: auto;
     text-align: left;
 }
+.dca-placeholder {
     background: var(--bg-light);
     border: 2px dashed var(--border);
     border-radius: 10px;
