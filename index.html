@@ -26,7 +26,8 @@
   <meta name="twitter:description" content="新NISAをSBI証券で始める完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。">
   <meta name="twitter:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
 
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- ── LCP最適化：hero画像を最優先で先読み ── -->
+  <link rel="preload" as="image" href="img/main_visual.jpg">
   <link rel="stylesheet" href="css/style.css">
   <style>
     .hottoke-note {
@@ -47,7 +48,8 @@
 <body>
 
   <div class="hero-section">
-      <img src="img/main_visual.jpg" alt="Hero Image" class="hero-image">
+      <img src="img/main_visual.jpg" alt="Hero Image" class="hero-image"
+           fetchpriority="high" decoding="sync">
       <div class="hero-overlay"></div>
   </div>
 
@@ -96,7 +98,7 @@
 
           <!-- 横長バナー：私についてはこちら -->
           <a href="./about.html" class="hottoke-about-banner">
-            <img src="img/chara-smile.png" alt="運営者" class="hottoke-about-icon">
+            <img src="img/chara-smile.png" alt="運営者" class="hottoke-about-icon" loading="lazy">
             <div class="hottoke-about-text">
               <strong>61歳・IT企業PM ／ 私が本気で勧める理由</strong>
               <small>FXで数百万失った私が、今これしかやっていない理由を話しています。</small>
@@ -149,7 +151,7 @@
 
       <!-- キャラ吹き出し：ポイント -->
       <div class="chara-balloon right type-point">
-          <img src="img/chara-point.png" alt="キャラクター" class="chara-balloon-icon">
+          <img src="img/chara-point.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
           <div class="chara-balloon-body">
               <span class="balloon-label">ポイント</span><br>
               銀行にお金を置いておくだけでは、<strong>インフレで実質的に目減り</strong>しています。これが「貯金だけでは老後が不安」な本当の理由です。
@@ -204,7 +206,7 @@
       </div>
 
       <figure class="nisa-1800-figure">
-          <img src="img/nisa-1800man-taxfree-vs-tax-account.png" alt="1800万円の枠の中で増えた利益はすべて非課税・課税口座との比較図">
+          <img src="img/nisa-1800man-taxfree-vs-tax-account.png" loading="lazy" alt="1800万円の枠の中で増えた利益はすべて非課税・課税口座との比較図">
           <figcaption>新NISAは1,800万円を上限に投資でき、その枠内で生まれた運用益はいくら大きくなっても非課税。1,800万円を超える投資は課税口座となり、利益の約20%が税金として差し引かれます。</figcaption>
       </figure>
 
@@ -265,7 +267,7 @@
 
           <!-- キャラ吹き出し：アイデア -->
           <div class="chara-balloon right type-idea">
-              <img src="img/chara-idea.png" alt="キャラクター" class="chara-balloon-icon">
+              <img src="img/chara-idea.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
               <div class="chara-balloon-body">
                   <span class="balloon-label">アドバイス</span><br>
                   スライダーを動かして、<strong>「もし月3万円積み立てたら？」「年利10%なら？」</strong>と色々試してみてください。数字が変わるたびに未来が見えてきます。
@@ -337,7 +339,7 @@
 
           <!-- キャラ吹き出し：疑問 -->
           <div class="chara-balloon right type-question">
-              <img src="img/chara-question.png" alt="キャラクター" class="chara-balloon-icon">
+              <img src="img/chara-question.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
               <div class="chara-balloon-body">
                   <span class="balloon-label">よくある疑問</span><br>
                   「積み立てた後、どうやって使うの？」という疑問、実は多いんです。<strong>運用しながら取り崩す</strong>と、現金だけの場合と比べて資産寿命が大きく変わります。
@@ -453,7 +455,7 @@
           </p>
 
           <figure class="cycle-figure">
-              <img src="img/nisa-olive-sbi-vpoint-tsumitate-cycle.png" alt="OLIVE口座＋SBI証券口座でVポイントが貯まるサイクル図">
+              <img src="img/nisa-olive-sbi-vpoint-tsumitate-cycle.png" loading="lazy" alt="OLIVE口座＋SBI証券口座でVポイントが貯まるサイクル図">
           </figure>
 
           <!-- なぜほっとけるのかの説明 -->
@@ -471,7 +473,7 @@
 
           <!-- キャラ吹き出し：私の理想形 -->
           <div class="chara-balloon right type-point">
-              <img src="img/chara-smile.png" alt="キャラクター" class="chara-balloon-icon">
+              <img src="img/chara-smile.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
               <div class="chara-balloon-body">
                   <span class="balloon-label">私が考える理想形</span><br>
                   正直に言います。<strong>これが私自身が構築しようとしているサイクルです。</strong>毎月の積立がVポイントを生み、そのポイントがまた投資に回る。人生で一番早く始めればよかったと思っている仕組みです。<strong>一度作るだけで、自動的に回り続けます。</strong>
@@ -677,7 +679,7 @@
     <div class="site-footer-inner">
       <div class="site-footer-top">
         <div class="site-footer-brand">
-          <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon">
+          <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon" loading="lazy">
           <div>
             <div class="site-footer-title">ほっとけ投資</div>
             <div class="site-footer-sub">新NISAを満額にして、あとは放置。</div>
@@ -701,7 +703,9 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- chart.jsはbody末尾でdefer読み込み（LCP改善） -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="js/script.js" defer></script>
   <script>
   // ── 暴落シミュレーション（5-2セクション） ──
   (function() {
