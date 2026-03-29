@@ -5,16 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- ── SEO ── -->
-  <title>新NISA完全ガイド｜SBI証券×OLIVEで資産形成を始める方法【50・60代向け】</title>
-  <meta name="description" content="新NISAをSBI証券で始める完全ガイド。非課税の仕組み・積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。投資未経験の50・60代を中心に、はじめて資産形成に取り組む方へ向けて書いています。">
+  <title>初心者のための新NISA完全ガイド｜ほっとけ投資でSBI証券から始める</title>
+  <meta name="description" content="投資が初めての方でも迷わず始められる新NISA完全ガイド。非課税の仕組み・積立シミュレーション・OLIVE×Vポイントサイクルをわかりやすく解説。SBI証券で口座開設から積立設定まで順番にご案内します。">
   <meta name="keywords" content="新NISA,SBI証券,積立投資,OLIVE,Vポイント,投資初心者,50代,60代,ドルコスト平均法,インデックス投資">
   <meta name="author" content="新NISA資産形成ガイド">
   <link rel="canonical" href="https://crossover4029-web.github.io/nisa-site/">
 
   <!-- ── OGP（SNSシェア対応） ── -->
   <meta property="og:type"        content="website">
-  <meta property="og:title"       content="新NISA完全ガイド｜SBI証券×OLIVEで資産形成を始める方法">
-  <meta property="og:description" content="新NISAをSBI証券で始める完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。50〜60代の投資初心者向け。">
+  <meta property="og:title"       content="初心者のための新NISA完全ガイド｜ほっとけ投資でSBI証券から始める">
+  <meta property="og:description" content="投資が初めての方でも迷わず始められる新NISA完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルをわかりやすく解説。">
   <meta property="og:url"         content="https://crossover4029-web.github.io/nisa-site/">
   <meta property="og:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
   <meta property="og:site_name"   content="新NISA資産形成ガイド">
@@ -22,8 +22,8 @@
 
   <!-- ── Twitter Card ── -->
   <meta name="twitter:card"        content="summary_large_image">
-  <meta name="twitter:title"       content="新NISA完全ガイド｜SBI証券×OLIVEで資産形成を始める方法">
-  <meta name="twitter:description" content="新NISAをSBI証券で始める完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルまでわかりやすく解説。">
+  <meta name="twitter:title"       content="初心者のための新NISA完全ガイド｜ほっとけ投資でSBI証券から始める">
+  <meta name="twitter:description" content="投資が初めての方でも迷わず始められる新NISA完全ガイド。SBI証券で口座開設から積立設定まで順番にご案内。">
   <meta name="twitter:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
 
   <!-- ── LCP最適化：hero画像を最優先で先読み ── -->
@@ -323,13 +323,16 @@
               <div class="nisa-limit-note">※新NISAの非課税投資枠は生涯1,800万円までです。枠を超えた運用益には通常通り約20%の税金がかかります。このシミュレーションは簡略化のため全額非課税として計算しています。</div>
           </div>
           <div class="chart-container"><canvas id="accumulationChart"></canvas></div>
-
           <!-- 免責注記：グラフ直下・見える位置 -->
           <div style="background:#fff8e1; border-left:3px solid #f6ad55; border-radius:6px; padding:10px 14px; margin-top:16px; font-size:12px; color:#744210; line-height:1.7;">
               ⚠️ <strong>シミュレーションについて</strong><br>
               表示される数値は過去の実績をもとにした試算です。将来の運用成果を保証するものではありません。実際の運用結果は市場環境により大きく異なる場合があります。
           </div>
-
+          <!-- 免責注記：結果直下・見える位置 -->
+          <div style="background:#fff8e1; border-left:3px solid #f6ad55; border-radius:6px; padding:10px 14px; margin-top:16px; font-size:12px; color:#744210; line-height:1.7;">
+              ⚠️ <strong>シミュレーションについて</strong><br>
+              表示される年数は過去の運用実績をもとにした試算です。将来の資産寿命を保証するものではありません。実際の運用結果・受取期間は市場環境により大きく異なる場合があります。
+          </div>
           <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:14px;">
               参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>
           </div>
@@ -422,13 +425,11 @@
                   <div id="lifeWithCash" class="summary-value">計算中...</div>
               </div>
           </div>
-
           <!-- 免責注記：結果直下・見える位置 -->
           <div style="background:#fff8e1; border-left:3px solid #f6ad55; border-radius:6px; padding:10px 14px; margin-top:16px; font-size:12px; color:#744210; line-height:1.7;">
               ⚠️ <strong>シミュレーションについて</strong><br>
               表示される年数は過去の運用実績をもとにした試算です。将来の資産寿命を保証するものではありません。実際の運用結果・受取期間は市場環境により大きく異なる場合があります。
           </div>
-
           <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:14px;">
               参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>
           </div>
