@@ -65,8 +65,9 @@
           <li><a href="#section1">1. 新NISAをやるべき理由：非課税の利点</a></li>
           <li><a href="#section2">2. 迷ったらこれ一択。王道のインデックス投資</a></li>
           <li><a href="#simulation">3. 積立シミュレーション：あなたの未来を描く</a></li>
-          <li><a href="#section6">4. これが「お金が増えるサイクル」の完成形</a></li>
-          <li><a href="#section7">5. 開始までの手順</a></li>
+          <li><a href="#section5">4. 資金の受取計画（出口戦略）</a></li>
+          <li><a href="#section6">5. これが「お金が増えるサイクル」の完成形</a></li>
+          <li><a href="#section7">6. 開始までの手順</a></li>
         </ul>
       </nav>
 
@@ -124,7 +125,7 @@
           </div>
           <div class="age-input-guide">
             世代を選ぶと、積立期間が自動で設定されます。<br>
-            <a href="#simulation" class="age-input-guide-link">👇 「4. 資産推移（積立シミュレーション）」で、あなたの未来の資産額を確認してみましょう。</a>
+            <a href="#simulation" class="age-input-guide-link">👇 「3. 資産推移（積立シミュレーション）」で、あなたの未来の資産額を確認してみましょう。</a>
           </div>
       </div>
 
@@ -255,7 +256,7 @@
         </a>
       </div>
 
-      <h2 id="simulation">4. 資産推移（積立シミュレーション）</h2>
+      <h2 id="simulation">3. 資産推移（積立シミュレーション）</h2>
       <div class="back-to-target">
           <a href="#target-section">↑ 世代選択に戻る</a>
       </div>
@@ -328,6 +329,106 @@
           </div>
       </div>
 
+      <h2 id="section5">4. 資金の受取計画（出口戦略）</h2>
+      <div class="simulation-box">
+
+          <!-- 導入文言 -->
+          <div class="sim-instruction">家や車・教育資金としても活用できますが、<br>老後資金とするなら―<br><span class="sim-instruction-sub">あなたの資産が何年持つか、計算してみましょう。</span></div>
+
+          <!-- キャラ吹き出し：疑問 -->
+          <div class="chara-balloon right type-question">
+              <img src="img/chara-question.png" alt="キャラクター" class="chara-balloon-icon">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">よくある疑問</span><br>
+                  「積み立てた後、どうやって使うの？」という疑問、実は多いんです。<strong>運用しながら取り崩す</strong>と、現金だけの場合と比べて資産寿命が大きく変わります。
+              </div>
+          </div>
+
+          <!-- ① 予想資産（最上部） -->
+          <div class="dec-assets-display">
+              <div class="dec-assets-label" id="decAssetsLabel">あなたの予想資産</div>
+              <div class="dec-assets-row">
+                  <input type="number" id="decAssets" class="dec-assets-input" value="0" oninput="syncDecNumber('decAssets')">
+                  <span class="dec-assets-unit">万円</span>
+              </div>
+              <div class="dec-assets-note">※上の積立シミュレーションの結果が自動で入ります。直接変更もできます。</div>
+          </div>
+
+          <!-- 入力パネル（1枠にまとめる） -->
+          <div class="dec-input-panel">
+
+              <!-- 毎月いくらほしいか -->
+              <div class="dec-monthly-hero">
+                  <div class="dec-monthly-hero-label">老後、毎月いくら受け取りたいですか？</div>
+                  <div class="dec-monthly-hero-row">
+                      <span class="dec-monthly-hero-prefix">月</span>
+                      <input type="number" id="decMonthly" min="0" max="50" step="0.5"
+                             class="dec-monthly-hero-input" placeholder="0"
+                             oninput="syncDecNumber('decMonthly')">
+                      <span class="dec-monthly-hero-unit">万円</span>
+                  </div>
+                  <input type="range" id="decMonthlySlider" min="0" max="50" step="0.5" value="0"
+                         class="dec-monthly-hero-slider" oninput="syncDecSlider('decMonthly')">
+                  <div id="decInputError" class="input-error-msg" style="text-align:center; margin-top:4px;">毎月に必要な額を入力してください</div>
+              </div>
+
+              <div class="dec-panel-divider"></div>
+
+              <!-- 開始年齢・想定リターン -->
+              <div class="control-panel dec-control-compact">
+                  <div class="input-group">
+                      <label>開始年齢</label>
+                      <span class="input-val-badge" id="decStartAgeDisplay">65歳</span>
+                      <input type="range" id="decStartAgeSlider" min="50" max="80" step="1" value="65" oninput="syncDecSlider('decStartAge')">
+                      <input type="number" id="decStartAge" min="50" max="80" value="65" oninput="syncDecNumber('decStartAge')">
+                  </div>
+                  <div class="input-group">
+                      <label>想定リターン</label>
+                      <span class="input-val-badge" id="decRateDisplay">7%</span>
+                      <span class="input-sub">運用しながら取り崩す場合の年利</span>
+                      <input type="range" id="decRateSlider" min="0" max="20" step="0.5" value="7" oninput="syncDecSlider('decRate')">
+                      <input type="number" id="decRate" min="0" max="20" step="0.5" value="7" oninput="syncDecNumber('decRate')">
+                  </div>
+              </div>
+
+          </div>
+
+          <div id="impactMessage" class="impact-banner"></div>
+          <div id="increaseAdvice" class="increase-advice" style="text-align:center;">月の取崩額をもっと増やしてみてください。</div>
+
+          <div class="chart-container" id="decChartContainer">
+              <div class="chart-placeholder">毎月の取崩額を入力してください。</div>
+          </div>
+
+          <div class="summary-card">
+              <div class="summary-item">
+                  <span class="summary-label">資産を運用しながら取り崩した場合</span>
+                  <div id="lifeWithInvest" class="summary-value">計算中...</div>
+              </div>
+              <div class="summary-item">
+                  <span class="summary-label">現金のみ（運用なし）の場合</span>
+                  <div id="lifeWithCash" class="summary-value">計算中...</div>
+              </div>
+          </div>
+          <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:20px;">
+              参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 5px; line-height: 1.5;">
+              ※楽観的数値の為、正確な数値（完全な精度）はこちらを参照ください。
+          </div>
+          <div class="disclaimer-text">
+              ※本シミュレーションは、新NISAの生涯投資枠（1,800万円）を超過した分も非課税として簡易計算しています。実運用では、資産を売却すると翌年にその元本分の枠が復活します（新NISA枠の再利用）。この仕組みを活用すれば、生涯累積で1,800万円以上の非課税投資が可能となります。
+          </div>
+      </div>
+
+      <div class="cta-container">
+          <p class="cta-push">口座開設は無料。利益は非課税。<br>貯金しているだけでは届かない未来が、ここにあります。</p>
+          <a href="./nisa-guide.html" class="cta-button">
+              🆓 無料で始める ｜ 口座開設の手順を確認する
+          </a>
+          <span class="cta-subtext-strong">SBI証券での口座開設を、画面を見ながら順番にご案内します</span>
+      </div>
+
             <!-- ── 暴落・出口戦略リンクカード ── -->
       <div id="section-links" style="margin:2rem 0; background:#1a202c; border-radius:14px; padding:24px 28px;">
         <div style="font-size:12px; font-weight:700; letter-spacing:.1em; color:#fcd34d; margin-bottom:10px;">CRASH &amp; EXIT STRATEGY</div>
@@ -343,7 +444,7 @@
       </div>
 
 
-      <h2 id="section6">4. これが「お金が増えるサイクル」の完成形</h2>
+      <h2 id="section6">5. これが「お金が増えるサイクル」の完成形</h2>
 
       <div class="cycle-section">
 
@@ -516,7 +617,7 @@
 
       </div>
 
-      <h2 id="section7">5. 開始までの手順</h2>
+      <h2 id="section7">6. 開始までの手順</h2>
       <div class="free-notice">
           🆓 <strong>SBI証券の口座開設は完全無料です。</strong>費用は一切かかりません。スマホで20〜30分で申込完了します。
       </div>
@@ -600,18 +701,6 @@
     </div>
   </footer>
 
-  <script>
-  // sp500Chart・dcaCompareChartはindex.htmlに存在しないためダミー補完
-  (function() {
-    ['sp500Chart','dcaCompareChart'].forEach(function(id) {
-      if (!document.getElementById(id)) {
-        var el = document.createElement('canvas');
-        el.id = id; el.style.display = 'none';
-        document.body.appendChild(el);
-      }
-    });
-  })();
-  </script>
   <script src="js/script.js"></script>
   <script>
   // ── 暴落シミュレーション（5-2セクション） ──
