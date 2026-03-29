@@ -675,7 +675,7 @@ tr:nth-child(even) td { background: var(--gray-light); }
       新NISA口座の開設申込が完了します。
     </div>
     <div class="hero-meta">
-      <span>対象：投資未経験のすべての世代</span>
+      <span>対象：50・60代を中心とした投資未経験の方</span>
       <span>申込作業の目安：20〜30分</span>
     </div>
     <div class="ad-note">※このページには広告リンクを含む場合があります。</div>
@@ -729,7 +729,7 @@ tr:nth-child(even) td { background: var(--gray-light); }
     <div style="display:flex; align-items:flex-start; gap:14px; background:#f0fdf4; border-radius:12px; padding:16px 20px; margin-bottom:24px; border-left:4px solid #38a169;">
       <img src="img/chara-smile.png" alt="運営者" style="width:52px; height:52px; border-radius:50%; flex-shrink:0;">
       <div style="font-size:14px; line-height:1.85; color:#1a202c;">
-        <span style="display:inline-block; font-size:11px; font-weight:700; background:#38a169; color:#fff; border-radius:4px; padding:1px 8px; margin-bottom:6px;">運営者より</span><br>
+        <span style="display:inline-block; font-size:11px; font-weight:700; background:#38a169; color:#fff; border-radius:4px; padding:1px 8px; margin-bottom:6px;">真-SHIN- より</span><br>
         FXで数百万円を失った私が、今これを選んでいる理由はシンプルです。<strong>「非課税・ポイント還元・手数料ゼロ」が全部揃っている組み合わせが、これだけだったからです。</strong>難しい話は抜きにして、この4つをセットで使うのが今の日本で最も合理的な選択だと思っています。
       </div>
     </div>
@@ -1334,6 +1334,12 @@ tr:nth-child(even) td { background: var(--gray-light); }
 <!-- qrcode.js ライブラリ -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
 <script>
+// アコーディオン開閉
+function toggle(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+
 // QRコードを生成
 window.addEventListener('DOMContentLoaded', function() {
     var targets = document.querySelectorAll('.qr-target');
@@ -1373,11 +1379,12 @@ window.addEventListener('DOMContentLoaded', function() {
       ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
     </div>
     <div class="site-footer-copy">
-      © 2025 ほっとけ投資 ／ 運営：CrossOver
+      &copy; <span id="copy-year">2025</span> ほっとけ投資 ／ 運営：真-SHIN-（CrossOver）
       <span class="site-footer-update">最終更新：2025年4月</span>
     </div>
   </div>
 </footer>
+  <script>document.getElementById("copy-year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>

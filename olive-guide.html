@@ -477,7 +477,7 @@ h3.sub { font-size: 14px; font-weight: 700; margin: 1rem 0 .4rem; color: var(--t
       <div class="chara-balloon right type-point" style="margin-bottom:16px;">
         <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
         <div class="chara-balloon-body">
-          <span class="balloon-label">運営者より</span><br>
+          <span class="balloon-label">真-SHIN- より</span><br>
           私自身は<strong>三井住友銀行の窓口で開設しました。</strong>スタッフの方が丁寧に説明してくれたので、スマホ操作に不安な方には窓口をおすすめします。どの方法で開設しても、SBI証券との連携設定（STEP 3）は同じ手順で行えます。
         </div>
       </div>
@@ -842,11 +842,12 @@ function toggle(id) {
       ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
     </div>
     <div class="site-footer-copy">
-      © 2025 ほっとけ投資 ／ 運営：CrossOver
+      &copy; <span id="copy-year">2025</span> ほっとけ投資 ／ 運営：真-SHIN-（CrossOver）
       <span class="site-footer-update">最終更新：2025年4月</span>
     </div>
   </div>
 </footer>
+  <script>document.getElementById("copy-year").textContent = new Date().getFullYear();</script>
 
 </body>
 </html>
