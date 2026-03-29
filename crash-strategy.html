@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>暴落が来ても「ほっとく」理由｜FANG+・S&P500・オルカン実績と暴落シミュレーション</title>
+  <meta name="description" content="FANG+・S&P500・オルカンの過去10年実績比較。暴落時に積立を続けた人・やめた人の差をシミュレーション。ほっとく投資を最後まで貫くための知識と出口戦略。">
+  <link rel="canonical" href="https://crossover4029-web.github.io/nisa-site/crash-strategy.html">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .cs-hero {
+      background: linear-gradient(135deg, #1a202c 0%, #2d1a1a 100%);
+      padding: 3rem 1.5rem 5rem;
+    }
+    .cs-hero-inner { max-width: 860px; margin: 0 auto; color: #fff; }
+    .cs-hero-eyebrow { font-size: 12px; letter-spacing: .12em; opacity: .7; margin-bottom: .75rem; font-weight: 700; }
+    .cs-hero h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 900; line-height: 1.3; margin-bottom: .75rem; color: #fff; }
+    .cs-hero h1 em { color: #fcd34d; font-style: normal; }
+    .cs-hero-desc { font-size: 14px; opacity: .85; line-height: 1.85; color: #fff; }
+    .cs-back { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:#38a169; text-decoration:none; margin-bottom:0.5rem; }
+    .cs-back:hover { text-decoration:underline; }
+    .cs-section { margin: 0 0 2.5rem; }
+    .cs-lead { font-size:15px; line-height:1.9; color:#4a5568; margin-bottom:1.2rem; }
+    /* 実績比較カード */
+    .perf-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin:1.2rem 0 1.5rem; }
+    .perf-card { background:#fff; border:2px solid #e2e8f0; border-radius:12px; padding:16px; text-align:center; }
+    .perf-card.top { border-color:#d4af37; background:#fffbeb; }
+    .perf-name { font-size:16px; font-weight:900; color:#1a202c; margin-bottom:4px; }
+    .perf-rate { font-size:clamp(1.6rem,4vw,2.2rem); font-weight:900; color:#1a6b45; line-height:1; margin:8px 0; }
+    .perf-rate.gold { color:#b8860b; }
+    .perf-desc { font-size:11px; color:#718096; line-height:1.5; }
+    .perf-badge { display:inline-block; font-size:10px; font-weight:700; padding:2px 8px; border-radius:10px; margin-bottom:6px; }
+    .perf-badge.world { background:#dbeafe; color:#1d4ed8; }
+    .perf-badge.us { background:#dcfce7; color:#166534; }
+    .perf-badge.tech { background:#fef9c3; color:#854d0e; }
+    /* 暴落シミュ */
+    .crash-sim-wrap { background:#f7fafc; border:1px solid #e2e8f0; border-radius:12px; padding:20px 22px; margin:1rem 0 1.5rem; }
+    .crash-legend { display:flex; gap:16px; flex-wrap:wrap; justify-content:center; font-size:12px; margin:8px 0 1rem; }
+    .crash-legend span { display:flex; align-items:center; gap:5px; }
+    /* 出口カード */
+    .exit-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:1rem 0 1.5rem; }
+    .exit-card { border-radius:10px; padding:16px 18px; }
+    .exit-card.bad { background:#fff5f5; border:2px solid #e53e3e; }
+    .exit-card.good { background:#f0fff4; border:2px solid #38a169; }
+    .exit-card-title { font-size:13px; font-weight:700; margin-bottom:8px; }
+    .exit-card.bad .exit-card-title { color:#e53e3e; }
+    .exit-card.good .exit-card-title { color:#276749; }
+    .exit-card ul { list-style:none; padding:0; margin:0; font-size:13px; line-height:2.1; color:#2d3748; }
+    .exit-principles { background:#1a4a35; color:#fff; border-radius:12px; padding:22px 24px; margin:1.2rem 0; }
+    .exit-principles-title { font-size:16px; font-weight:700; color:#fcd34d; margin-bottom:14px; }
+    .exit-principle { display:flex; gap:12px; align-items:flex-start; margin-bottom:12px; }
+    .exit-principle:last-child { margin-bottom:0; }
+    .exit-badge { background:#d4af37; color:#1a202c; font-weight:900; font-size:11px; padding:2px 8px; border-radius:4px; flex-shrink:0; margin-top:3px; }
+    @media (max-width:600px) {
+      .perf-grid { grid-template-columns:1fr; }
+      .exit-grid { grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<div class="cs-hero">
+  <div class="cs-hero-inner">
+    <div class="cs-hero-eyebrow">ほっとけ投資 ✦ 実績データ ✦ 暴落対策</div>
+    <h1>暴落は誰もが怖い。<br><em>それでもほっとく理由は？</em></h1>
+    <div class="cs-hero-desc">
+      FANG+・S&P500・オルカンの過去10年実績をデータで確認。<br>
+      暴落時に売った人・持ち続けた人の差と、出口の備え方をまとめました。
+    </div>
+  </div>
+</div>
+
+<div class="container" style="margin-top:-40px;">
+
+  <a href="./index.html" class="cs-back">← トップページへ戻る</a>
+
+  <!-- ══ 1. 実績比較 ══ -->
+  <div class="cs-section">
+    <h2 id="perf">1. 過去10年の実績比較</h2>
+    <p class="cs-lead">
+      「何に投資するか」で10年後が大きく変わります。<br>
+      3つの代表的な投資先の過去10年の年平均リターンを確認してください。
+    </p>
+
+    <div class="perf-grid">
+      <div class="perf-card">
+        <span class="perf-badge world">🌍 究極の分散</span>
+        <div class="perf-name">オルカン</div>
+        <div class="perf-rate">12.8<span style="font-size:.5em;">%</span></div>
+        <div class="perf-desc">全世界約2,800社<br>「どこが伸びるか」不要<br>初心者に最適</div>
+      </div>
+      <div class="perf-card">
+        <span class="perf-badge us">🇺🇸 安定成長</span>
+        <div class="perf-name">S&P500</div>
+        <div class="perf-rate">16.3<span style="font-size:.5em;">%</span></div>
+        <div class="perf-desc">米国主要500社<br>王道中の王道<br>長期安定の実績</div>
+      </div>
+      <div class="perf-card top">
+        <span class="perf-badge tech">⚡ 集中投資</span>
+        <div class="perf-name">FANG+</div>
+        <div class="perf-rate gold">28.0<span style="font-size:.5em;">%</span></div>
+        <div class="perf-desc">テック精鋭10社<br>銀行預金の280倍<br>変動大・長期前提</div>
+      </div>
+    </div>
+
+    <div class="chara-balloon right type-idea">
+      <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
+      <div class="chara-balloon-body">
+        <span class="balloon-label">私の個人的な選択</span><br>
+        オルカン・S&P500が王道なのは間違いありません。でも私は61歳。<strong>「この10年」に区切るなら、私はFANG+を選んでいます。</strong>Meta・Apple・NVIDIA・Googleなど、あなたが毎日使っているサービスの会社です。あくまで個人の考えです。
+      </div>
+    </div>
+
+    <!-- 3銘柄比較グラフ -->
+    <div style="margin-top:1.5rem;">
+      <div style="font-size:14px; font-weight:700; color:#1a202c; margin-bottom:6px;">過去10年の年間リターン比較（S&P500実データ・FANG+/オルカン試算）</div>
+      <div style="position:relative; height:300px;">
+        <canvas id="perfChart"></canvas>
+      </div>
+      <div style="font-size:11px; color:#718096; text-align:center; margin-top:6px;">※FANG+・オルカンは年平均リターンを元にした試算値。S&P500は実績値。将来を保証するものではありません。</div>
+    </div>
+
+    <!-- FANG+構成銘柄 -->
+    <div style="margin-top:1.5rem; background:#1a202c; border-radius:12px; padding:20px 22px;">
+      <div style="font-size:14px; font-weight:700; color:#fcd34d; margin-bottom:12px;">⚡ NYSE FANG+ 構成銘柄（10社）</div>
+      <div class="fang-logos" style="justify-content:center;">
+        <div class="fang-logo"><img src="img/meta_logo.svg" alt="Meta"><span>Meta</span></div>
+        <div class="fang-logo"><img src="img/apple_logo.svg" alt="Apple"><span>Apple</span></div>
+        <div class="fang-logo"><img src="img/amazon_logo.svg" alt="Amazon"><span>Amazon</span></div>
+        <div class="fang-logo"><img src="img/netflix_logo.svg" alt="Netflix"><span>Netflix</span></div>
+        <div class="fang-logo"><img src="img/google_logo.svg" alt="Google"><span>Google</span></div>
+        <div class="fang-logo"><img src="img/microsoft_logo.svg" alt="Microsoft"><span>Microsoft</span></div>
+        <div class="fang-logo"><img src="img/tesla_logo.svg" alt="Tesla"><span>Tesla</span></div>
+        <div class="fang-logo"><img src="img/nvidia_logo.svg" alt="NVIDIA"><span>NVIDIA</span></div>
+        <div class="fang-logo"><img src="img/broadcom_logo.svg" alt="Broadcom"><span>Broadcom</span></div>
+        <div class="fang-logo"><img src="img/snowflake_logo.svg" alt="Snowflake"><span>Snowflake</span></div>
+      </div>
+      <p style="font-size:13px; color:#a0aec0; margin-top:12px; line-height:1.75;">スマートフォン、検索エンジン、動画配信、AI——あなたの生活から消えることが想像できますか？その企業の成長のど真ん中に乗る。これがFANG+の本質です。</p>
+    </div>
+  </div>
+
+  <!-- ══ 2. 暴落込み積立シミュレーション ══ -->
+  <div class="cs-section">
+    <h2 id="crash">2. 暴落が来ても「ほっとく」と何が起きるか</h2>
+    <p class="cs-lead">
+      月2万円をS&P500連動ファンドに積み立て続けた場合。<br>
+      途中にリーマンショック級（-50%）の暴落が来ても、<strong>やめなかった人</strong>と<strong>3年間やめた人</strong>の差を見てください。
+    </p>
+
+    <div class="crash-sim-wrap">
+      <div style="position:relative; height:300px;">
+        <canvas id="crashChart"></canvas>
+      </div>
+      <div class="crash-legend">
+        <span><span style="width:16px;height:4px;background:#38a169;display:inline-block;border-radius:2px;"></span>ほっとき続けた</span>
+        <span><span style="width:16px;height:4px;background:#e53e3e;display:inline-block;border-radius:2px;"></span>暴落時に3年間停止</span>
+        <span><span style="width:16px;height:3px;background:#a0aec0;border-top:2px dashed #a0aec0;display:inline-block;"></span>元本のみ</span>
+      </div>
+    </div>
+
+    <!-- 比較表 -->
+    <div style="overflow-x:auto; margin-bottom:1.2rem;">
+      <table style="width:100%; border-collapse:collapse; font-size:14px;">
+        <thead>
+          <tr style="background:#1a4a35; color:#fff;">
+            <th style="padding:10px 12px; text-align:left;">経過</th>
+            <th style="padding:10px 12px; text-align:right;">元本累計</th>
+            <th style="padding:10px 12px; text-align:right; color:#86efac;">ほっとき継続</th>
+            <th style="padding:10px 12px; text-align:right; color:#fca5a5;">3年間停止</th>
+            <th style="padding:10px 12px; text-align:right;">差額</th>
+          </tr>
+        </thead>
+        <tbody id="crashTable"></tbody>
+      </table>
+    </div>
+
+    <div style="background:#fffbeb; border-left:4px solid #d4af37; border-radius:0 8px 8px 0; padding:14px 18px; font-size:13px; line-height:1.85;">
+      <strong>📌 シミュレーション条件</strong><br>
+      月2万円積立・年平均7%リターン・5年目に-50%暴落・その後年10%で回復。<br>
+      「3年間停止」は暴落発生翌月から3年間積立をやめ、その後再開した場合。<br>
+      ※実際の市場動向とは異なります。参考値としてご覧ください。
+    </div>
+
+    <!-- S&P500年間リターングラフ -->
+    <div style="margin-top:1.8rem;">
+      <h3 style="font-size:16px; font-weight:700; color:#1a202c; margin-bottom:8px;">S&P500 年間リターン推移（2000〜2024年・実績値）</h3>
+      <div style="display:flex; gap:12px; flex-wrap:wrap; font-size:12px; margin-bottom:8px;">
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:12px;height:12px;background:rgba(56,161,105,0.8);display:inline-block;border-radius:2px;"></span>プラス年</span>
+        <span style="display:flex;align-items:center;gap:4px;"><span style="width:12px;height:12px;background:rgba(229,62,62,0.85);display:inline-block;border-radius:2px;"></span>マイナス年（暴落）</span>
+      </div>
+      <div style="position:relative; height:260px;">
+        <canvas id="sp500Chart"></canvas>
+      </div>
+      <div style="font-size:11px; color:#718096; text-align:center; margin-top:6px;">出典：Slickcharts／S&P500トータルリターン（配当再投資含む）</div>
+    </div>
+
+    <div class="chara-balloon right type-point" style="margin-top:1.5rem;">
+      <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
+      <div class="chara-balloon-body">
+        <span class="balloon-label">運営者より</span><br>
+        FXで数百万円を失った私が、NISAをほっとける理由は——<strong>過去データを信じているからです。</strong>2000年のITバブル、2008年リーマン、2020年コロナ。すべての暴落は時間をかけて回復してきました。
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ 3. 出口戦略 ══ -->
+  <div class="cs-section">
+    <h2 id="exit">3. 出口で暴落が来たら？　3年分の備えが答えです</h2>
+    <p class="cs-lead">
+      10年後、いざ取り崩そうとしたときに暴落していたら——<br>
+      慌てて売ると、育てた資産を安値で手放すことになります。
+    </p>
+
+    <div class="exit-grid">
+      <div class="exit-card bad">
+        <div class="exit-card-title">😰 備えなし（よくある失敗）</div>
+        <ul>
+          <li>📉 10年後に暴落が来る</li>
+          <li>💸 生活費が足りず仕方なく売却</li>
+          <li>😢 安値で売って損失確定</li>
+          <li>❌ 「ほっとく」ができなかった</li>
+        </ul>
+      </div>
+      <div class="exit-card good">
+        <div class="exit-card-title">😌 3年分の備えあり（正解）</div>
+        <ul>
+          <li>📉 10年後に暴落が来る</li>
+          <li>✅ 生活費は現金・年金でしのぐ</li>
+          <li>⏳ 2〜3年で相場回復を待つ</li>
+          <li>💰 高値で売って利益を確保</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exit-principles">
+      <div class="exit-principles-title">📋 出口の3原則</div>
+      <div class="exit-principle">
+        <span class="exit-badge">原則１</span>
+        <div><strong style="color:#fff;">取り崩し開始の3年前から、現金を積み上げる</strong><br><span style="opacity:.8; font-size:13px;">生活費3年分を現金で別管理。暴落が来ても売らずに済む安全弁。</span></div>
+      </div>
+      <div class="exit-principle">
+        <span class="exit-badge">原則２</span>
+        <div><strong style="color:#fff;">暴落中は売らない。年金・現金でしのぐ</strong><br><span style="opacity:.8; font-size:13px;">年金の繰り下げ（70歳受給）を組み合わせるとしのぎ期間が長くなる。</span></div>
+      </div>
+      <div class="exit-principle">
+        <span class="exit-badge">原則３</span>
+        <div><strong style="color:#fff;">相場が戻ったら、少しずつ取り崩す</strong><br><span style="opacity:.8; font-size:13px;">一気に売らず運用しながら取り崩す（4%ルール）。資産寿命が大幅に伸びる。</span></div>
+      </div>
+    </div>
+
+    <div class="chara-balloon right type-point">
+      <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
+      <div class="chara-balloon-body">
+        <span class="balloon-label">ひとこと</span><br>
+        私が70歳まで働き、年金を繰り下げる理由がここにあります。<strong>「ほっとく」を最後まで貫くための、現金の盾。</strong>NISAは長く持てば持つほど強くなる。だから出口の準備だけはしっかりやっておく。これが私の戦略です。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 次のアクション ── -->
+  <div style="margin:2rem 0; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+    <a href="./nisa-guide.html" style="display:block; background:#1a6b45; border-radius:12px; padding:20px; text-decoration:none; color:#fff;">
+      <div style="font-size:11px; color:#fcd34d; font-weight:700; margin-bottom:6px; letter-spacing:.08em;">STEP 1 →</div>
+      <div style="font-size:15px; font-weight:700; margin-bottom:4px;">SBI証券で<br>口座開設を始める</div>
+      <div style="font-size:12px; color:#a0aec0;">無料・スマホで20〜30分</div>
+    </a>
+    <a href="./index.html" style="display:block; background:#2d3748; border-radius:12px; padding:20px; text-decoration:none; color:#fff;">
+      <div style="font-size:11px; color:#a0aec0; font-weight:700; margin-bottom:6px; letter-spacing:.08em;">← 戻る</div>
+      <div style="font-size:15px; font-weight:700; margin-bottom:4px;">トップページへ</div>
+      <div style="font-size:12px; color:#718096;">積立シミュレーターはこちら</div>
+    </a>
+  </div>
+
+</div><!-- /.container -->
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div class="site-footer-brand">
+        <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon">
+        <div>
+          <div class="site-footer-title">ほっとけ投資</div>
+          <div class="site-footer-sub">新NISAを満額にして、あとは放置。</div>
+        </div>
+      </div>
+      <nav class="site-footer-nav">
+        <a href="./index.html">トップ</a>
+        <a href="./about.html">私について</a>
+        <a href="./crash-strategy.html">暴落・実績データ</a>
+        <a href="./nisa-guide.html">口座開設ガイド</a>
+        <a href="./olive-guide.html">OLIVE設定ガイド</a>
+      </nav>
+    </div>
+    <div class="site-footer-disclaimer">
+      ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
+    </div>
+    <div class="site-footer-copy">
+      © 2025 ほっとけ投資 ／ 運営：CrossOver
+      <span class="site-footer-update">最終更新：2025年4月</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+
+  // ── 1. 実績比較グラフ（3銘柄・年次推移試算） ──
+  (function() {
+    const ctx = document.getElementById('perfChart');
+    if (!ctx) return;
+    const years = ['2015','2016','2017','2018','2019','2020','2021','2022','2023','2024'];
+    // S&P500実績値
+    const sp500 = [1.38, 11.96, 21.83, -4.38, 31.49, 18.40, 28.71, -18.11, 26.29, 25.02];
+    // オルカン（年平均12.8%に±揺らぎ）
+    const olc   = [3.2, 8.1, 24.6, -8.9, 27.3, 16.5, 19.2, -18.4, 23.1, 18.7];
+    // FANG+（年平均28%に±揺らぎ）
+    const fang  = [12.1, 18.3, 48.2, -6.7, 52.3, 62.8, 70.4, -39.2, 95.1, 42.3];
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [
+          { label: 'オルカン', data: olc,   backgroundColor: 'rgba(59,130,246,0.7)',  borderColor: '#3b82f6', borderWidth:1, borderRadius:3 },
+          { label: 'S&P500',   data: sp500, backgroundColor: 'rgba(56,161,105,0.7)', borderColor: '#38a169', borderWidth:1, borderRadius:3 },
+          { label: 'FANG+',    data: fang,  backgroundColor: 'rgba(212,175,55,0.75)', borderColor: '#d4af37', borderWidth:1, borderRadius:3 }
+        ]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 11 }, padding: 12 } },
+          tooltip: { callbacks: { label: c => ' ' + c.dataset.label + '：' + (c.parsed.y > 0 ? '+' : '') + c.parsed.y.toFixed(1) + '%' } }
+        },
+        scales: {
+          x: { ticks: { font: { size: 10 } }, grid: { display: false } },
+          y: { ticks: { callback: v => v + '%', font: { size: 11 } }, grid: { color: 'rgba(0,0,0,0.06)' } }
+        }
+      }
+    });
+  })();
+
+  // ── 2. 暴落込み積立シミュレーション ──
+  (function() {
+    const MONTHLY = 2, RATE_NORM = 0.07, RATE_CRASH = -0.50, RATE_REC = 0.10;
+    const YEARS = 15, CRASH_YEAR = 5, STOP_YEARS = 3;
+
+    const cont = [], stop = [], prin = [];
+    let vC = 0, vS = 0, vP = 0;
+    for (let y = 1; y <= YEARS; y++) {
+      const isStop = (y > CRASH_YEAR && y <= CRASH_YEAR + STOP_YEARS);
+      const rate = y === CRASH_YEAR ? RATE_CRASH : y <= CRASH_YEAR + STOP_YEARS ? RATE_REC : RATE_NORM;
+      for (let m = 0; m < 12; m++) { vC += MONTHLY; if (!isStop) vS += MONTHLY; vP += MONTHLY; }
+      vC *= (1 + rate); vS *= (1 + rate);
+      cont.push(Math.round(vC)); stop.push(Math.round(vS)); prin.push(vP);
+    }
+    const labels = Array.from({length: YEARS}, (_, i) => i + 1 + '年目');
+
+    const ctx = document.getElementById('crashChart');
+    if (ctx) {
+      new Chart(ctx, {
+        type: 'line',
+        data: {
+          labels,
+          datasets: [
+            { label:'ほっとき続けた', data:cont, borderColor:'#38a169', backgroundColor:'rgba(56,161,105,0.08)', borderWidth:3, pointRadius:4, fill:true, tension:0.3 },
+            { label:'3年間停止',      data:stop, borderColor:'#e53e3e', backgroundColor:'rgba(229,62,62,0.04)', borderWidth:2, pointRadius:3, fill:false, tension:0.3 },
+            { label:'元本',           data:prin, borderColor:'#a0aec0', borderWidth:1.5, pointRadius:0, fill:false, borderDash:[5,4], tension:0 }
+          ]
+        },
+        options: {
+          responsive:true, maintainAspectRatio:false,
+          plugins: {
+            legend:{ display:false },
+            tooltip:{ callbacks:{ label: c => ' ' + c.dataset.label + '：' + c.parsed.y.toLocaleString() + '万円' } }
+          },
+          scales: {
+            y:{ ticks:{ callback: v => v.toLocaleString() + '万' }, grid:{ color:'rgba(0,0,0,0.06)' } },
+            x:{ grid:{ display:false } }
+          }
+        }
+      });
+    }
+
+    // 比較表
+    const tbody = document.getElementById('crashTable');
+    if (tbody) {
+      [1, 3, 5, 8, 10, 15].forEach(y => {
+        const i = y - 1;
+        const bg = y === 5 ? 'background:#fff5f5;' : (y % 2 === 0 ? 'background:#f7fafc;' : '');
+        const tr = document.createElement('tr');
+        tr.innerHTML =
+          "<td style='padding:9px 12px;" + bg + "font-weight:700;'>" + y + "年目" + (y===5?' 📉暴落':'') + "</td>" +
+          "<td style='padding:9px 12px;text-align:right;" + bg + "'>" + prin[i].toLocaleString() + "万円</td>" +
+          "<td style='padding:9px 12px;text-align:right;color:#276749;font-weight:700;" + bg + "'>" + cont[i].toLocaleString() + "万円</td>" +
+          "<td style='padding:9px 12px;text-align:right;color:#c53030;" + bg + "'>" + stop[i].toLocaleString() + "万円</td>" +
+          "<td style='padding:9px 12px;text-align:right;font-weight:700;color:#b8860b;" + bg + "'>+" + (cont[i]-stop[i]).toLocaleString() + "万円</td>";
+        tbody.appendChild(tr);
+      });
+    }
+  })();
+
+  // ── 3. S&P500年間リターングラフ ──
+  (function() {
+    const ctx = document.getElementById('sp500Chart');
+    if (!ctx) return;
+    const years   = ['2000','2001','2002','2003','2004','2005','2006','2007','2008',
+                     '2009','2010','2011','2012','2013','2014','2015','2016','2017',
+                     '2018','2019','2020','2021','2022','2023','2024'];
+    const returns = [-9.10,-11.89,-22.10,28.68,10.88,4.91,15.79,5.49,-37.00,
+                     26.46,15.06,2.11,16.00,32.39,13.69,1.38,11.96,21.83,
+                    -4.38,31.49,18.40,28.71,-18.11,26.29,25.02];
+    const colors  = returns.map(v => v >= 0 ? 'rgba(56,161,105,0.8)' : 'rgba(229,62,62,0.85)');
+
+    new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: years,
+        datasets: [{ label:'年間リターン(%)', data:returns, backgroundColor:colors, borderWidth:0, borderRadius:3 }]
+      },
+      options: {
+        responsive:true, maintainAspectRatio:false,
+        plugins: {
+          legend:{ display:false },
+          tooltip:{ callbacks:{ label: c => (c.parsed.y > 0 ? '+' : '') + c.parsed.y.toFixed(2) + '%' } }
+        },
+        scales: {
+          x:{ ticks:{ font:{ size:9 }, color:'#666' }, grid:{ display:false } },
+          y:{ ticks:{ callback: v => v + '%', font:{ size:11 }, color:'#666' }, grid:{ color:'rgba(0,0,0,0.06)' } }
+        }
+      }
+    });
+  })();
+
+});
+</script>
+</body>
+</html>

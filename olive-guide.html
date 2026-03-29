@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OLIVE開設＆クレカ積立設定ガイド｜SBI証券と連携してVポイントを貯める</title>
+<meta name="description" content="三井住友のOLIVEを開設してSBI証券と連携。クレカ積立でVポイントが自動で貯まる設定を、スマホの画面を見ながら順番に進めるだけで完了できます。">
+<link rel="canonical" href="https://crossover4029-web.github.io/nisa-site/olive-guide.html">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;600;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+
+/* ════════════════════════════════════════
+   ROOT VARIABLES
+════════════════════════════════════════ */
+:root {
+  --green:        #1a6b45;
+  --green-mid:    #2d8f5f;
+  --green-light:  #e8f5ee;
+  --green-pale:   #f4faf7;
+  --gold:         #b8860b;
+  --gold-light:   #fdf8e8;
+  --red:          #c0392b;
+  --red-light:    #fdf0ee;
+  --red-vivid:    #e74c3c;
+  --blue:         #1a4a8a;
+  --blue-light:   #eef3fb;
+  --olive:        #3a7d44;
+  --olive-light:  #e8f5e9;
+  --gray:         #4a4a4a;
+  --gray-light:   #f5f5f3;
+  --gray-mid:     #e0deda;
+  --border:       #d0d0cc;
+  --text:         #1e1e1e;
+  --text-muted:   #666;
+  --serif:        'Noto Serif JP', serif;
+  --sans:         'Noto Sans JP', sans-serif;
+  --radius:       8px;
+  --radius-lg:    16px;
+  --container-w:  900px;
+  --container-px: 60px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--sans);
+  font-size: 15px;
+  color: var(--text);
+  background: #f7f6f3;
+  line-height: 1.85;
+}
+
+/* ── Sticky banner ── */
+.sp-banner {
+  position: sticky; top: 0; z-index: 200;
+  width: 100%;
+  background: #fff8e1;
+  border-bottom: 2px solid var(--gold);
+  padding: 0.55rem 1.25rem;
+  display: flex; align-items: flex-start; gap: 0.55rem;
+  font-size: 13px; color: #5a3e00;
+}
+.sp-banner-icon { font-size: 17px; flex-shrink: 0; line-height: 1.5; }
+.sp-banner strong { font-weight: 700; }
+
+/* ── Hero ── */
+.hero {
+  width: 100%;
+  background: linear-gradient(135deg, #16a34a 0%, #1a6b45 100%);
+  padding: 3rem 1.5rem 5rem;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; top: -80px; right: -60px;
+  width: 300px; height: 300px; border-radius: 50%;
+  background: rgba(255,255,255,0.05);
+  pointer-events: none;
+}
+.hero-inner { max-width: var(--container-w); margin: 0 auto; color: #fff; }
+.hero-eyebrow {
+  font-size: 12px; letter-spacing: .12em; opacity: .8;
+  margin-bottom: .75rem; font-weight: 700;
+}
+.hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(1.5rem, 4vw, 2.2rem);
+  font-weight: 700; line-height: 1.35; margin-bottom: .75rem;
+}
+.hero-desc { font-size: 14px; opacity: .9; line-height: 1.8; margin-bottom: 1rem; }
+.hero-meta {
+  display: flex; gap: .4rem 1.5rem; flex-wrap: wrap;
+  font-size: 12px; opacity: .75;
+}
+.ad-note { font-size: 11px; opacity: .6; margin-top: .75rem; }
+
+/* ── Container ── */
+.container {
+  max-width: var(--container-w);
+  margin: -40px auto 60px;
+  padding: 2rem var(--container-px) 3rem;
+  background: #fff;
+  border-radius: var(--radius-lg);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.10);
+  position: relative;
+}
+
+/* ── Flow ── */
+.flow-wrap {
+  background: var(--gray-light); border: 1px solid var(--gray-mid);
+  border-radius: var(--radius); padding: 1rem 1.25rem; margin: 1.5rem 0;
+}
+.flow-label { font-size: 12px; font-weight: 700; color: var(--text-muted); margin-bottom: .75rem; }
+.flow-row { display: flex; align-items: center; gap: 4px; overflow-x: auto; padding-bottom: 2px; }
+.flow-node { display: flex; flex-direction: column; align-items: center; gap: 6px; flex-shrink: 0; }
+.flow-num {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--green); color: #fff;
+  font-size: 14px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+}
+.flow-num.key-num { background: var(--red-vivid); }
+.flow-text { font-size: 10px; text-align: center; color: var(--gray); line-height: 1.3; }
+.flow-arrow { width: 20px; height: 2px; background: var(--gray-mid); flex-shrink: 0; }
+
+/* ── Section（アコーディオン） ── */
+.section { border: 1px solid var(--border); border-radius: var(--radius); margin-bottom: .75rem; overflow: hidden; }
+.sec-header {
+  display: flex; align-items: center; gap: .75rem;
+  padding: .85rem 1rem; cursor: pointer;
+  background: var(--gray-light); user-select: none;
+}
+.sec-header:hover { background: var(--green-light); }
+.step-badge {
+  font-size: 11px; font-weight: 700; padding: 2px 10px;
+  border-radius: 20px; white-space: nowrap; flex-shrink: 0;
+}
+.step-badge.normal { background: var(--green); color: #fff; }
+.step-badge.key    { background: var(--red-vivid); color: #fff; }
+.step-badge.done   { background: #9ca3af; color: #fff; }
+.sec-title { font-size: 15px; font-weight: 700; flex: 1; }
+.sec-arrow { font-size: 18px; color: var(--text-muted); transition: transform .2s; margin-left: auto; }
+.section.open .sec-arrow { transform: rotate(180deg); }
+.sec-body { display: none; padding: 1rem 1.25rem 1.25rem; border-top: 1px solid var(--border); }
+.section.open .sec-body { display: block; }
+
+/* ── スクリーンショットブロック ── */
+.ss-block { background: var(--gray-light); border-radius: var(--radius); padding: 1rem; margin: .85rem 0; }
+.ss-inner { display: flex; gap: 1rem; align-items: flex-start; }
+.ss-img-wrap {
+  width: 160px; flex-shrink: 0;
+  background: #e2e8f0; border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  min-height: 120px; border: 2px dashed #94a3b8;
+  font-size: 11px; color: #64748b; text-align: center; padding: 8px;
+}
+.ss-img-wrap img { width: 100%; border-radius: 6px; display: block; }
+.ss-content { flex: 1; }
+.ss-scene { font-size: 11px; color: var(--text-muted); margin-bottom: .4rem; }
+.ss-note { font-size: 11px; color: var(--text-muted); margin-top: .6rem; border-top: 1px dashed var(--border); padding-top: .5rem; }
+.bullet { padding-left: 1.2rem; font-size: 13.5px; line-height: 1.9; }
+.bullet li { margin-bottom: .2rem; }
+
+/* ── ボックス ── */
+.box { display: flex; gap: .6rem; border-radius: var(--radius); padding: .75rem 1rem; margin: .85rem 0; font-size: 13.5px; line-height: 1.75; }
+.box.warn  { background: #fff8e1; border: 1px solid #f6d860; }
+.box.tip   { background: var(--green-light); border: 1px solid #86efac; }
+.box.point { background: var(--blue-light); border: 1px solid #93c5fd; }
+.bi { font-size: 17px; flex-shrink: 0; line-height: 1.6; }
+
+/* ── テーブル ── */
+table { width: 100%; border-collapse: collapse; font-size: 13.5px; margin: .85rem 0; }
+th { background: var(--green); color: #fff; padding: .5rem .75rem; text-align: left; font-weight: 700; }
+td { padding: .5rem .75rem; border-bottom: 1px solid var(--border); }
+tr:nth-child(even) td { background: var(--gray-light); }
+
+/* ── h2/h3 ── */
+h2 { font-family: var(--serif); font-size: 1.1rem; font-weight: 700; margin: 1.5rem 0 .5rem; color: var(--green); border-left: 4px solid var(--green); padding-left: .6rem; }
+h3.sub { font-size: 14px; font-weight: 700; margin: 1rem 0 .4rem; color: var(--text); }
+
+/* ── divider ── */
+.sp-divider {
+  display: flex; align-items: center; gap: 1rem;
+  margin: 1.5rem 0; color: var(--text-muted); font-size: 13px; font-weight: 700;
+}
+.sp-divider::before, .sp-divider::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+.sp-divider-text { white-space: nowrap; }
+
+/* ── intro-title ── */
+.intro-title { font-size: 13px; font-weight: 700; color: var(--text-muted); margin: 1.5rem 0 .75rem; letter-spacing: .06em; text-transform: uppercase; }
+
+/* ── device-grid ── */
+.device-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 1rem; }
+.device-card { border-radius: var(--radius); padding: 1rem; border: 1px solid var(--border); }
+.device-card.pc { background: var(--blue-light); }
+.device-card.sp { background: var(--green-light); }
+.dc-head { font-size: 14px; font-weight: 700; margin-bottom: .5rem; }
+.device-card p { font-size: 13px; line-height: 1.7; color: var(--gray); }
+.two-screen-tip { font-size: 13px; background: var(--gold-light); border: 1px solid #f6d860; border-radius: var(--radius); padding: .75rem 1rem; margin-bottom: 1.5rem; }
+
+/* ── CTA ── */
+.final-cta {
+  background: var(--green); color: #fff;
+  border-radius: var(--radius);
+  padding: 1.75rem 1.5rem;
+  margin-top: 1.25rem; text-align: center;
+}
+.final-cta h2 { font-family: var(--serif); font-size: 1.2rem; font-weight: 700; margin-bottom: .5rem; color: #fff; border: none; padding: 0; }
+.final-cta p { font-size: 13px; opacity: .9; margin-bottom: 1rem; }
+.btn-final {
+  display: block;
+  background: linear-gradient(180deg, #ffe066 0%, #f5c400 60%, #e0a800 100%);
+  color: #1a202c;
+  font-weight: 700; font-size: 16px;
+  padding: 1.1rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  max-width: 360px;
+  margin: 0 auto;
+  line-height: 1.4;
+  transition: all .2s;
+  border: none;
+  box-shadow: 0 6px 0 #b8860b, 0 8px 16px rgba(0,0,0,0.3);
+  letter-spacing: .04em;
+  position: relative; top: 0;
+}
+.btn-final:hover { box-shadow: 0 3px 0 #b8860b, 0 5px 10px rgba(0,0,0,0.3); top: 3px; opacity: 1; }
+.final-cta-sub { font-size: 12px; opacity: .75; margin-top: .75rem; }
+
+/* ── QR ── */
+.cta-qr-wrap { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; margin-top: 12px; justify-content: center; }
+.cta-qr-left { flex: 1; min-width: 200px; }
+.cta-qr-right { display: flex; flex-direction: column; align-items: center; gap: 8px; flex-shrink: 0; }
+.cta-qr-right .qr-target { background: #fff; padding: 8px; border-radius: 8px; border: 2px solid #1a6b45; }
+.qr-label { font-size: 12px; color: #5a3e00; text-align: center; line-height: 1.5; }
+.sp-direct-btn { display: none; }
+.sp-guide-note { display: none; }
+.sp-guide-sub  { display: none; }
+
+/* ── 次のステップ ── */
+.next-row { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 1rem; }
+.next-card {
+  flex: 1; min-width: 180px;
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: .85rem 1rem; font-size: 13px; line-height: 1.7;
+  background: var(--gray-light);
+}
+.next-card a { color: var(--green); font-weight: 700; text-decoration: none; }
+.next-card a:hover { text-decoration: underline; }
+
+/* ── Vポイント説明 ── */
+.vpoint-section {
+  background: linear-gradient(135deg, #fefce8 0%, #fef9c3 100%);
+  border: 2px solid #fcd34d;
+  border-radius: 14px;
+  padding: 24px 24px 20px;
+  margin: 1.5rem 0;
+}
+
+/* ── キャラ吹き出し ── */
+.chara-balloon { display:flex; align-items:flex-start; gap:12px; margin:1rem 0; }
+.chara-balloon-icon { width:56px; height:56px; border-radius:50%; object-fit:cover; flex-shrink:0; border:2px solid #e2e8f0; }
+.chara-balloon-body { flex:1; border-radius:0 12px 12px 12px; padding:12px 16px; font-size:14px; line-height:1.85; position:relative; }
+.chara-balloon-body::before { content:''; position:absolute; top:12px; left:-8px; border:8px solid transparent; border-right-color:inherit; border-left:0; }
+.chara-balloon.type-point .chara-balloon-body { background:#f0fdf4; border:1px solid #86efac; border-right-color:#86efac; }
+.chara-balloon.type-idea  .chara-balloon-body { background:#fefce8; border:1px solid #fcd34d; border-right-color:#fcd34d; }
+.balloon-label { display:inline-block; font-size:11px; font-weight:700; background:#38a169; color:#fff; border-radius:4px; padding:1px 8px; margin-bottom:4px; }
+
+
+@media (min-width: 600px) { .ss-img-wrap { width: 160px; } }
+@media (max-width: 720px) {
+  :root { --container-px: 20px; }
+  .container { margin: -40px 12px 40px; }
+  .hero { padding-bottom: 4.5rem; }
+  .device-grid { grid-template-columns: 1fr; }
+  .ss-inner { flex-direction: column; }
+  .ss-img-wrap { width: 100%; max-width: 220px; }
+  .next-row { flex-direction: column; }
+  .flow-text { font-size: 8px; }
+  .flow-node { min-width: 52px; }
+}
+@media (max-width: 420px) {
+  .container { margin: -30px 8px 30px; }
+  .hero h1 { font-size: 1.3rem; }
+  .sec-title { font-size: .9rem; }
+}
+@media (max-width: 600px) {
+  .cta-qr-right { display: none; }
+  .sp-guide-note {
+    display: block; font-size: 13px; color: #5a3e00;
+    background: #fff8e1; border: 1px solid #e8d87a;
+    border-radius: 8px; padding: 10px 14px; margin-top: 12px; line-height: 1.7;
+  }
+  .sp-direct-btn {
+    display: block; width: 100%; margin-top: 10px; padding: 16px;
+    background: #1a6b45; color: #fff; font-size: 17px; font-weight: 700;
+    text-align: center; border-radius: 8px; text-decoration: none; letter-spacing: .04em;
+  }
+  .sp-guide-sub { display: block; font-size: 12px; color: #666; text-align: center; margin-top: 6px; line-height: 1.6; }
+}
+@media print {
+  .sp-banner { position: static; }
+  .hero { padding-bottom: 2rem; background: #1a6b45 !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  .container { margin: 0 auto; box-shadow: none; padding: 1.5rem; border-radius: 0; }
+  .sec-body { display: block !important; }
+  .btn-final, .final-cta { display: none; }
+}
+
+</style>
+</head>
+<body>
+
+<!-- ── Sticky banner ── -->
+<div class="sp-banner">
+  <span class="sp-banner-icon">📱</span>
+  <div>
+    <strong>このページはPCでもスマホでも読めます。</strong>
+    実際のOLIVE開設・設定作業は<strong>スマホで進めることをおすすめします</strong>。
+  </div>
+</div>
+
+<!-- ── Hero ── -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow">三井住友OLIVE ✦ SBI証券連携 ✦ クレカ積立設定</div>
+    <h1>OLIVE開設＆<br>クレカ積立設定ガイド</h1>
+    <div class="hero-desc">
+      OLIVEを開設してSBI証券と連携するだけで、<br>
+      毎月の積立にVポイントが自動で貯まるしくみが完成します。
+    </div>
+    <div class="hero-meta">
+      <span>対象：SBI証券の口座開設が完了した方</span>
+      <span>作業の目安：20〜30分</span>
+    </div>
+    <div class="ad-note">※このページには広告リンクを含む場合があります。</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ── 前提バナー（最上部） ── -->
+  <div style="margin: 1.5rem 0 1.2rem; background:#1a4a35; border-radius:10px; padding:14px 20px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+    <div style="display:flex; align-items:center; gap:12px; flex:1; min-width:200px;">
+      <div style="font-size:20px; flex-shrink:0;">✅</div>
+      <div>
+        <div style="font-size:13px; font-weight:700; color:#fcd34d; margin-bottom:2px; letter-spacing:.04em;">前提条件：SBI証券の口座開設が完了していること</div>
+        <div style="font-size:12px; color:#e2e8f0; line-height:1.6;">まだの方はSTEP１から先に完了させてください。</div>
+      </div>
+    </div>
+    <a href="./nisa-guide.html" style="flex-shrink:0; display:inline-block; background:#38a169; color:#fff; font-size:13px; font-weight:700; padding:9px 20px; border-radius:7px; text-decoration:none; white-space:nowrap;">
+      ← STEP１ 口座開設ガイドへ
+    </a>
+  </div>
+
+  <!-- ── ① ゴール ── -->
+  <div style="margin: 2rem 0 1.5rem; background: linear-gradient(160deg, #f0fdf4 0%, #fefce8 100%); border-radius: 16px; padding: 32px 28px 28px; text-align:center; border: 2px solid #d4af37;">
+
+    <!-- GOAL ラベル -->
+    <div style="font-size:clamp(1.2rem, 3.5vw, 1.8rem); font-weight:900; letter-spacing:.22em; color:#b8860b; margin-bottom:16px; text-transform:uppercase;">─── GOAL ───</div>
+
+    <!-- メインコピー（最大） -->
+    <div style="font-size:clamp(1.05rem, 3vw, 1.25rem); font-weight:700; color:#1a202c; margin-bottom:6px;">
+      新NISAを満額にして、ほっとく。
+    </div>
+    <div style="font-size:clamp(1.7rem, 5.5vw, 2.6rem); font-weight:900; color:#1a6b45; line-height:1.25; margin-bottom:20px; letter-spacing:-.01em;">
+      それだけで、<br class="sp-only">10年後が変わる。
+    </div>
+
+    <!-- サブコピー -->
+    <div style="font-size:14px; color:#4a5568; line-height:1.9; margin-bottom:24px;">
+      運用益はすべて非課税。複利で増え続ける。<br>
+      難しくない。怖くない。ただ、始めるだけでいい。
+    </div>
+
+    <!-- ステップフロー -->
+    <div style="display:flex; align-items:stretch; justify-content:center; flex-wrap:wrap; gap:8px; font-size:13px; font-weight:700; margin-bottom:20px;">
+      <div style="background:#fff; border:2px solid #16a34a; border-radius:10px; padding:12px 18px; color:#16a34a; min-width:110px;">
+        <div style="font-size:11px; color:#718096; margin-bottom:4px; font-weight:700;">STEP 1</div>
+        SBI証券で<br>口座開設
+      </div>
+      <div style="display:flex; align-items:center; color:#b8860b; font-size:22px; font-weight:900; padding:0 2px;">▶</div>
+      <div style="background:#fff; border:2px solid #1d4ed8; border-radius:10px; padding:12px 18px; color:#1d4ed8; min-width:110px;">
+        <div style="font-size:11px; color:#718096; margin-bottom:4px; font-weight:700;">STEP 2</div>
+        オリーブ連携で<br>Vポイント設定
+      </div>
+      <div style="display:flex; align-items:center; color:#b8860b; font-size:22px; font-weight:900; padding:0 2px;">▶</div>
+      <div style="background:#1a6b45; border-radius:10px; padding:12px 18px; color:#fff; min-width:110px;">
+        <div style="font-size:11px; color:#fcd34d; margin-bottom:4px; font-weight:700;">GOAL</div>
+        毎月自動積立<br>あとはほっとく
+      </div>
+    </div>
+    <div style="font-size:12px; color:#b8860b; font-weight:700; margin-bottom:4px;">
+      🗂 このページではSTEP２「オリーブ連携＆Vポイント設定」を完了させます。
+    </div>
+
+  </div>
+
+
+  <!-- ── ② 全体フロー ── -->
+  <div class="flow-wrap">
+    <div class="flow-label">▸ 全体の流れ（STEP 0〜5）</div>
+    <div class="flow-row" style="justify-content:center;">
+      <div class="flow-node">
+        <div class="flow-num">0</div>
+        <div class="flow-text">OLIVE<br>申込開始</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">1</div>
+        <div class="flow-text">本人<br>確認</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">2</div>
+        <div class="flow-text">口座<br>開設完了</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num key-num">3</div>
+        <div class="flow-text">SBI証券<br>連携</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">4</div>
+        <div class="flow-text">クレカ<br>積立設定</div>
+      </div>
+      <div class="flow-arrow"></div>
+      <div class="flow-node">
+        <div class="flow-num">5</div>
+        <div class="flow-text">完了・<br>放置</div>
+      </div>
+    </div>
+    <div style="font-size:12px; color:#c0392b; font-weight:700; text-align:center; margin-top:10px; background:#fff5f5; border:1px solid #fca5a5; border-radius:8px; padding:6px 14px;">
+      ⚠️ STEP 3「SBI証券との連携」は設定を間違えるとポイントが貯まらないため注意してください。
+    </div>
+  </div>
+
+  <!-- ── ③ CTA ── -->
+  <!-- ════════════ STEP 0 ════════════ -->
+  <div class="section open" id="s0">
+    <div class="sec-header" onclick="toggle('s0')">
+      <span class="step-badge normal">STEP 0</span>
+      <span class="sec-title">OLIVEの申込を開始する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:16px; font-weight:700; color:#1a6b45; margin:.6rem 0 .8rem;">📋 OLIVEの開設方法は3つあります。ご自身に合った方法を選んでください。</p>
+
+      <!-- 3つの開設方法 -->
+      <div style="margin-bottom:16px;">
+        <div style="display:flex; flex-direction:column; gap:8px;">
+          <div style="display:flex; align-items:center; gap:12px; background:#e8f5ee; border-radius:8px; padding:12px 16px; border:1px solid #86efac;">
+            <div style="font-size:22px; flex-shrink:0;">📱</div>
+            <div>
+              <div style="font-weight:700; font-size:14px; color:#1a6b45; margin-bottom:2px;">スマホアプリ（最短・自宅完結）</div>
+              <div style="font-size:13px; color:#4a5568;">アプリから申込。マイナンバーカードをスマホで撮影して本人確認。最短翌営業日から利用可能。</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; background:#e8f5ee; border-radius:8px; padding:12px 16px; border:1px solid #86efac;">
+            <div style="font-size:22px; flex-shrink:0;">🖥</div>
+            <div>
+              <div style="font-weight:700; font-size:14px; color:#1a6b45; margin-bottom:2px;">Webブラウザ（PCからも可）</div>
+              <div style="font-size:13px; color:#4a5568;">PCのブラウザからも申込可能。手順はスマホと同様。本人確認書類の撮影はスマホと併用推奨。</div>
+            </div>
+          </div>
+          <div style="display:flex; align-items:center; gap:12px; background:#e8f5ee; border-radius:8px; padding:12px 16px; border:1px solid #86efac;">
+            <div style="font-size:22px; flex-shrink:0;">🏦</div>
+            <div>
+              <div style="font-weight:700; font-size:14px; color:#1a6b45; margin-bottom:2px;">三井住友銀行の窓口（安心・丁寧）</div>
+              <div style="font-size:13px; color:#4a5568;">スタッフに教えてもらいながら開設できる。「スマホ操作が不安」「直接聞きながら進めたい」方におすすめ。来店予約が必要な場合があります。</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 運営者吹き出し -->
+      <div class="chara-balloon right type-point" style="margin-bottom:16px;">
+        <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
+        <div class="chara-balloon-body">
+          <span class="balloon-label">運営者より</span><br>
+          私自身は<strong>三井住友銀行の窓口で開設しました。</strong>スタッフの方が丁寧に説明してくれたので、スマホ操作に不安な方には窓口をおすすめします。どの方法で開設しても、SBI証券との連携設定（STEP 3）は同じ手順で行えます。
+        </div>
+      </div>
+
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">スマホ・Webで申込む場合は、三井住友銀行のOLIVEページにアクセスして申込を開始します。</p>
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">📱<br>スクリーンショット<br>準備中</div>
+          <div class="ss-content">
+            <div class="ss-scene">OLIVE申込開始画面</div>
+            <ul class="bullet">
+              <li>三井住友銀行の公式サイトからOLIVEの申込ページにアクセスします。</li>
+              <li>「OLIVEをはじめる」または「申込む」ボタンをタップします。</li>
+              <li>すでに三井住友銀行口座をお持ちの方は「口座をお持ちの方」を選択してください。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。「OLIVE」「申込む」という言葉を探してください。</div>
+      </div>
+      <div class="box warn"><span class="bi">⚠️</span><div>三井住友銀行の公式URL（<strong>www.smbc.co.jp</strong>）を直接入力するか、このページのボタンからアクセスしてください。</div></div>
+      <h3 class="sub">事前に手元に用意するもの</h3>
+      <table>
+        <thead><tr><th>必要なもの</th><th>補足</th></tr></thead>
+        <tbody>
+          <tr><td><strong>マイナンバーカード</strong>（必須）</td><td>プラスチック製のカード。表・裏の両面が必要です。</td></tr>
+          <tr><td><strong>メールアドレス</strong>（必須）</td><td>GmailなどのフリーメールでOK。</td></tr>
+          <tr><td><strong>スマートフォン</strong>（必須）</td><td>カメラ機能が使えることを確認してください。</td></tr>
+          <tr><td><strong>SBI証券の口座番号</strong>（STEP 3で使用）</td><td>SBI証券のアプリまたは登録メールで確認できます。</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ── STEP0 下：OLIVEまだの方向け申込CTA ── -->
+  <div class="final-cta">
+    <h2>📱 OLIVEをまだ開設していない方はここから</h2>
+    <p>開設は無料。スマホがあれば20〜30分で申込完了します。<br>開設後、このページに戻ってSTEP 1から設定を進めてください。</p>
+
+    <!-- スマホ推奨の理由 -->
+    <div style="background:#fff; border-radius:10px; padding:12px 16px; margin-bottom:16px; font-size:13px; color:#1a202c; text-align:left; line-height:1.85; border-left:4px solid #d4af37;">
+      <div style="font-weight:700; margin-bottom:6px; color:#1a6b45;">📱 スマホを推奨する理由</div>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="padding-left:1.4em; position:relative; margin-bottom:4px; color:#1a6b45;"><span style="position:absolute; left:0;">✅</span><strong>マイナンバーカードをその場で撮影できる</strong> → 最短翌営業日から利用開始</li>
+        <li style="padding-left:1.4em; position:relative; color:#4a5568;"><span style="position:absolute; left:0;">⏳</span>郵送の場合は書類到着まで<strong>1〜2週間かかる</strong>場合があります</li>
+      </ul>
+    </div>
+
+    <!-- QRコード -->
+    <div style="display:flex; flex-direction:column; align-items:center; margin-bottom:16px;">
+      <div class="qr-target"></div>
+      <div class="qr-label" style="color:#fff; margin-top:8px;">📱 スマホで読み取ってそのまま開始</div>
+    </div>
+
+    <div style="font-size:12px; color:rgba(255,255,255,0.7); margin-bottom:8px;">── PCでアクセスする方はこちら ──</div>
+    <a class="btn-final" href="https://www.smbc.co.jp/olive/" target="_blank">
+      🖥 OLIVEの申込を始める（無料）
+    </a>
+    <div class="final-cta-sub">※リンク先は三井住友銀行公式サイトです。</div>
+
+    <div class="sp-guide-note">💡 このページをブックマークしてから開始すると、戻ってきたときに手順をすぐ確認できます。</div>
+    <a class="sp-direct-btn" href="https://www.smbc.co.jp/olive/" target="_blank">📱 OLIVEの申込を別タブで開く</a>
+    <div class="sp-guide-sub">↑ 別タブで開くので、このページは開いたままにしておけます。</div>
+
+    <!-- 偽サイト注意喚起 -->
+    <div style="margin-top:12px; background:#e8f5ee; border-radius:10px; padding:14px 16px; border:1px solid #86efac; font-size:13px; line-height:1.85; color:#1a202c; text-align:left;">
+      <div style="font-size:11px; font-weight:700; color:#fff; background:#c0392b; display:inline-block; border-radius:4px; padding:2px 10px; margin-bottom:8px; letter-spacing:.06em;">🔴 要注意！読み飛ばさないでください</div>
+      <div style="font-weight:700; color:#1a6b45; margin-bottom:6px;">⚠️ 偽サイト・フィッシング詐欺にご注意ください</div>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="padding-left:1.2em; position:relative; margin-bottom:4px;"><span style="position:absolute; left:0; color:#1a6b45;">・</span>三井住友銀行を装った偽メール・偽サイトの被害が報告されています。</li>
+        <li style="padding-left:1.2em; position:relative; margin-bottom:4px;"><span style="position:absolute; left:0; color:#1a6b45;">・</span>公式URLは <strong>https://www.smbc.co.jp/olive/</strong> です。アクセス前にURLを必ずご確認ください。</li>
+        <li style="padding-left:1.2em; position:relative;"><span style="position:absolute; left:0; color:#1a6b45;">・</span>不審なメールのリンクからではなく、<strong>このページのボタンまたはQRコードから</strong>アクセスすることをおすすめします。</li>
+      </ul>
+    </div>
+
+    <!-- 開設済みの方への案内 -->
+    <div style="margin-top:16px; padding-top:16px; border-top:1px solid rgba(255,255,255,0.2); font-size:14px; color:#fff; text-align:center;">
+      ✅ OLIVEの開設が完了している方は<br>
+      <strong style="color:#fcd34d;">このまま↓ STEP 1へ進んでください</strong>
+    </div>
+  </div>
+
+  <!-- ── ④ このページの使い方 ── -->
+  <div class="intro-title">このページの使い方</div>
+  <div class="device-grid">
+    <div class="device-card pc">
+      <div class="dc-head">💻 PC・タブレット</div>
+      <div style="font-size:12px; font-weight:700; color:#4a90d9; margin:-8px 0 10px; letter-spacing:.04em;">まず流れを確認する用</div>
+      <p>このガイドを読む用に使います。全体の流れを確認してから作業を始めましょう。</p>
+    </div>
+    <div class="device-card sp">
+      <div class="dc-head">📱 スマホ（推奨）</div>
+      <div style="font-size:12px; font-weight:700; color:#38a169; margin:-8px 0 10px; letter-spacing:.04em;">実際の設定作業はこちら</div>
+      <p>実際のOLIVE開設・連携作業はスマホで行います。マイナンバーカードをその場で撮影できます。</p>
+    </div>
+  </div>
+  <div class="two-screen-tip">
+    💡 PCでこのページを見ながら、スマホで操作する「2画面スタイル」もおすすめです。
+  </div>
+
+  <!-- ── スマホ作業開始 区切り ── -->
+  <div class="sp-divider">
+    <span class="sp-divider-text">📱 ここからの操作はスマホで進めましょう</span>
+  </div>
+
+  <!-- ════════════ STEP 1 ════════════ -->
+  <div class="section" id="s1">
+    <div class="sec-header" onclick="toggle('s1')">
+      <span class="step-badge normal">STEP 1</span>
+      <span class="sec-title">本人確認をする</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">マイナンバーカードをスマホのカメラで撮影して本人確認を完了させます。</p>
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">📱<br>スクリーンショット<br>準備中</div>
+          <div class="ss-content">
+            <div class="ss-scene">本人確認・マイナンバーカード撮影画面</div>
+            <ul class="bullet">
+              <li>マイナンバーカードの<strong>表面・裏面</strong>をそれぞれ撮影します。</li>
+              <li>明るい場所で撮影し、カード全体が画面内に収まるようにしてください。</li>
+              <li>顔写真の撮影も求められる場合があります。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">「通知カード（紙のみ）」は使用不可です。プラスチック製のマイナンバーカードをご用意ください。</div>
+      </div>
+      <div class="box tip"><span class="bi">💡</span><div>撮影がうまくいかない場合は、カードをテーブルに置いて真上から撮影するとうまくいきます。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════ STEP 2 ════════════ -->
+  <div class="section" id="s2">
+    <div class="sec-header" onclick="toggle('s2')">
+      <span class="step-badge normal">STEP 2</span>
+      <span class="sec-title">OLIVE口座開設完了を確認する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">申込完了後、審査が行われます。通常は数日以内にメールで通知が届きます。</p>
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">📱<br>スクリーンショット<br>準備中</div>
+          <div class="ss-content">
+            <div class="ss-scene">口座開設完了通知画面</div>
+            <ul class="bullet">
+              <li>登録したメールアドレスに「口座開設完了」のメールが届きます。</li>
+              <li>三井住友銀行アプリをダウンロードして、ログインできることを確認してください。</li>
+              <li>OLIVEフレキシブルペイ（カード）の設定も忘れずに行いましょう。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="box warn"><span class="bi">⚠️</span><div>口座開設完了のメールが届いたら、次のSTEP 3（SBI証券との連携）をすぐに進めましょう。連携設定を忘れるとVポイントが貯まりません。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════ STEP 3（重要） ════════════ -->
+  <div class="section" id="s3">
+    <div class="sec-header" onclick="toggle('s3')">
+      <span class="step-badge key">STEP 3</span>
+      <span class="sec-title">SBI証券と連携する（重要）</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">SBI証券とOLIVEを連携することで、クレカ積立でVポイントが貯まるようになります。<strong>最も重要な設定です。</strong></p>
+      <div class="box warn"><span class="bi">⚠️</span><div>この設定を行わないと、クレカ積立をしてもVポイントが貯まりません。必ず実施してください。</div></div>
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">📱<br>スクリーンショット<br>準備中</div>
+          <div class="ss-content">
+            <div class="ss-scene">SBI証券連携設定画面</div>
+            <ul class="bullet">
+              <li>SBI証券のアプリまたはWebサイトにログインします。</li>
+              <li>「口座管理」→「お客様情報の確認・変更」→「証券口座とサービスの連携」を選択します。</li>
+              <li>「三井住友カード（OLIVEフレキシブルペイ）」を選んで連携を完了させます。</li>
+            </ul>
+          </div>
+        </div>
+        <div class="ss-note">画面のデザインは変更される場合があります。「連携」「カード登録」という言葉を探してください。</div>
+      </div>
+      <div class="box tip"><span class="bi">💡</span><div>連携が完了すると、SBI証券の画面に「三井住友カード」が登録済みと表示されます。必ず確認してください。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════ STEP 4 ════════════ -->
+  <div class="section" id="s4">
+    <div class="sec-header" onclick="toggle('s4')">
+      <span class="step-badge normal">STEP 4</span>
+      <span class="sec-title">クレカ積立を設定する</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">SBI証券でクレカ積立（三井住友カード）を設定します。毎月の積立額に対してVポイントが還元されます。</p>
+      <div class="ss-block">
+        <div class="ss-inner">
+          <div class="ss-img-wrap">📱<br>スクリーンショット<br>準備中</div>
+          <div class="ss-content">
+            <div class="ss-scene">クレカ積立設定画面</div>
+            <ul class="bullet">
+              <li>SBI証券のアプリにログインし、「NISA」→「積立設定」を選択します。</li>
+              <li>積立する投資信託（例：eMAXIS Slim 全世界株式）を選択します。</li>
+              <li>支払い方法で「三井住友カード（クレカ積立）」を選択します。</li>
+              <li>毎月の積立金額を設定して完了です。</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <h3 class="sub">Vポイント還元率の目安</h3>
+      <table>
+        <thead><tr><th>カードの種類</th><th>Vポイント還元率</th></tr></thead>
+        <tbody>
+          <tr><td>OLIVEフレキシブルペイ（一般）</td><td>0.5%</td></tr>
+          <tr><td>OLIVEフレキシブルペイ ゴールド</td><td>1.0%</td></tr>
+          <tr><td>OLIVEフレキシブルペイ プラチナプリファード</td><td>3.0%（上限あり）</td></tr>
+        </tbody>
+      </table>
+      <div class="box point"><span class="bi">📌</span><div>毎月5万円積立の場合、一般カードで月250ポイント・年間3,000ポイントが貯まります。貯まったVポイントはそのまま投資に回せます。</div></div>
+    </div>
+  </div>
+
+  <!-- ════════════ STEP 5 ════════════ -->
+  <div class="section" id="s5">
+    <div class="sec-header" onclick="toggle('s5')">
+      <span class="step-badge done">STEP 5</span>
+      <span class="sec-title">完了。あとはほっとく。</span>
+      <span class="sec-arrow">▾</span>
+    </div>
+    <div class="sec-body">
+      <p style="font-size:13.5px;margin:.6rem 0 .8rem;">設定はこれで完了です。毎月自動で積立が行われ、Vポイントが貯まり続けます。</p>
+      <div class="box tip"><span class="bi">✅</span><div><strong>やることはもうありません。</strong>毎月自動で積立→Vポイント獲得→ポイントも投資へ。このサイクルが自動で回り続けます。価格の上下に一喜一憂せず、長期保有が資産形成の王道です。</div></div>
+    </div>
+  </div>
+
+  <!-- ── Vポイントの使い方 ── -->
+  <div class="vpoint-section">
+    <div style="font-size:16px; font-weight:700; color:#b8860b; text-align:center; margin-bottom:16px; padding-bottom:10px; border-bottom:2px solid #fcd34d;">
+      ⭐ 貯まったVポイントの使い方
+    </div>
+    <div style="display:flex; align-items:flex-start; gap:16px; margin-bottom:16px;">
+      <img src="img/characters/vpoint-reward-character.png" alt="Vポイントくん" style="width:64px; height:64px; object-fit:cover; border-radius:50%; border:2px solid #b8860b; flex-shrink:0;">
+      <div style="font-size:14px; line-height:1.85; color:#1a202c;">
+        <span style="display:inline-block; font-size:11px; font-weight:700; background:#b8860b; color:#fff; border-radius:4px; padding:1px 8px; margin-bottom:6px;">Vポイントくん</span><br>
+        「貯まったVポイントはSBI証券でそのまま投資に使えるよ！コンビニや街のお店でも使えるし、キャッシュバックも可能。ポイントを投資に回せば複利で増えるから、使い方次第で資産形成がさらに加速するよ！」
+      </div>
+    </div>
+    <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; text-align:center; font-size:13px;">
+      <div style="background:#fff; border-radius:10px; padding:12px 8px; border:1px solid #fcd34d;">
+        <div style="font-size:20px; margin-bottom:6px;">📈</div>
+        <div style="font-weight:700; color:#b8860b; margin-bottom:4px;">SBI証券で投資</div>
+        <div style="color:#4a5568; font-size:12px;">1ポイント＝1円として投資信託の購入に使える</div>
+      </div>
+      <div style="background:#fff; border-radius:10px; padding:12px 8px; border:1px solid #fcd34d;">
+        <div style="font-size:20px; margin-bottom:6px;">🛒</div>
+        <div style="font-weight:700; color:#b8860b; margin-bottom:4px;">街のお店で使う</div>
+        <div style="color:#4a5568; font-size:12px;">コンビニ・スーパー等、Vポイント加盟店で使える</div>
+      </div>
+      <div style="background:#fff; border-radius:10px; padding:12px 8px; border:1px solid #fcd34d;">
+        <div style="font-size:20px; margin-bottom:6px;">💴</div>
+        <div style="font-weight:700; color:#b8860b; margin-bottom:4px;">キャッシュバック</div>
+        <div style="color:#4a5568; font-size:12px;">カードの支払いに充当してお金として使える</div>
+      </div>
+    </div>
+    <div style="font-size:11px; color:#999; text-align:center; margin-top:12px;">※当サイトに登場するキャラクターは当サイト独自のイメージキャラクターです。各サービスの公式キャラクターとは一切関係ありません。</div>
+  </div>
+
+  <!-- ── 次のステップ ── -->
+  <div style="margin-top:1.5rem;">
+    <h2>✅ 設定完了後の確認事項</h2>
+    <div class="next-row">
+      <div class="next-card">
+        <strong>積立設定の確認</strong><br>
+        SBI証券アプリで「積立設定一覧」を確認し、クレカ積立が正しく設定されているか確認しましょう。
+      </div>
+      <div class="next-card">
+        <strong>Vポイントの確認</strong><br>
+        翌月の積立後、三井住友銀行アプリまたはVpassアプリでVポイントが付与されているか確認しましょう。
+      </div>
+    </div>
+  </div>
+
+  <!-- ── 締め ── -->
+  <div class="final-cta">
+    <!-- メイン画像 -->
+    <img
+      src="img/characters/nisa-long-term-investment-leave-it-passive-strategy.png"
+      alt="設定おつかれさまでした。あとはほっとく投資。ほっとくだけです。"
+      style="width:100%; max-width:520px; height:auto; border-radius:16px; margin-bottom:20px; display:block; margin-left:auto; margin-right:auto;"
+    >
+    <p style="font-size:14px; opacity:.9; line-height:1.9;">
+      積立・ポイント還元・複利運用が<br>すべて自動で回り続けます。<br>
+      これが「ほっとけ投資」の完成形です。
+    </p>
+
+    <div style="margin-top:20px; padding:16px 20px; background:rgba(255,255,255,0.12); border-radius:10px; font-size:13px; color:#fff; line-height:1.9; text-align:left;">
+      <div style="font-weight:700; color:#fcd34d; margin-bottom:8px;">📌 あとは何もしなくていいこと</div>
+      <ul style="list-style:none; padding:0; margin:0;">
+        <li style="padding-left:1.4em; position:relative; margin-bottom:4px;"><span style="position:absolute;left:0;">✅</span>毎月、自動で積立が実行される</li>
+        <li style="padding-left:1.4em; position:relative; margin-bottom:4px;"><span style="position:absolute;left:0;">✅</span>Vポイントが自動で付与される</li>
+        <li style="padding-left:1.4em; position:relative; margin-bottom:4px;"><span style="position:absolute;left:0;">✅</span>運用益は非課税のまま複利で増え続ける</li>
+        <li style="padding-left:1.4em; position:relative;"><span style="position:absolute;left:0;">✅</span>価格の上下に一喜一憂しない。ただ待つだけ</li>
+      </ul>
+    </div>
+
+    <div style="margin-top:20px; display:flex; flex-wrap:wrap; gap:10px; justify-content:center;">
+      <a href="./index.html" style="display:inline-block; background:#fff; color:#1a6b45; font-weight:700; font-size:14px; padding:11px 24px; border-radius:8px; text-decoration:none;">
+        🏠 トップページへ戻る
+      </a>
+      <a href="./about.html" style="display:inline-block; background:rgba(255,255,255,0.15); color:#fff; font-weight:700; font-size:14px; padding:11px 24px; border-radius:8px; text-decoration:none; border:1px solid rgba(255,255,255,0.3);">
+        📖 運営者の投資スタンスを読む
+      </a>
+    </div>
+  </div>
+
+</div><!-- /.container -->
+
+<!-- qrcode.js -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script>
+window.addEventListener('DOMContentLoaded', function() {
+  var targets = document.querySelectorAll('.qr-target');
+  targets.forEach(function(el) {
+    new QRCode(el, {
+      text: 'https://www.smbc.co.jp/olive/',
+      width: 120, height: 120,
+      colorDark: '#1a6b45', colorLight: '#ffffff',
+      correctLevel: QRCode.CorrectLevel.M
+    });
+  });
+});
+
+function toggle(id) {
+  var el = document.getElementById(id);
+  el.classList.toggle('open');
+}
+</script>
+
+<!-- フッター -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-top">
+      <div class="site-footer-brand">
+        <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon">
+        <div>
+          <div class="site-footer-title">ほっとけ投資</div>
+          <div class="site-footer-sub">新NISAを満額にして、あとは放置。</div>
+        </div>
+      </div>
+      <nav class="site-footer-nav">
+        <a href="./index.html">トップ</a>
+        <a href="./about.html">私について</a>
+        <a href="./crash-strategy.html">暴落・実績データ</a>
+        <a href="./nisa-guide.html">口座開設ガイド</a>
+        <a href="./olive-guide.html">OLIVE設定ガイド</a>
+      </nav>
+    </div>
+    <div class="site-footer-disclaimer">
+      ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
+    </div>
+    <div class="site-footer-copy">
+      © 2025 ほっとけ投資 ／ 運営：CrossOver
+      <span class="site-footer-update">最終更新：2025年4月</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

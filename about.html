@@ -314,6 +314,105 @@
     .career-event-red  { background: #e53e3e; color: #fff; }
     .career-event-blue { background: #3b82f6; color: #fff; }
 
+    /* ── 新NISAは"全世代必須"ブロック ── */
+    .nisa-allgen-block {
+      background: #f0fff4;
+      border: 2px solid #38a169;
+      border-radius: 14px;
+      padding: 28px 28px 24px;
+      margin: 2rem 0;
+    }
+    .nisa-allgen-title {
+      font-size: 19px;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 1rem;
+      padding-bottom: 10px;
+      border-bottom: 2px solid #38a169;
+    }
+    .nisa-allgen-lead {
+      font-size: 16px;
+      line-height: 1.9;
+      color: #2d3748;
+      margin-bottom: 1.4rem;
+    }
+    .nisa-allgen-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .nisa-allgen-card {
+      background: #fff;
+      border: 1px solid #c6f6d5;
+      border-radius: 10px;
+      padding: 16px 20px;
+      font-size: 15px;
+      line-height: 1.85;
+      color: #2d3748;
+    }
+    .nisa-allgen-card.active {
+      border: 2px solid #d4af37;
+      background: #fffbeb;
+    }
+    .nisa-allgen-card-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+    }
+    .nisa-allgen-age {
+      font-size: 16px;
+      font-weight: 700;
+      color: #1a202c;
+    }
+    .nisa-allgen-tag {
+      font-size: 12px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+    }
+    .nisa-allgen-tag.green  { background: #c6f6d5; color: #276749; }
+    .nisa-allgen-tag.yellow { background: #fef9c3; color: #854d0e; }
+    .nisa-allgen-tag.gold   { background: #fde68a; color: #92400e; }
+    .nisa-allgen-connector {
+      text-align: center;
+      color: #38a169;
+      font-size: 20px;
+      font-weight: 700;
+      padding: 6px 0;
+    }
+    .nisa-allgen-merit {
+      background: #1a4a35;
+      color: #fff;
+      border-radius: 10px;
+      padding: 18px 22px;
+      margin-top: 1.4rem;
+    }
+    .nisa-allgen-merit-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: #fcd34d;
+      margin-bottom: 10px;
+    }
+    .nisa-allgen-merit-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6px 16px;
+    }
+    .nisa-allgen-merit-list li {
+      font-size: 14px;
+      line-height: 1.7;
+      color: #e2e8f0;
+    }
+    @media (max-width: 600px) {
+      .nisa-allgen-block { padding: 20px 16px; }
+      .nisa-allgen-merit-list { grid-template-columns: 1fr; }
+    }
+
     /* 転換点矢印 */
     .career-turn {
       font-size: 13px;
@@ -587,10 +686,81 @@
       年金を増やしながら、70歳までは給与で生活し、投資も全力で続ける。</p>
       <p>では、何に投資するのか。</p>
 
+      <p>私の場合、答えはすぐに出ました。<strong>新NISAです。</strong><br>
+      理由は後述しますが、FXで数百万円を失った経験があったからこそ、<br>
+      「利益に税金がかからない、長期でほったらかせる仕組み」に迷わず飛びつきました。</p>
+
+      <p>ただ——これは私だけの話ではありません。<br>
+      新NISAは<strong>20代でも、60代でも、今すぐ始めた人が得をする制度</strong>です。<br>
+      「もう遅い」「若い人のもの」という思い込みを、数字で確認してみてください。</p>
+
+      <!-- ★ TODO① 新NISAは"全世代必須"ブロック ここから -->
+      <div class="nisa-allgen-block">
+        <div class="nisa-allgen-title">💡 新NISAは"全世代必須"である理由</div>
+
+        <p class="nisa-allgen-lead">
+          「NISAって若い人のものでしょ？」——よく聞く言葉ですが、<strong>まったくの誤解</strong>です。<br>
+          20代でも、60代でも、今すぐ始めた人が得をする仕組みになっています。
+        </p>
+
+        <div class="nisa-allgen-cards">
+
+          <div class="nisa-allgen-card">
+            <div class="nisa-allgen-card-head">
+              <span class="nisa-allgen-age">20〜30代</span>
+              <span class="nisa-allgen-tag green">時間という最強の武器</span>
+            </div>
+            <p>複利の力は"時間"で爆発的に伸びます。月3万円を30年続けるだけで、インデックス投資の平均リターン（年7%想定）なら元本1,080万円が<strong>約3,400万円</strong>に。税金もかかりません。</p>
+          </div>
+
+          <div class="nisa-allgen-connector">▼</div>
+
+          <div class="nisa-allgen-card">
+            <div class="nisa-allgen-card-head">
+              <span class="nisa-allgen-age">40〜50代</span>
+              <span class="nisa-allgen-tag yellow">積立×成長投資枠の両刀</span>
+            </div>
+            <p>住宅ローン・教育費が重い世代ですが、それでも<strong>毎月1〜3万円の積立</strong>を続けることに意味があります。NISAには非課税の上限（1,800万円）があるため、早く埋めるほど非課税の恩恵が長く続きます。</p>
+          </div>
+
+          <div class="nisa-allgen-connector">▼</div>
+
+          <div class="nisa-allgen-card active">
+            <div class="nisa-allgen-card-head">
+              <span class="nisa-allgen-age">60代〜（私）</span>
+              <span class="nisa-allgen-tag gold">運用期間10年でも十分な理由</span>
+            </div>
+            <p>「今から始めても遅い」は本当に間違いです。<strong>60歳から10年で満額1,800万円を非課税運用</strong>できれば、70歳時点での資産は試算で<strong>約3,000万円以上</strong>になり得ます。年金を繰り下げながらNISAで増やす——これが私の戦略です。</p>
+          </div>
+
+        </div>
+
+        <!-- 共通メリット帯 -->
+        <div class="nisa-allgen-merit">
+          <div class="nisa-allgen-merit-title">📌 年齢に関係なく共通のメリット</div>
+          <ul class="nisa-allgen-merit-list">
+            <li>✅ <strong>利益・配当に税金ゼロ</strong>（通常は約20%課税）</li>
+            <li>✅ <strong>非課税枠1,800万円</strong>は一生使える生涯枠</li>
+            <li>✅ <strong>いつでも売却可能</strong>（売った分の枠は翌年復活）</li>
+            <li>✅ <strong>月100円から</strong>始められる、少額でもOK</li>
+          </ul>
+        </div>
+
+        <!-- キャラ吹き出し -->
+        <div class="chara-balloon right type-point" style="margin-top: 1.5rem;">
+          <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
+          <div class="chara-balloon-body">
+            <span class="balloon-label">ひとこと</span><br>
+            「遅い」のではなく「今がいちばん早い」。NISAを始めていない1日1日が、非課税運用できた"はずの日"です。<strong>今日始めた人が、10年後に笑います。</strong>
+          </div>
+        </div>
+
+      </div>
+      <!-- ★ TODO① ここまで -->
+
       <hr class="about-divider">
 
-      <p>ここで、過去の話をさせてください。</p>
-      <p>私は以前、<strong>FXをやっていました。そして、数百万円の損失を出してやめました。</strong></p>
+      <p>先ほど「FXの失敗」と書きました。少し、その話をさせてください。</p>
 
       <div class="about-failure">
         あれは投資ではありません。完全に「投機」でした。<br>
@@ -665,7 +835,9 @@
         <nav class="site-footer-nav">
           <a href="./index.html">トップ</a>
           <a href="./about.html">私について</a>
+          <a href="./crash-strategy.html">暴落・実績データ</a>
           <a href="./nisa-guide.html">口座開設ガイド</a>
+          <a href="./olive-guide.html">OLIVE設定ガイド</a>
         </nav>
       </div>
       <div class="site-footer-disclaimer">
