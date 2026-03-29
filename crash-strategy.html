@@ -10,16 +10,19 @@
   <link rel="stylesheet" href="css/style.css">
   <style>
     .cs-hero {
-      background: linear-gradient(135deg, #1a202c 0%, #2d1a1a 100%);
+      background: linear-gradient(135deg, #1a4a35 0%, #1a6b45 100%);
       padding: 3rem 1.5rem 5rem;
     }
     .cs-hero-inner { max-width: 860px; margin: 0 auto; color: #fff; }
     .cs-hero-eyebrow { font-size: 12px; letter-spacing: .12em; opacity: .7; margin-bottom: .75rem; font-weight: 700; }
     .cs-hero h1 { font-size: clamp(1.5rem, 4vw, 2.2rem); font-weight: 900; line-height: 1.3; margin-bottom: .75rem; color: #fff; }
     .cs-hero h1 em { color: #fcd34d; font-style: normal; }
-    .cs-hero-desc { font-size: 14px; opacity: .85; line-height: 1.85; color: #fff; }
-    .cs-back { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:#38a169; text-decoration:none; margin-bottom:0.5rem; }
+    .cs-hero-desc { font-size: 14px; opacity: .85; line-height: 1.85; }
+    .cs-back { display:inline-flex; align-items:center; gap:6px; font-size:13px; color:#38a169; text-decoration:none; margin-bottom:.5rem; }
     .cs-back:hover { text-decoration:underline; }
+    .chara-balloon.left { flex-direction: row-reverse; }
+    .chara-balloon.left .chara-balloon-body { border-radius: 12px 0 12px 12px; }
+    .chara-balloon.left .chara-balloon-body::before { left: auto; right: -8px; border-left: 8px solid; border-right: 0; }
     .cs-section { margin: 0 0 2.5rem; }
     .cs-lead { font-size:15px; line-height:1.9; color:#4a5568; margin-bottom:1.2rem; }
     /* 実績比較カード */
@@ -56,6 +59,12 @@
       .perf-grid { grid-template-columns:1fr; }
       .exit-grid { grid-template-columns:1fr; }
     }
+    @media (max-width:480px) {
+      .cs-hero { padding: 2rem 1rem 4rem; }
+      .cs-hero h1 { font-size: 1.4rem; }
+      .exit-principles { padding: 16px 14px; }
+      .exit-principle { gap: 8px; }
+    }
   </style>
 </head>
 <body>
@@ -72,16 +81,146 @@
   </div>
 </div>
 
-<div class="container" style="margin-top:-40px;">
+<div class="container" style="margin-top:-40px; padding-top:24px;">
 
   <a href="./index.html" class="cs-back">← トップページへ戻る</a>
 
-  <!-- ══ 1. 実績比較 ══ -->
+  <!-- ══ 1. 何に投資するか？ ══ -->
   <div class="cs-section">
-    <h2 id="perf">1. 過去10年の実績比較</h2>
+
+    <h2 id="choose" style="font-size:clamp(1.2rem,3vw,1.6rem);">1. あなたは何に投資するのか？</h2>
+
+    <!-- インパクトブロック -->
+    <div style="background:#fffbeb; border:2px solid #d4af37; border-radius:14px; padding:24px 28px; margin:1rem 0 1.4rem;">
+      <div style="font-size:clamp(1.1rem,3vw,1.4rem); font-weight:900; line-height:1.6; margin-bottom:14px; color:#1a202c;">
+        新NISAを始めるにあたって、<br>
+        あなたはまず<em style="color:#b8860b; font-style:normal;">投資先を選ぶ</em>必要があります。
+      </div>
+      <div style="font-size:14px; color:#4a5568; line-height:1.9; border-top:1px solid #f6d860; padding-top:12px;">
+        同じ金額・同じ期間・同じ積立額でも、<strong style="color:#b8860b;">どこに投資するかだけで結果がまったく違います。</strong><br>
+        このページのデータは、あなたがその選択をするための<strong style="color:#b8860b;">判断材料</strong>です。
+      </div>
+    </div>
+
     <p class="cs-lead">
-      「何に投資するか」で10年後が大きく変わります。<br>
-      3つの代表的な投資先の過去10年の年平均リターンを確認してください。
+      多くの方が選ぶのが<strong>インデックス投資</strong>です。<br>
+      その中でも代表的なのが2つ。
+    </p>
+
+    <div style="background:#f0fdf4; border-left:4px solid #38a169; border-radius:0 8px 8px 0; padding:14px 18px; margin:.8rem 0 1.2rem; font-size:14px; line-height:2;">
+      <div>🌍 <strong>オルカン（オールカントリー）</strong>……全世界約2,800社にまとめて分散投資。「どの国が伸びるかわからない」という不安をまるごと解消。</div>
+      <div style="margin-top:6px;">🇺🇸 <strong>S&P500</strong>……アメリカの主要500社に投資。世界最大の経済大国・米国の成長にそのまま乗る王道の選択肢。</div>
+    </div>
+
+    <div class="chara-balloon right type-point">
+      <img src="img/characters/sbi-finance-character.png" alt="証券くん" class="chara-balloon-icon" style="border:2px solid #1d4ed8;">
+      <div class="chara-balloon-body" style="background:#eef3fb; border-color:#93c5fd;">
+        <span class="balloon-label" style="background:#1d4ed8;">証券くん</span><br>
+        迷ったら<strong>オルカンかS&P500、どちらか一択</strong>でOKです。どちらも長期積立との相性は抜群。「どれがいいかわからない」という方は、まずこの2つを比べてみてください。
+      </div>
+    </div>
+
+    <div class="chara-balloon left type-point">
+      <img src="img/characters/sbi-finance-character.png" alt="証券くん" class="chara-balloon-icon" style="border:2px solid #1d4ed8;">
+      <div class="chara-balloon-body" style="background:#eef3fb; border-color:#93c5fd;">
+        <span class="balloon-label" style="background:#1d4ed8;">証券くん</span><br>
+        もちろん、<strong>2つ同時に選ぶこともできます。</strong>新NISAの積立には年間360万円という上限がありますが、その範囲内であれば複数の投資先に分けることも自由です。「オルカン半分・S&P500半分」のような組み合わせも一般的です。
+      </div>
+    </div>
+
+    <div class="chara-balloon right type-point">
+      <img src="img/characters/sbi-finance-character.png" alt="証券くん" class="chara-balloon-icon" style="border:2px solid #1d4ed8;">
+      <div class="chara-balloon-body" style="background:#eef3fb; border-color:#93c5fd;">
+        <span class="balloon-label" style="background:#1d4ed8;">証券くん</span><br>
+        <strong>取引手数料についても知っておいてください。</strong>新NISAの積立投資信託は、SBI証券では<strong>買付手数料が無料（ノーロード）</strong>です。ただし、保有中は「信託報酬」という運用コストがかかります。オルカンやS&P500の信託報酬は<strong>年0.1%前後</strong>と非常に低く、長期投資に向いています。FANG+連動ファンドは少し高めの<strong>年0.7〜0.8%程度</strong>です。コストが低いほど、長期で見たときの差は大きくなります。
+      </div>
+    </div>
+
+    <!-- ポートフォリオ例 -->
+    <div style="margin-top:1.2rem; background:#f7fafc; border:1px solid #e2e8f0; border-radius:14px; padding:20px 22px;">
+      <div style="font-size:14px; font-weight:700; color:#1a202c; margin-bottom:4px;">📊 一般的なポートフォリオ例</div>
+      <div style="font-size:12px; color:#718096; margin-bottom:16px;">※あくまで参考例です。正解はありません。</div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px;">
+
+        <div style="background:#fff; border-radius:10px; border:1px solid #e2e8f0; padding:14px; text-align:center; min-width:0;">
+          <div style="font-size:12px; font-weight:700; color:#1a6b45; margin-bottom:8px;">シンプル派</div>
+          <div style="position:relative; height:120px;"><canvas id="pie1"></canvas></div>
+          <div style="margin-top:10px; font-size:11px; line-height:1.9; text-align:left; color:#4a5568;">
+            <span style="display:inline-block; width:9px; height:9px; background:#38a169; border-radius:2px; margin-right:4px;"></span>オルカン 100%
+          </div>
+          <div style="font-size:11px; color:#718096; margin-top:6px; line-height:1.6; text-align:left;">「これ一本で世界中に分散」とにかくシンプルに。</div>
+        </div>
+
+        <div style="background:#fff; border-radius:10px; border:2px solid #d4af37; padding:14px; text-align:center; min-width:0;">
+          <div style="font-size:12px; font-weight:700; color:#b8860b; margin-bottom:8px;">バランス派（人気）</div>
+          <div style="position:relative; height:120px;"><canvas id="pie2"></canvas></div>
+          <div style="margin-top:10px; font-size:11px; line-height:1.9; text-align:left; color:#4a5568;">
+            <span style="display:inline-block; width:9px; height:9px; background:#3b82f6; border-radius:2px; margin-right:4px;"></span>S&P500 50%<br>
+            <span style="display:inline-block; width:9px; height:9px; background:#38a169; border-radius:2px; margin-right:4px;"></span>オルカン 30%<br>
+            <span style="display:inline-block; width:9px; height:9px; background:#f59e0b; border-radius:2px; margin-right:4px;"></span>金ETF 20%
+          </div>
+          <div style="font-size:11px; color:#718096; margin-top:6px; line-height:1.6; text-align:left;">米国成長＋世界分散＋守りの金。</div>
+        </div>
+
+        <div style="background:#fff; border-radius:10px; border:1px solid #e2e8f0; padding:14px; text-align:center; min-width:0;">
+          <div style="font-size:12px; font-weight:700; color:#7c3aed; margin-bottom:8px;">アグレッシブ派</div>
+          <div style="position:relative; height:120px;"><canvas id="pie3"></canvas></div>
+          <div style="margin-top:10px; font-size:11px; line-height:1.9; text-align:left; color:#4a5568;">
+            <span style="display:inline-block; width:9px; height:9px; background:#3b82f6; border-radius:2px; margin-right:4px;"></span>S&P500 40%<br>
+            <span style="display:inline-block; width:9px; height:9px; background:#8b5cf6; border-radius:2px; margin-right:4px;"></span>FANG+ 40%<br>
+            <span style="display:inline-block; width:9px; height:9px; background:#38a169; border-radius:2px; margin-right:4px;"></span>オルカン 20%
+          </div>
+          <div style="font-size:11px; color:#718096; margin-top:6px; line-height:1.6; text-align:left;">テック成長を取りにいく積極型。変動大きめ。</div>
+        </div>
+
+      </div>
+      <div style="font-size:11px; color:#a0aec0; text-align:center; margin-top:12px;">金ETFはNISA成長投資枠での運用が一般的です。</div>
+
+      <!-- 運営者の実際のポートフォリオ -->
+      <div style="margin-top:20px; padding-top:20px; border-top:2px dashed #d4af37;">
+        <div style="text-align:center; font-size:11px; font-weight:700; letter-spacing:.1em; color:#b8860b; margin-bottom:14px;">── 運営者（61歳）の場合 ──</div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:20px; flex-wrap:wrap;">
+
+          <!-- 円グラフ -->
+          <div style="text-align:center; flex-shrink:0;">
+            <div style="position:relative; height:130px; width:130px; margin:0 auto;">
+              <canvas id="pie4"></canvas>
+            </div>
+            <div style="margin-top:8px; font-size:11px; color:#4a5568; text-align:left; display:inline-block;">
+              <span style="display:inline-block; width:9px; height:9px; background:#d4af37; border-radius:2px; margin-right:4px;"></span>FANG+ 100%
+            </div>
+          </div>
+
+          <!-- 運営者コメント -->
+          <div style="flex:1; min-width:200px; max-width:400px;">
+            <div style="display:flex; align-items:flex-start; gap:12px;">
+              <img src="img/chara-smile.png" alt="運営者" style="width:52px; height:52px; border-radius:50%; border:2px solid #d4af37; flex-shrink:0;">
+              <div style="background:#fffbeb; border:2px solid #d4af37; border-radius:0 12px 12px 12px; padding:14px 16px; font-size:13px; line-height:1.85; color:#2d3748; position:relative;">
+                <div style="position:absolute; top:14px; left:-9px; border:8px solid transparent; border-right-color:#d4af37; border-left:0;"></div>
+                <div style="position:absolute; top:15px; left:-7px; border:7px solid transparent; border-right-color:#fffbeb; border-left:0;"></div>
+                <span style="display:inline-block; font-size:11px; font-weight:700; background:#d4af37; color:#1a202c; border-radius:4px; padding:1px 8px; margin-bottom:6px;">超アグレッシブ派（私の選択）</span><br>
+                <strong>60歳の私は、FANG+ 一本です。</strong><br>
+                残り10年に区切るなら、「世界分散で守る」より「テックの成長に全力で乗る」方が合っていると判断しました。Meta・Apple・NVIDIA・Google——この10年でこれらが衰退することは想像できない。<br>
+                <span style="font-size:12px; color:#718096; margin-top:6px; display:block;">※これはあくまで私個人の判断です。変動は大きいため、万人向けではありません。</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- ══ 2. 実績比較 ══ -->
+  <div class="cs-section">
+    <h2 id="perf">2. 過去10年の実績比較</h2>
+
+    <p class="cs-lead">
+      <strong>「何に投資するか」で、10年後の資産は大きく変わります。</strong><br>
+      過去10年間の実績データから、3つの投資先を見ていきましょう。
     </p>
 
     <div class="perf-grid">
@@ -106,6 +245,14 @@
     </div>
 
     <div class="chara-balloon right type-idea">
+      <img src="img/chara-idea.png" alt="キャラクター" class="chara-balloon-icon">
+      <div class="chara-balloon-body">
+        <span class="balloon-label">アドバイス</span><br>
+        年平均リターンの数字だけ見ると「FANG+一択では？」と思うかもしれません。でも<strong>変動の大きさ（リスク）も桁違いです。</strong>下のグラフで実際の年ごとのブレ幅を確認してみてください。
+      </div>
+    </div>
+
+    <div class="chara-balloon right type-idea">
       <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
       <div class="chara-balloon-body">
         <span class="balloon-label">私の個人的な選択</span><br>
@@ -123,7 +270,7 @@
     </div>
 
     <!-- FANG+構成銘柄 -->
-    <div style="margin-top:1.5rem; background:#1a202c; border-radius:12px; padding:20px 22px;">
+    <div style="margin-top:1.5rem; background:linear-gradient(135deg, #1a4a35 0%, #1a6b45 100%); border-radius:12px; padding:20px 22px;">
       <div style="font-size:14px; font-weight:700; color:#fcd34d; margin-bottom:12px;">⚡ NYSE FANG+ 構成銘柄（10社）</div>
       <div class="fang-logos" style="justify-content:center;">
         <div class="fang-logo"><img src="img/meta_logo.svg" alt="Meta"><span>Meta</span></div>
@@ -141,9 +288,18 @@
     </div>
   </div>
 
-  <!-- ══ 2. 暴落込み積立シミュレーション ══ -->
+  <!-- ══ 3. 暴落込み積立シミュレーション ══ -->
   <div class="cs-section">
-    <h2 id="crash">2. 暴落が来ても「ほっとく」と何が起きるか</h2>
+    <h2 id="crash">3. 暴落が来ても「ほっとく」と何が起きるか</h2>
+
+    <div class="chara-balloon right type-point">
+      <img src="img/chara-point.png" alt="キャラクター" class="chara-balloon-icon">
+      <div class="chara-balloon-body">
+        <span class="balloon-label">ポイント</span><br>
+        「暴落したら積立をやめたほうがいいんじゃないか？」——これ、多くの方が感じる疑問です。でも<strong>データはその逆を示しています。</strong>実際に見てみましょう。
+      </div>
+    </div>
+
     <p class="cs-lead">
       月2万円をS&P500連動ファンドに積み立て続けた場合。<br>
       途中にリーマンショック級（-50%）の暴落が来ても、<strong>やめなかった人</strong>と<strong>3年間やめた人</strong>の差を見てください。
@@ -205,13 +361,31 @@
     </div>
   </div>
 
-  <!-- ══ 3. 出口戦略 ══ -->
+  <!-- ══ 4. 出口戦略 ══ -->
   <div class="cs-section">
-    <h2 id="exit">3. 出口で暴落が来たら？　3年分の備えが答えです</h2>
+    <h2 id="exit">4. 出口で暴落が来たら？　3年分の備えが答えです</h2>
     <p class="cs-lead">
       10年後、いざ取り崩そうとしたときに暴落していたら——<br>
       慌てて売ると、育てた資産を安値で手放すことになります。
     </p>
+
+    <div style="background:#fff5f5; border:1px solid #fed7d7; border-radius:12px; padding:20px 24px; margin:1rem 0 1.4rem; font-size:15px; line-height:1.95; color:#2d3748;">
+      <div style="font-size:13px; font-weight:700; color:#c53030; margin-bottom:10px; letter-spacing:.04em;">⚠️ 正直に言います</div>
+      <strong>「自分が取り崩す瞬間に暴落が来るかどうか」——これは誰にも予想できません。</strong><br>
+      もしそのタイミングで暴落が起きたとしたら、残念ですがそこは<strong>我慢するしかありません。</strong><br><br>
+      ただし、<strong style="color:#1a6b45;">対策は打てます。</strong><br>
+      過去のデータを見ると、どの暴落も<strong>2〜3年以内に回復</strong>してきた実績があります。<br>
+      つまり、「その2〜3年をしのぐ現金さえ確保しておけば、売らずに待てる」のです。<br>
+      準備した人と、していない人——出口での差はここで決まります。
+    </div>
+
+    <div class="chara-balloon right type-idea">
+      <img src="img/chara-idea.png" alt="キャラクター" class="chara-balloon-icon">
+      <div class="chara-balloon-body">
+        <span class="balloon-label">アドバイス</span><br>
+        出口で失敗する人の多くは「準備不足」です。<strong>ゴールが近づいたら、現金の備えを作ること。</strong>それだけで、暴落が来ても慌てずに済みます。
+      </div>
+    </div>
 
     <div class="exit-grid">
       <div class="exit-card bad">
@@ -250,17 +424,165 @@
       </div>
     </div>
 
+    <!-- 割合取り崩し戦略 -->
+    <div style="margin:1.5rem 0; background:#f0fdf4; border:2px solid #38a169; border-radius:14px; padding:22px 24px;">
+      <div style="font-size:15px; font-weight:700; color:#1a4a35; margin-bottom:12px; padding-bottom:10px; border-bottom:1px solid #c6f6d5;">
+        💡 現金の備えが難しい方へ——「割合取り崩し」という考え方
+      </div>
+      <p style="font-size:14px; line-height:1.95; color:#2d3748; margin-bottom:12px;">
+        「3年分の現金を別に積み上げる余裕がない」という方も多いと思います。<br>
+        そのような場合のもうひとつの戦略が、<strong>「毎月固定額ではなく、残高の一定割合を取り崩す」</strong>方法です。
+      </p>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px; margin-bottom:14px;">
+        <div style="background:#fff; border-radius:10px; padding:14px 16px; border:1px solid #c6f6d5;">
+          <div style="font-size:12px; font-weight:700; color:#e53e3e; margin-bottom:8px;">❌ 固定額取り崩し（リスクあり）</div>
+          <div style="font-size:13px; color:#4a5568; line-height:1.85;">
+            毎月「5万円」と決めて取り崩す。<br>
+            暴落中も同じ額を売るため、<strong style="color:#c53030;">安値で大量に売ることになる。</strong><br>
+            資産が想定より早く底をつく可能性がある。
+          </div>
+        </div>
+        <div style="background:#fff; border-radius:10px; padding:14px 16px; border:2px solid #38a169;">
+          <div style="font-size:12px; font-weight:700; color:#1a6b45; margin-bottom:8px;">✅ 割合取り崩し（おすすめ）</div>
+          <div style="font-size:13px; color:#4a5568; line-height:1.85;">
+            残高の「4%」など割合で取り崩す。<br>
+            暴落で残高が減れば、取り崩し額も自動で減る。<br>
+            <strong style="color:#1a6b45;">資産を長持ちさせやすい。</strong>
+          </div>
+        </div>
+      </div>
+
+      <div style="background:#1a4a35; border-radius:10px; padding:14px 18px; font-size:13px; color:#e2e8f0; line-height:1.9;">
+        <strong style="color:#fcd34d;">たとえば「年4%取り崩し」の場合——</strong><br>
+        残高1,000万円なら年40万円（月約3.3万円）。暴落で残高が700万円になれば年28万円に自動調整。<br>
+        運用利回りが4%以上あれば<strong style="color:#fcd34d;">理論上は資産が減らない</strong>とされており、これが「4%ルール」と呼ばれる考え方です。<br>
+        <span style="font-size:12px; opacity:.75; display:block; margin-top:6px;">※市場環境によって異なります。あくまで参考としてください。</span>
+      </div>
+    </div>
+
+    <!-- 4%ルール詳細 -->
+    <div style="margin:1.5rem 0;">
+      <div style="font-size:16px; font-weight:700; color:#1a202c; margin-bottom:4px; padding-left:12px; border-left:4px solid #d4af37;">4%ルールとは何か？</div>
+      <div style="font-size:12px; color:#718096; margin-bottom:14px; padding-left:16px;">アメリカの研究から生まれた、資産を長持ちさせる取り崩し戦略</div>
+
+      <!-- 起源 -->
+      <div style="background:#fffbeb; border:1px solid #f6d860; border-radius:10px; padding:16px 20px; margin-bottom:12px; font-size:14px; line-height:1.95; color:#2d3748;">
+        <strong style="color:#b8860b;">📖 どこから来た考え方か</strong><br>
+        1994年にアメリカのファイナンシャルプランナー、ウィリアム・ベンゲンが発表した研究が起源です。<br>
+        過去の市場データ（株式・債券）を分析した結果、<strong>「毎年残高の4%を取り崩せば、30年間資産が底をつかなかった」</strong>という結論が導き出されました。<br>
+        この考え方は「トリニティ・スタディ」とも呼ばれ、世界中のFIRE（早期退職）実践者に広まっています。
+      </div>
+
+      <!-- 証券くん：4%ルールとは？ -->
+      <figure style="margin:0 0 12px;">
+        <img src="img/characters/4percent-rule-explanation-character.png"
+             alt="4%ルールとは？資産を長く安心して取り崩すための安全な引き出しの目安"
+             style="width:100%; border-radius:12px; display:block;">
+      </figure>
+
+      <!-- 証券くん：なぜ資産が減らないのか？ -->
+      <figure style="margin:0 0 12px;">
+        <img src="img/characters/4percent-rule-assets-stability.png"
+             alt="なぜ資産が減らないのか？運用益＞取り崩し額のバランスが続くことが鍵"
+             style="width:100%; border-radius:12px; display:block;">
+      </figure>
+
+      <!-- 具体例 -->
+      <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:16px 20px; margin-bottom:12px; font-size:14px;">
+        <div style="font-weight:700; color:#1a202c; margin-bottom:12px;">📊 具体的な数字で見ると</div>
+        <div style="overflow-x:auto;">
+          <table style="width:100%; border-collapse:collapse; font-size:13px;">
+            <thead>
+              <tr style="background:#1a4a35; color:#fff;">
+                <th style="padding:9px 12px; text-align:left;">資産残高</th>
+                <th style="padding:9px 12px; text-align:right;">年間取り崩し（4%）</th>
+                <th style="padding:9px 12px; text-align:right;">月額換算</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td style="padding:9px 12px; border-bottom:1px solid #e2e8f0;">500万円</td><td style="padding:9px 12px; text-align:right; border-bottom:1px solid #e2e8f0;">20万円</td><td style="padding:9px 12px; text-align:right; border-bottom:1px solid #e2e8f0; color:#718096;">約1.7万円</td></tr>
+              <tr style="background:#f7fafc;"><td style="padding:9px 12px; border-bottom:1px solid #e2e8f0;">1,000万円</td><td style="padding:9px 12px; text-align:right; border-bottom:1px solid #e2e8f0;">40万円</td><td style="padding:9px 12px; text-align:right; border-bottom:1px solid #e2e8f0; color:#718096;">約3.3万円</td></tr>
+              <tr><td style="padding:9px 12px; border-bottom:1px solid #e2e8f0;">1,800万円</td><td style="padding:9px 12px; text-align:right; border-bottom:1px solid #e2e8f0; font-weight:700; color:#1a6b45;">72万円</td><td style="padding:9px 12px; text-align:right; border-bottom:1px solid #e2e8f0; font-weight:700; color:#1a6b45;">月6万円</td></tr>
+              <tr style="background:#f7fafc;"><td style="padding:9px 12px;">3,000万円</td><td style="padding:9px 12px; text-align:right; font-weight:700; color:#1a6b45;">120万円</td><td style="padding:9px 12px; text-align:right; font-weight:700; color:#1a6b45;">月10万円</td></tr>
+            </tbody>
+          </table>
+        </div>
+        <div style="font-size:12px; color:#718096; margin-top:8px;">※新NISAの満額（1,800万円）を積み上げれば、月6万円を半永久的に取り崩せる計算になります。</div>
+      </div>
+
+      <!-- 注意点 -->
+      <div style="background:#fff5f5; border:1px solid #fed7d7; border-radius:10px; padding:16px 20px; font-size:13px; line-height:1.9; color:#2d3748;">
+        <strong style="color:#c53030;">⚠️ 4%ルールの注意点</strong><br>
+        この研究はアメリカの市場データが前提です。日本在住の方は円安・インフレ・税制の違いも考慮が必要です。また「30年もつ」というのはあくまで過去データによる試算で、将来を保証するものではありません。<br>
+        <strong>あくまで「考え方のひとつ」として参考にしてください。</strong>
+      </div>
+
+      <!-- 4%ルール シミュレーター -->
+      <div style="background:#fff; border:1px solid #e2e8f0; border-radius:10px; padding:20px; margin-top:12px;">
+        <div style="font-weight:700; color:#1a202c; margin-bottom:4px;">🎛 シミュレーター：スライダーで動かしてみる</div>
+        <div style="font-size:12px; color:#718096; margin-bottom:16px;">初期資産・取り崩し率・運用利回りを変えると、30年後の残高が変わります。</div>
+
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; font-size:13px; color:#4a5568;">
+          <label style="min-width:110px;">初期資産</label>
+          <input type="range" id="cs-asset" min="300" max="3000" step="100" value="1000" style="flex:1;">
+          <span style="min-width:72px; text-align:right; font-weight:700; font-size:13px; color:#1a202c;"><span id="csv-asset">1,000</span>万円</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:10px; font-size:13px; color:#4a5568;">
+          <label style="min-width:110px;">取り崩し率</label>
+          <input type="range" id="cs-rate" min="1" max="8" step="0.5" value="4" style="flex:1;">
+          <span style="min-width:72px; text-align:right; font-weight:700; font-size:13px; color:#1a202c;"><span id="csv-rate">4.0</span>%</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px; font-size:13px; color:#4a5568;">
+          <label style="min-width:110px;">想定運用利回り</label>
+          <input type="range" id="cs-return" min="0" max="10" step="0.5" value="7" style="flex:1;">
+          <span style="min-width:72px; text-align:right; font-weight:700; font-size:13px; color:#1a202c;"><span id="csv-return">7.0</span>%</span>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:12px; margin-bottom:8px; font-size:12px; color:#718096;">
+          <span style="display:flex; align-items:center; gap:4px;"><span style="width:10px; height:10px; border-radius:2px; background:#38a169; display:inline-block;"></span>4%ルール（割合取り崩し）</span>
+          <span style="display:flex; align-items:center; gap:4px;"><span style="width:10px; height:10px; border-radius:2px; background:#e53e3e; display:inline-block;"></span>固定額取り崩し（同じ初年額）</span>
+          <span style="display:flex; align-items:center; gap:4px;"><span style="width:10px; height:10px; border-radius:2px; background:#a0aec0; display:inline-block;"></span>元本のみ</span>
+        </div>
+
+        <div style="position:relative; height:260px;">
+          <canvas id="cs-chart"></canvas>
+        </div>
+
+        <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(140px,1fr)); gap:8px; margin-top:12px;">
+          <div style="background:#f7fafc; border-radius:8px; padding:10px 12px;">
+            <div style="font-size:11px; color:#718096; margin-bottom:3px;">年間取り崩し額（初年）</div>
+            <div style="font-size:17px; font-weight:700; color:#1a202c;" id="cs-annual">—</div>
+            <div style="font-size:11px; color:#a0aec0; margin-top:2px;" id="cs-monthly">月 — 万円</div>
+          </div>
+          <div style="background:#f7fafc; border-radius:8px; padding:10px 12px;">
+            <div style="font-size:11px; color:#718096; margin-bottom:3px;">30年後の残高（4%ルール）</div>
+            <div style="font-size:17px; font-weight:700; color:#1a6b45;" id="cs-end4">—</div>
+            <div style="font-size:11px; color:#a0aec0; margin-top:2px;" id="cs-end4s"></div>
+          </div>
+          <div style="background:#f7fafc; border-radius:8px; padding:10px 12px;">
+            <div style="font-size:11px; color:#718096; margin-bottom:3px;">固定額　資産寿命</div>
+            <div style="font-size:17px; font-weight:700; color:#e53e3e;" id="cs-life">—</div>
+            <div style="font-size:11px; color:#a0aec0; margin-top:2px;">年で底をつく</div>
+          </div>
+        </div>
+      </div>
+
     <div class="chara-balloon right type-point">
       <img src="img/chara-smile.png" alt="運営者" class="chara-balloon-icon">
       <div class="chara-balloon-body">
         <span class="balloon-label">ひとこと</span><br>
-        私が70歳まで働き、年金を繰り下げる理由がここにあります。<strong>「ほっとく」を最後まで貫くための、現金の盾。</strong>NISAは長く持てば持つほど強くなる。だから出口の準備だけはしっかりやっておく。これが私の戦略です。
+        私が70歳まで働き、年金を繰り下げる理由がここにあります。<strong>「ほっとく」を最後まで貫くための、現金の盾。</strong>NISAは長く持てば持つほど強くなる。だから出口の準備だけはしっかりやっておく。これが私の戦略です。<br><br>
+        あとは……<br>
+        <span style="font-size:15px; font-weight:700; color:#1a202c;">自分の出口戦略時には、絶対に暴落は起きない。</span><br>
+        <span style="margin-left:1em; font-size:14px; color:#4a5568;">・・・・・と信じ切ることです。<span style="color:#b8860b;">（笑）</span></span><br>
+        <span style="margin-left:1em; font-size:14px; color:#4a5568;">・・・・・と願うことです。<span style="color:#b8860b;">（笑）</span></span>
       </div>
     </div>
   </div>
 
   <!-- ── 次のアクション ── -->
-  <div style="margin:2rem 0; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+  <div style="margin:2rem 0; display:grid; grid-template-columns:repeat(auto-fit,minmax(200px,1fr)); gap:12px;">
     <a href="./nisa-guide.html" style="display:block; background:#1a6b45; border-radius:12px; padding:20px; text-decoration:none; color:#fff;">
       <div style="font-size:11px; color:#fcd34d; font-weight:700; margin-bottom:6px; letter-spacing:.08em;">STEP 1 →</div>
       <div style="font-size:15px; font-weight:700; margin-bottom:4px;">SBI証券で<br>口座開設を始める</div>
@@ -306,6 +628,28 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+
+  // ── ポートフォリオ例 円グラフ ──
+  (function() {
+    const opt = (colors, data) => ({
+      type: 'doughnut',
+      data: {
+        datasets: [{ data, backgroundColor: colors, borderWidth: 2, borderColor: '#fff' }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        cutout: '55%',
+        plugins: { legend: { display: false }, tooltip: { enabled: false } }
+      }
+    });
+    const p1 = document.getElementById('pie1');
+    const p2 = document.getElementById('pie2');
+    const p3 = document.getElementById('pie3');
+    if (p1) new Chart(p1, opt(['#38a169'], [100]));
+    if (p2) new Chart(p2, opt(['#3b82f6','#38a169','#f59e0b'], [50,30,20]));
+    if (p3) new Chart(p3, opt(['#3b82f6','#8b5cf6','#38a169'], [40,40,20]));
+    if (document.getElementById('pie4')) new Chart(document.getElementById('pie4'), opt(['#d4af37'], [100]));
+  })();
 
   // ── 1. 実績比較グラフ（3銘柄・年次推移試算） ──
   (function() {
@@ -433,6 +777,69 @@ document.addEventListener('DOMContentLoaded', function() {
         }
       }
     });
+  })();
+
+  // ── 4%ルール シミュレーター ──
+  (function() {
+    let csChart = null;
+    function calcCS() {
+      const asset  = parseFloat(document.getElementById('cs-asset').value);
+      const rate   = parseFloat(document.getElementById('cs-rate').value) / 100;
+      const ret    = parseFloat(document.getElementById('cs-return').value) / 100;
+      const years  = 30;
+      const fixedW = asset * rate;
+
+      const labels=[], d4=[], dfix=[], dprin=[];
+      let b4=asset, bfix=asset, lifeY=null;
+
+      for (let y=0; y<=years; y++) {
+        labels.push(y+'年');
+        d4.push(Math.round(b4));
+        dfix.push(Math.max(0, Math.round(bfix)));
+        dprin.push(Math.max(0, Math.round(asset - fixedW * y)));
+        const w4 = b4 * rate;
+        b4 = b4*(1+ret) - w4; if(b4<0) b4=0;
+        if(bfix>0){ bfix=bfix*(1+ret)-fixedW; if(bfix<=0 && lifeY===null) lifeY=y; if(bfix<0) bfix=0; }
+      }
+
+      document.getElementById('csv-asset').textContent  = asset.toLocaleString();
+      document.getElementById('csv-rate').textContent   = (rate*100).toFixed(1);
+      document.getElementById('csv-return').textContent = (ret*100).toFixed(1);
+
+      const annualW = Math.round(asset*rate);
+      document.getElementById('cs-annual').textContent  = annualW.toLocaleString()+'万円';
+      document.getElementById('cs-monthly').textContent = '月 '+(Math.round(annualW/12*10)/10).toFixed(1)+' 万円';
+
+      const end4 = d4[d4.length-1];
+      document.getElementById('cs-end4').textContent = end4.toLocaleString()+'万円';
+      document.getElementById('cs-end4s').textContent = end4>=asset?'初期資産より増加':end4>0?'資産維持':'資産ゼロ';
+      document.getElementById('cs-life').textContent = lifeY!==null ? lifeY+'年' : '30年以上';
+
+      const ctx = document.getElementById('cs-chart');
+      if (!ctx) return;
+      if (csChart) csChart.destroy();
+      csChart = new Chart(ctx, {
+        type:'line',
+        data:{ labels, datasets:[
+          { label:'4%ルール', data:d4,   borderColor:'#38a169', backgroundColor:'rgba(56,161,105,0.07)', borderWidth:2.5, pointRadius:0, fill:true,  tension:0.3 },
+          { label:'固定額',   data:dfix, borderColor:'#e53e3e', backgroundColor:'rgba(229,62,62,0.04)',  borderWidth:2,   pointRadius:0, fill:false, tension:0.3, borderDash:[5,3] },
+          { label:'元本',     data:dprin,borderColor:'#a0aec0', borderWidth:1.5, pointRadius:0, fill:false, tension:0, borderDash:[3,4] }
+        ]},
+        options:{
+          responsive:true, maintainAspectRatio:false,
+          plugins:{ legend:{display:false}, tooltip:{ callbacks:{ label: c=>' '+c.dataset.label+'：'+Math.max(0,c.parsed.y).toLocaleString()+'万円' } } },
+          scales:{
+            x:{ ticks:{ callback:(v,i)=>i%5===0?i+'年':'', font:{size:11} }, grid:{display:false} },
+            y:{ min:0, ticks:{ callback:v=>v.toLocaleString()+'万', font:{size:11} }, grid:{color:'rgba(0,0,0,0.05)'} }
+          }
+        }
+      });
+    }
+    ['cs-asset','cs-rate','cs-return'].forEach(id=>{
+      const el = document.getElementById(id);
+      if(el) el.addEventListener('input', calcCS);
+    });
+    calcCS();
   })();
 
 });
