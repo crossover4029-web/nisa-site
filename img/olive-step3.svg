@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 260" width="160" height="260">
+  <rect width="160" height="260" rx="14" fill="#1a1a2e"/>
+  <rect x="6" y="16" width="148" height="228" rx="8" fill="#fff"/>
+  <rect x="55" y="16" width="50" height="8" rx="4" fill="#1a1a2e"/>
+
+  <text x="12" y="30" font-size="7" fill="#888" font-family="sans-serif">9:41</text>
+  <text x="138" y="30" font-size="7" fill="#888" font-family="sans-serif" text-anchor="end">●●●</text>
+
+  <!-- SBI header (orange) -->
+  <rect x="6" y="34" width="148" height="22" fill="#e85d04"/>
+  <text x="80" y="49" font-size="9" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">SBI証券</text>
+
+  <!-- breadcrumb -->
+  <text x="12" y="64" font-size="6" fill="#718096" font-family="sans-serif">口座管理 › お客様情報 › サービス連携</text>
+
+  <!-- section title -->
+  <text x="12" y="78" font-size="8" fill="#1a202c" font-family="sans-serif" font-weight="bold">証券口座とサービスの連携</text>
+  <line x1="12" y1="82" x2="148" y2="82" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- card row - OLIVE (highlighted) -->
+  <rect x="12" y="88" width="136" height="44" rx="6" fill="#fff7ed" stroke="#e85d04" stroke-width="1.5"/>
+  <rect x="18" y="96" width="24" height="16" rx="3" fill="#006934"/>
+  <text x="30" y="107" font-size="7" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">OLIVE</text>
+  <text x="50" y="103" font-size="7.5" fill="#1a202c" font-family="sans-serif" font-weight="bold">OLIVEフレキシブルペイ</text>
+  <text x="50" y="114" font-size="6" fill="#718096" font-family="sans-serif">三井住友銀行</text>
+  <rect x="104" y="97" width="38" height="14" rx="7" fill="#e85d04"/>
+  <text x="123" y="107" font-size="6.5" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">連携する</text>
+
+  <!-- card row - standard (inactive) -->
+  <rect x="12" y="138" width="136" height="38" rx="6" fill="#f7fafc" stroke="#e2e8f0" stroke-width="1"/>
+  <rect x="18" y="146" width="24" height="16" rx="3" fill="#c0392b"/>
+  <text x="30" y="157" font-size="6" fill="#fff" font-family="sans-serif" text-anchor="middle">三井住友</text>
+  <text x="50" y="152" font-size="7" fill="#4a5568" font-family="sans-serif">三井住友カード(NL)</text>
+  <text x="50" y="163" font-size="6" fill="#a0aec0" font-family="sans-serif">三井住友カード株式会社</text>
+  <rect x="104" y="147" width="38" height="14" rx="7" fill="#e2e8f0"/>
+  <text x="123" y="157" font-size="6.5" fill="#718096" font-family="sans-serif" text-anchor="middle">連携する</text>
+
+  <!-- tip -->
+  <rect x="12" y="184" width="136" height="28" rx="6" fill="#fff7ed"/>
+  <text x="20" y="196" font-size="6.5" fill="#92400e" font-family="sans-serif">⚠️ 連携するカードはOLIVEフレキシブル</text>
+  <text x="20" y="206" font-size="6.5" fill="#92400e" font-family="sans-serif">ペイを選んでください</text>
+
+  <text x="80" y="238" font-size="6" fill="#a0aec0" font-family="sans-serif" text-anchor="middle">※ 画面はイメージです</text>
+</svg>

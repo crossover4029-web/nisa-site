@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 260" width="160" height="260">
+  <!-- phone frame -->
+  <rect width="160" height="260" rx="14" fill="#1a1a2e"/>
+  <rect x="6" y="16" width="148" height="228" rx="8" fill="#fff"/>
+  <!-- notch -->
+  <rect x="55" y="16" width="50" height="8" rx="4" fill="#1a1a2e"/>
+
+  <!-- status bar -->
+  <text x="12" y="30" font-size="7" fill="#888" font-family="sans-serif">9:41</text>
+  <text x="138" y="30" font-size="7" fill="#888" font-family="sans-serif" text-anchor="end">●●●</text>
+
+  <!-- SMBC header bar -->
+  <rect x="6" y="34" width="148" height="22" fill="#006934"/>
+  <text x="80" y="49" font-size="9" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">三井住友銀行</text>
+
+  <!-- hero image placeholder -->
+  <rect x="6" y="56" width="148" height="44" fill="#e8f5ee"/>
+  <text x="80" y="73" font-size="8" fill="#006934" font-family="sans-serif" text-anchor="middle" font-weight="bold">OLIVE フレキシブルペイ</text>
+  <text x="80" y="85" font-size="7" fill="#4a5568" font-family="sans-serif" text-anchor="middle">銀行・カード・ポイントが1つに</text>
+
+  <!-- divider -->
+  <line x1="12" y1="104" x2="148" y2="104" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- body text -->
+  <text x="80" y="118" font-size="7.5" fill="#2d3748" font-family="sans-serif" text-anchor="middle" font-weight="bold">OLIVEをはじめましょう</text>
+  <text x="80" y="130" font-size="6.5" fill="#718096" font-family="sans-serif" text-anchor="middle">申込は最短10分、無料です。</text>
+
+  <!-- CTA button -->
+  <rect x="24" y="138" width="112" height="22" rx="11" fill="#006934"/>
+  <text x="80" y="153" font-size="8.5" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">OLIVEをはじめる</text>
+
+  <!-- secondary button -->
+  <rect x="24" y="165" width="112" height="20" rx="10" fill="#fff" stroke="#006934" stroke-width="1.5"/>
+  <text x="80" y="178" font-size="8" fill="#006934" font-family="sans-serif" text-anchor="middle">口座をお持ちの方はこちら</text>
+
+  <!-- note -->
+  <text x="80" y="200" font-size="6" fill="#a0aec0" font-family="sans-serif" text-anchor="middle">※ 画面はイメージです</text>
+
+  <!-- bottom nav bar -->
+  <rect x="6" y="228" width="148" height="16" rx="0" fill="#f7fafc"/>
+  <line x1="6" y1="228" x2="154" y2="228" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="40" y="239" font-size="6" fill="#006934" font-family="sans-serif" text-anchor="middle">ホーム</text>
+  <text x="80" y="239" font-size="6" fill="#718096" font-family="sans-serif" text-anchor="middle">手続き</text>
+  <text x="120" y="239" font-size="6" fill="#718096" font-family="sans-serif" text-anchor="middle">お問合せ</text>
+</svg>

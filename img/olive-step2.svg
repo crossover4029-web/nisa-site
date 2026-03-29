@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 260" width="160" height="260">
+  <rect width="160" height="260" rx="14" fill="#1a1a2e"/>
+  <rect x="6" y="16" width="148" height="228" rx="8" fill="#fff"/>
+  <rect x="55" y="16" width="50" height="8" rx="4" fill="#1a1a2e"/>
+
+  <text x="12" y="30" font-size="7" fill="#888" font-family="sans-serif">9:41</text>
+  <text x="138" y="30" font-size="7" fill="#888" font-family="sans-serif" text-anchor="end">●●●</text>
+
+  <!-- header -->
+  <rect x="6" y="34" width="148" height="22" fill="#006934"/>
+  <text x="80" y="49" font-size="9" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">三井住友銀行</text>
+
+  <!-- success icon -->
+  <circle cx="80" cy="88" r="22" fill="#e8f5ee"/>
+  <circle cx="80" cy="88" r="16" fill="#006934"/>
+  <text x="80" y="94" font-size="16" fill="#fff" font-family="sans-serif" text-anchor="middle">✓</text>
+
+  <!-- title -->
+  <text x="80" y="122" font-size="9" fill="#006934" font-family="sans-serif" text-anchor="middle" font-weight="bold">口座開設が完了しました</text>
+
+  <!-- divider -->
+  <line x1="24" y1="130" x2="136" y2="130" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- details -->
+  <text x="80" y="144" font-size="6.5" fill="#4a5568" font-family="sans-serif" text-anchor="middle">ご登録のメールアドレスに</text>
+  <text x="80" y="154" font-size="6.5" fill="#4a5568" font-family="sans-serif" text-anchor="middle">完了通知をお送りしました</text>
+
+  <!-- info box -->
+  <rect x="18" y="160" width="124" height="36" rx="6" fill="#f0fff4" stroke="#86efac" stroke-width="1"/>
+  <text x="80" y="173" font-size="6.5" fill="#276749" font-family="sans-serif" text-anchor="middle" font-weight="bold">OLIVEフレキシブルペイ</text>
+  <text x="80" y="184" font-size="6" fill="#4a5568" font-family="sans-serif" text-anchor="middle">カード番号：**** **** **** 1234</text>
+  <text x="80" y="193" font-size="6" fill="#4a5568" font-family="sans-serif" text-anchor="middle">有効期限：**/**</text>
+
+  <!-- next step button -->
+  <rect x="20" y="202" width="120" height="20" rx="10" fill="#006934"/>
+  <text x="80" y="215" font-size="7.5" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">アプリでログインする</text>
+
+  <text x="80" y="238" font-size="6" fill="#a0aec0" font-family="sans-serif" text-anchor="middle">※ 画面はイメージです</text>
+</svg>

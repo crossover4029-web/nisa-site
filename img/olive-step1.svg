@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 160 260" width="160" height="260">
+  <rect width="160" height="260" rx="14" fill="#1a1a2e"/>
+  <rect x="6" y="16" width="148" height="228" rx="8" fill="#fff"/>
+  <rect x="55" y="16" width="50" height="8" rx="4" fill="#1a1a2e"/>
+
+  <!-- status bar -->
+  <text x="12" y="30" font-size="7" fill="#888" font-family="sans-serif">9:41</text>
+  <text x="138" y="30" font-size="7" fill="#888" font-family="sans-serif" text-anchor="end">●●●</text>
+
+  <!-- header -->
+  <rect x="6" y="34" width="148" height="22" fill="#006934"/>
+  <text x="80" y="49" font-size="9" fill="#fff" font-family="sans-serif" text-anchor="middle" font-weight="bold">本人確認</text>
+
+  <!-- step indicator -->
+  <rect x="12" y="60" width="136" height="14" rx="7" fill="#e8f5ee"/>
+  <rect x="12" y="60" width="46" height="14" rx="7" fill="#006934"/>
+  <text x="80" y="70" font-size="6" fill="#4a5568" font-family="sans-serif" text-anchor="middle">STEP 1 / 3</text>
+
+  <!-- instruction -->
+  <text x="80" y="88" font-size="7.5" fill="#2d3748" font-family="sans-serif" text-anchor="middle" font-weight="bold">マイナンバーカードを</text>
+  <text x="80" y="99" font-size="7.5" fill="#2d3748" font-family="sans-serif" text-anchor="middle" font-weight="bold">撮影してください（表面）</text>
+
+  <!-- card frame mockup -->
+  <rect x="22" y="106" width="116" height="74" rx="6" fill="#f0f4f8" stroke="#006934" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <!-- card inside -->
+  <rect x="30" y="113" width="100" height="60" rx="4" fill="#dbeafe" stroke="#93c5fd" stroke-width="1"/>
+  <rect x="35" y="120" width="28" height="36" rx="3" fill="#bfdbfe"/>
+  <text x="49" y="142" font-size="7" fill="#1d4ed8" font-family="sans-serif" text-anchor="middle">顔写真</text>
+  <text x="90" y="130" font-size="5.5" fill="#1e3a5f" font-family="sans-serif" font-weight="bold">個人番号カード</text>
+  <text x="90" y="140" font-size="5" fill="#4a5568" font-family="sans-serif">氏名　山田　太郎</text>
+  <text x="90" y="150" font-size="5" fill="#4a5568" font-family="sans-serif">生年月日 S40.1.1</text>
+  <text x="90" y="160" font-size="5" fill="#4a5568" font-family="sans-serif">住所　○○市□□町</text>
+
+  <!-- guide corners -->
+  <path d="M22,118 L22,106 L34,106" stroke="#006934" stroke-width="2" fill="none"/>
+  <path d="M138,118 L138,106 L126,106" stroke="#006934" stroke-width="2" fill="none"/>
+  <path d="M22,168 L22,180 L34,180" stroke="#006934" stroke-width="2" fill="none"/>
+  <path d="M138,168 L138,180 L126,180" stroke="#006934" stroke-width="2" fill="none"/>
+
+  <!-- tip -->
+  <text x="80" y="196" font-size="6.5" fill="#718096" font-family="sans-serif" text-anchor="middle">明るい場所で撮影してください</text>
+  <text x="80" y="206" font-size="6.5" fill="#718096" font-family="sans-serif" text-anchor="middle">カード全体が枠内に収まるように</text>
+
+  <!-- shutter button -->
+  <circle cx="80" cy="222" r="8" fill="#006934"/>
+  <circle cx="80" cy="222" r="5" fill="#fff"/>
+
+  <text x="80" y="252" font-size="6" fill="#a0aec0" font-family="sans-serif" text-anchor="middle">※ 画面はイメージです</text>
+</svg>
