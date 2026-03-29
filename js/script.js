@@ -118,12 +118,15 @@ function setTarget(key) {
         updateBadge(id, vals[i]);
     });
 
-    document.getElementById('decStartAge').value = conf.decStartAge;
-    document.getElementById('decMonthly').value  = conf.decMonthly;
-    document.getElementById('decRate').value     = conf.decRate;
+    const decStartAgeEl = document.getElementById('decStartAge');
+    const decMonthlyEl  = document.getElementById('decMonthly');
+    const decRateEl     = document.getElementById('decRate');
+    if (decStartAgeEl) decStartAgeEl.value = conf.decStartAge;
+    if (decMonthlyEl)  decMonthlyEl.value  = conf.decMonthly;
+    if (decRateEl)     decRateEl.value     = conf.decRate;
 
     updateAccumulation();
-    updateDecumulation();
+    if (document.getElementById('decChartContainer')) updateDecumulation();
 }
 
 /* ── ② 金額を日本語表記に変換（案C：億・千万・百万の3段階） ── */
@@ -349,7 +352,7 @@ document.addEventListener('DOMContentLoaded', () => {
     /* setTarget('30') がスライダー・バッジ・グラフをすべて初期化する */
     setTarget('30');
 
-    /* dec系スライダーの初期同期 */
+    /* dec系スライダーの初期同期（dec要素がある場合のみ） */
     ['decStartAge', 'decMonthly', 'decRate'].forEach(id => {
         const number = document.getElementById(id);
         const slider = document.getElementById(id + 'Slider');
