@@ -59,8 +59,9 @@ body {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 50vh;
-    min-height: 400px;
+    height: 55vh;
+    min-height: 420px;
+    max-height: 560px;
     background-color: var(--primary-dark);
     overflow: hidden;
     display: flex;
