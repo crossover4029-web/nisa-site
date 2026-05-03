@@ -12,7 +12,7 @@
   --c-gold-soft: #d4b576;
   --c-green: #1e4d3f;         /* deep green */
   --c-green-2: #2a6a55;
-  --c-bg: #fbfaf6;            /* warm off-white */
+  --c-bg: #fbfaf6;            /* warm off-white   */
   --c-bg-2: #f3f0e8;
   --c-paper: #ffffff;
   --c-text: #1a1f2e;
@@ -20,7 +20,7 @@
   --c-text-3: #6b7384;
   --c-line: #d8d3c5;
   --c-line-soft: #ebe6d9;
-
+  
   /* Typography */
   --font-serif: "Noto Serif JP", "游明朝", "Yu Mincho", serif;
   --font-sans: "Noto Sans JP", "游ゴシック", "Yu Gothic", sans-serif;
