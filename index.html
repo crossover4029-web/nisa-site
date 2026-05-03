@@ -1,1245 +1,817 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>POWERR Asiaとは？日本がアジアのエネルギーと資源を支える新構想 | POWERR Asia Lab</title>
-<meta name="description" content="POWERR Asia（パワー・アジア)を初心者向けに解説。日本のエネルギー安全保障、資源供給、サプライチェーン、日本株、新NISAとの関係をわかりやすく読み解きます。">
-<meta name="keywords" content="POWERR Asia,パワーアジア,パワーアジア研究室,アジア エネルギー 資源,日本株 国策テーマ,新NISA 日本株,重要鉱物,サプライチェーン,エネルギー安全保障,一帯一路 違い,国策投資,日本株 長期投資">
-<meta property="og:title" content="POWERR Asiaとは？日本がアジアのエネルギーと資源を支える新構想">
-<meta property="og:description" content="POWERR Asia（パワー・アジア)を初心者向けに解説。エネルギー安全保障・資源供給・日本株・新NISAをわかりやすく読み解く情報サイト。">
-<meta property="og:type" content="website">
-<meta property="og:site_name" content="POWERR Asia Lab">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;500;600;700&family=Noto+Sans+JP:wght@300;400;500;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<link rel="stylesheet" href="css/style.css">
+  <!-- ── SEO ── -->
+  <title>初心者のための新NISA完全ガイド｜ほっとけ投資でSBI証券から始める</title>
+  <meta name="description" content="投資が初めての方でも迷わず始められる新NISA完全ガイド。非課税の仕組み・積立シミュレーション・OLIVE×Vポイントサイクルをわかりやすく解説。SBI証券で口座開設から積立設定まで順番にご案内します。">
+  <meta name="keywords" content="新NISA,SBI証券,積立投資,OLIVE,Vポイント,投資初心者,50代,60代,ドルコスト平均法,インデックス投資">
+  <meta name="author" content="新NISA資産形成ガイド">
+  <link rel="canonical" href="https://crossover4029-web.github.io/nisa-site/">
 
+  <!-- ── OGP（SNSシェア対応） ── -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="初心者のための新NISA完全ガイド｜ほっとけ投資でSBI証券から始める">
+  <meta property="og:description" content="投資が初めての方でも迷わず始められる新NISA完全ガイド。積立シミュレーション・OLIVE×Vポイントサイクルをわかりやすく解説。">
+  <meta property="og:url"         content="https://crossover4029-web.github.io/nisa-site/">
+  <meta property="og:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
+  <meta property="og:site_name"   content="新NISA資産形成ガイド">
+  <meta property="og:locale"      content="ja_JP">
+
+  <!-- ── Twitter Card ── -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="初心者のための新NISA完全ガイド｜ほっとけ投資でSBI証券から始める">
+  <meta name="twitter:description" content="投資が初めての方でも迷わず始められる新NISA完全ガイド。SBI証券で口座開設から積立設定まで順番にご案内。">
+  <meta name="twitter:image"       content="https://crossover4029-web.github.io/nisa-site/img/nisa-1800man-taxfree-vs-tax-account.png">
+
+  <!-- ── LCP最適化：hero画像を最優先で先読み ── -->
+  <link rel="preload" as="image" href="img/main_visual.jpg">
+  <link rel="stylesheet" href="css/style.css">
+  <!-- deferにより描画をブロックせず、DOMContentLoaded後に実行 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js" defer></script>
+  <script src="js/script.js" defer></script>
+  <style>
+    .hottoke-note {
+      display: inline-block;
+      background: rgba(56, 161, 105, 0.12);
+      color: #276749;
+      font-size: 11px;
+      font-weight: 700;
+      padding: 2px 10px;
+      border-radius: 20px;
+      border: 1px solid rgba(56, 161, 105, 0.4);
+      margin-left: 6px;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+  </style>
 </head>
 <body>
 
-<!-- ============================================
-     UTILITY BAR
-     ============================================ -->
-<div class="utility-bar">
-  <div class="container">
-    <span class="utility-tag">独立系・国策テーマ研究</span>
-    <span class="utility-date" id="today">— UPDATED —</span>
+  <div class="hero-section">
+      <img src="img/main_visual.jpg" alt="Hero Image" class="hero-image"
+           fetchpriority="high" decoding="sync">
+      <div class="hero-overlay"></div>
   </div>
-</div>
-
-<!-- ============================================
-     HEADER
-     ============================================ -->
-<header class="site-header">
-  <div class="container">
-    <div class="header-inner">
-    <a href="#top" class="brand">
-      <span class="brand-mark">POWERR<span class="dot">·</span>Asia Lab</span>
-      <span class="brand-sub">パワーアジア研究室</span>
-    </a>
-
-    <nav class="nav" id="mainNav">
-      <a href="#crisis">現状を知る</a>
-      <a href="#about">POWERR Asiaとは</a>
-      <a href="#stocks">日本株テーマ</a>
-      <a href="#nisa">新NISAで考える</a>
-      <a href="#articles">記事一覧</a>
-      <a href="#youtube">YouTube</a>
-      <!-- AFFILIATE/EXT LINK PLACEHOLDER: noteのプロフィールURLに置き換え -->
-      <a href="#note" class="cta">noteへ</a>
-    </nav>
-
-    <button class="menu-toggle" id="menuToggle" aria-label="メニュー" aria-expanded="false">
-      <span></span>
-    </button>
-    </div>
-  </div>
-</header>
-
-<!-- ============================================
-     HERO — 画像背景版
-     ============================================ -->
-<section class="hero" id="top">
-  <!-- HERO IMAGE PLACEHOLDER: images/hero.png を差し替えると画像が変わります -->
-  <div class="hero-bg" style="background-image:url('images/hero.png');" aria-hidden="true"></div>
 
   <div class="container">
-    <div class="hero-text">
-      <span class="hero-eyebrow">Partnership on Wide Energy and Resources Resilience Asia</span>
-      <h1>日本。<br>アジアの<br><span class="accent">エネルギーと資源</span>を支える時代へ。</h1>
-      <p class="hero-sub">
-        POWERR Asiaをきっかけに、エネルギー安全保障・資源供給・日本株・新NISAをわかりやすく読み解く。
-      </p>
-      <p class="hero-note">
-        これは、単なるニュースではありません。<br>
-        日本の将来、アジアの成長、そして私たちの資産形成にもつながる可能性のある国策テーマです。
-      </p>
-      <div class="hero-actions">
-        <a href="#about" class="btn btn-primary btn-arrow">POWERR Asiaを知る</a>
-        <a href="#stocks" class="btn btn-ghost btn-arrow">日本株テーマを見る</a>
-        <a href="#youtube" class="btn btn-ghost btn-arrow">動画で学ぶ</a>
-      </div>
-    </div>
+      <h1>
+        <span>Strategy for Asset Building</span>
+        新NISAを活用した資産形成の指針
+        <em class="h1-sub" style="font-size: clamp(1.3rem, 3vw, 1.7rem);">「ほっとけ投資」で、10年後の自分を変える。</em>
+      </h1>
 
-    <!-- 右側情報パネル -->
-    <aside class="hero-panel" aria-label="POWERR Asiaの金融協力">
-      <div class="hero-panel-label">POWERR Asia · Financial Framework</div>
-      <div class="hero-panel-title">
-        総額約100億ドル規模の<br>
-        金融協力枠組み
-      </div>
-      <div class="hero-panel-subtitle">
-        資源を買う・貯める・止まらない供給網を作る
-      </div>
-
-      <p class="hero-panel-desc">
-        POWERR Asiaは、原油・石油製品等の調達、サプライチェーン維持、
-        備蓄制度・備蓄タンク、重要鉱物、バイオ燃料、省エネ、
-        産業高度化などを対象に、総額約100億ドル規模の金融協力を行う枠組みです。
-      </p>
-
-      <ul class="hero-panel-list">
-        <li>原油・石油製品の調達 <span class="num">01</span></li>
-        <li>備蓄制度・備蓄タンク <span class="num">02</span></li>
-        <li>重要鉱物・バイオ燃料 <span class="num">03</span></li>
-        <li>省エネ・産業高度化 <span class="num">04</span></li>
-        <li>サプライチェーン維持 <span class="num">05</span></li>
-      </ul>
-
-      <p class="hero-panel-note">
-        最大で約12億バレル、ASEANの約1年分の原油輸入にも相当。
-      </p>
-    </aside>
-  </div>
-
-  <a href="#crisis" class="hero-scroll" aria-label="次のセクションへスクロール">SCROLL</a>
-</section>
-
-<!-- ============================================
-     CRISIS — なぜ今、エネルギー危機なのか
-     ============================================ -->
-<section class="crisis" id="crisis">
-  <div class="container">
-    <span class="section-eyebrow">The Root Cause</span>
-    <h2 class="section-title">なぜ今、エネルギー危機なのか</h2>
-    <p class="section-lead">
-      POWERR Asiaが生まれた背景には、アジア全体が抱える深刻なエネルギーの「脆弱性」があります。<br>
-      まずその現実から見ていきましょう。
-    </p>
-  </div>
-
-  <div class="container crisis-blocks-wrap">
-  <!-- ブロック① ホルムズ海峡 -->
-  <div class="crisis-block" id="crisis-hormuz">
-    <div class="crisis-image-stack">
-      <div class="crisis-image-wrap">
-        <img
-          src="images/strait-of-hormuz-oil-tanker-blockade-risk-editorial-illustration.png"
-          alt="ホルムズ海峡の地図と封鎖リスクを示す画像。イラク・イラン・サウジアラビア・UAE・オマーンの位置と封鎖ラインが描かれている"
-          class="crisis-img"
-          loading="lazy"
-        >
-      </div>
-      <div class="crisis-image-wrap">
-        <img
-          src="images/hormuz-strait-blocked-oil-shipping-route-africa-detour-japan.png"
-          alt="ホルムズ海峡封鎖時にアフリカ大陸を迂回する長大な代替航路を示す世界地図"
-          class="crisis-img"
-          loading="lazy"
-        >
-      </div>
-    </div>
-    <div class="crisis-text">
-      <span class="crisis-num">01</span>
-      <h3 class="crisis-heading">ホルムズ海峡——<br>世界の原油が通る「一本道」</h3>
-      <p>
-        ペルシャ湾とオマーン湾をつなぐホルムズ海峡は、幅わずか約50kmの細い水路です。<br>
-        にもかかわらず、ここを通過する原油・LNGは<strong>世界全体の取引量の約2割〜3割</strong>に達します。<br>
-        <strong>日本に届く原油の約9割もこの海峡を経由しています。</strong>
-      </p>
-      <p>
-        イランとアメリカの対立、フーシ派による船舶攻撃、中東各地の地政学的緊張——
-        これらが重なるたびに、原油価格は跳ね上がり、日本のガソリン代・電気代・物価が連動して動きます。
-        「自分には関係ない」と思っていたニュースが、実は毎月の家計に直結しているのです。
-      </p>
-      <div class="crisis-risk-box">
-        <div class="crisis-risk-item">
-          <div>
-            <strong>封鎖リスク</strong>
-            <p>ホルムズ海峡が1週間封鎖されるだけで、<br><strong>アジア全体の石油在庫は急速に減少する。</strong></p>
-          </div>
-        </div>
-        <div class="crisis-risk-item">
-          <div>
-            <strong>価格急騰リスク</strong>
-            <p>緊張が高まるたびに原油価格は上昇。<br><strong>輸入依存度90%以上の日本には直撃する。</strong></p>
-          </div>
-        </div>
-        <div class="crisis-risk-item">
-          <div>
-            <strong>迂回コスト</strong>
-            <p><strong>代替ルート（アフリカ回り）は距離が3倍以上。輸送コストの急増は物価全体を押し上げる。</strong>封鎖が長引くほど、日本の輸入コストは雪だるま式に膨らんでいく。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ブロック② マラッカ海峡 -->
-  <div class="crisis-block crisis-block--alt" id="crisis-malacca">
-    <div class="crisis-image-wrap">
-      <img
-        src="images/strait-of-malacca-oil-tanker-congestion-shipping-risk.png"
-        alt="マラッカ海峡を無数のタンカーと貨物船が埋め尽くす空撮イメージ"
-        class="crisis-img"
-        loading="lazy"
-      >
-    </div>
-    <div class="crisis-text">
-      <span class="crisis-num">02</span>
-      <h3 class="crisis-heading">マラッカ海峡——<br>東南アジアの「最後の輸送路」も限界に近い</h3>
-      <p>
-        ホルムズ海峡を出た原油は、次にインド洋を渡り、マレーシアとインドネシアの間にある
-        <strong>マラッカ海峡</strong>を通って日本・東南アジアへ届きます。
-        この海峡は幅が最も狭い部分で約2.8kmしかなく、
-        年間で10万隻以上の船舶が行き交う世界最混雑の航路のひとつです。
-      </p>
-      <p>
-        交通量の過密による衝突リスク、海賊・テロの脅威、台風など自然災害による港湾機能の停止——
-        マラッカ海峡もまた、いつ「詰まってもおかしくない」状態にあります。
-        ホルムズとマラッカ、この2本のボトルネックが同時に機能不全に陥った場合、
-        アジアのエネルギー供給は深刻な打撃を受けます。
-      </p>
-      <div class="crisis-risk-box">
-        <div class="crisis-risk-item">
-          <span class="risk-icon">🚢</span>
-          <div>
-            <strong>過密航路リスク</strong>
-            <p>年間10万隻超が通過。一度の大型事故で航路全体が数日〜数週間止まる可能性がある。</p>
-          </div>
-        </div>
-        <div class="crisis-risk-item">
-          <span class="risk-icon">🏴‍☠️</span>
-          <div>
-            <strong>海賊・安全保障リスク</strong>
-            <p>東南アジア海域は依然として海賊事案が発生。武装勢力による船舶拿捕のリスクも残る。</p>
-          </div>
-        </div>
-        <div class="crisis-risk-item">
-          <span class="risk-icon">🌀</span>
-          <div>
-            <strong>自然災害リスク</strong>
-            <p>大型台風・地震による港湾インフラ損壊。代替港が少ない地域では復旧に時間がかかる。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ブロック③ 備蓄の少なさ -->
-  <div class="crisis-block" id="crisis-storage">
-    <div class="crisis-image-stack">
-      <div class="crisis-image-wrap">
-        <img
-          src="images/southeast-asia-fuel-storage-shortage-energy-security-risk.png"
-          alt="フィリピン・ベトナム・インドネシアの国旗が付いた空に近い燃料タンク3基と東南アジア地図"
-          class="crisis-img"
-          loading="lazy"
-        >
-      </div>
-      <div class="crisis-image-wrap">
-        <img
-          src="images/southeast-asia-fuel-shortage-empty-gas-station-long-queue.png"
-          alt="東南アジアの燃料不足で空のガソリンスタンドに長蛇の列を作るバイクと車。赤いバツ印の看板が給油停止を示す"
-          class="crisis-img"
-          loading="lazy"
-        >
-      </div>
-    </div>
-    <div class="crisis-text">
-      <span class="crisis-num">03</span>
-      <h3 class="crisis-heading">「2週間で燃料が消える国もある」——<br>アジアの備蓄量の現実</h3>
-      <p>
-        ホルムズやマラッカが止まったとき、各国に残された時間はどれくらいあるのでしょうか。
-        先進国（日本・アメリカなど）は国家として<strong>90日分以上</strong>の石油備蓄を義務付けていますが、
-        東南アジアの実情はまったく異なります。
-      </p>
-
-      <div class="crisis-storage-grid">
-        <div class="crisis-storage-card crisis-storage-card--warning">
-          <div class="storage-flag"><img src="https://flagcdn.com/w40/ph.png" alt="フィリピン国旗" class="storage-flag-img"></div>
-          <div class="storage-country">フィリピン</div>
-          <div class="storage-days">60日</div>
-          <div class="storage-bar"><div class="storage-fill" style="width:24%"></div></div>
-          <div class="storage-note">IEA基準90日を大きく下回る</div>
-        </div>
-        <div class="crisis-storage-card crisis-storage-card--warning">
-          <div class="storage-flag"><img src="https://flagcdn.com/w40/vn.png" alt="ベトナム国旗" class="storage-flag-img"></div>
-          <div class="storage-country">ベトナム</div>
-          <div class="storage-days">15日</div>
-          <div class="storage-bar"><div class="storage-fill" style="width:6%"></div></div>
-          <div class="storage-note">経済成長が続く一方、備蓄インフラが追いついていない</div>
-        </div>
-        <div class="crisis-storage-card crisis-storage-card--warning">
-          <div class="storage-flag"><img src="https://flagcdn.com/w40/id.png" alt="インドネシア国旗" class="storage-flag-img"></div>
-          <div class="storage-country">インドネシア</div>
-          <div class="storage-days">20日</div>
-          <div class="storage-bar"><div class="storage-fill" style="width:8%"></div></div>
-          <div class="storage-note">人口2億7000万人を抱えながら備蓄は薄い</div>
-        </div>
-        <div class="crisis-storage-card crisis-storage-card--caution">
-          <div class="storage-flag"><img src="https://flagcdn.com/w40/th.png" alt="タイ国旗" class="storage-flag-img"></div>
-          <div class="storage-country">タイ</div>
-          <div class="storage-days">61日</div>
-          <div class="storage-bar"><div class="storage-fill crisis-storage-fill--caution" style="width:24%"></div></div>
-          <div class="storage-note">製造業の集積地だが非常時の余裕は小さい</div>
-        </div>
-        <div class="crisis-storage-card crisis-storage-card--caution">
-          <div class="storage-flag"><img src="https://flagcdn.com/w40/my.png" alt="マレーシア国旗" class="storage-flag-img"></div>
-          <div class="storage-country">マレーシア</div>
-          <div class="storage-days">—</div>
-          <div class="storage-bar"><div class="storage-fill" style="width:0%"></div></div>
-          <div class="storage-note">公式データ未公表</div>
-        </div>
-        <div class="crisis-storage-card crisis-storage-card--safe">
-          <div class="storage-flag"><img src="https://flagcdn.com/w40/jp.png" alt="日本国旗" class="storage-flag-img"></div>
-          <div class="storage-country">日本（参考）</div>
-          <div class="storage-days">254日</div>
-          <div class="storage-bar crisis-storage-bar--safe"><div class="storage-fill storage-fill--safe" style="width:100%"></div></div>
-          <div class="storage-note">IEA基準で国家備蓄90日を義務付け。POWERR Asiaはこの水準をアジアへ</div>
-        </div>
-      </div>
-
-      <p class="crisis-storage-source">
-        ※備蓄日数は各国政府発表をもとにタイメディアが集計した参考値です。測定基準・調査時期により異なる場合があります。<br>
-        出典：<a href="https://x-bomberth.com/20260310aseanoil/" target="_blank" rel="noopener">X-bomber Thailand（2026年3月）</a>
-      </p>
-
-      <p style="margin-top:2rem;">
-        <strong>日本が254日分の備蓄を持つのに対し、ベトナムは15日、インドネシアは20日。</strong><br>
-        <strong>供給が2〜3週間止まるだけで燃料が底をつく国がアジアに複数あります。</strong><br>
-        <strong>備蓄タンクを作る資金がない——この現実が、次の問題につながります。</strong>
-      </p>
-    </div>
-  </div>
-
-  <!-- ブロック④ 一帯一路の罠（ライト版） -->
-  <div class="crisis-block crisis-block--alt" id="crisis-debt">
-    <div class="crisis-image-stack">
-      <div class="crisis-image-wrap">
-        <img
-          src="images/china-bri-infrastructure-debt-risk-port-collateral.png"
-          alt="中国の一帯一路構想。アジア・アフリカに広がる黄金の輸送ルートと、金利6%・返済期間20年・担保：港湾施設と記された契約書"
-          class="crisis-img"
-          loading="lazy"
-        >
-      </div>
-      <div class="crisis-image-wrap">
-        <img
-          src="images/southeast-asian-port-china-debt-risk-editorial-illustration.png"
-          alt="中国国旗が掲げられた港湾施設の前で、困惑した表情の政府関係者が書類にサインするイメージ"
-          class="crisis-img"
-          loading="lazy"
-        >
-      </div>
-    </div>
-    <div class="crisis-text">
-      <span class="crisis-num">04</span>
-      <h3 class="crisis-heading">お金がない → 中国に頼った →<br>港を手放した国がある</h3>
-      <p style="text-align:center;">
-        備蓄タンク、港湾、精製施設——これらを整備するには巨額の資金が必要です。
-        しかし多くの東南アジア諸国には、その財政的余力がありません。
-        そこに現れたのが、<br>
-        <span class="bri-badge">中国の「一帯一路」構想</span>
-      </p>
-      <p>
-        「条件なし」「審査なし」で巨額の融資を提供する一帯一路は、インフラ資金に飢えた途上国には
-        魅力的に映りました。しかし返済が滞ったとき、何が起きたのか——
-        その典型的な事例が、<strong>スリランカのハンバントタ港</strong>です。
-      </p>
-      <div class="crisis-debt-box">
-        <div class="crisis-debt-case">
-          <div class="debt-case-label">CASE — スリランカ / ハンバントタ港</div>
-          <p>
-            中国から約11億ドルの融資を受けて建設したハンバントタ港。
-            しかし経済危機で返済不能に陥ったスリランカは2017年、
-            この港の運営権を<strong>99年間</strong>、中国国有企業に譲渡せざるを得なくなりました。
-          </p>
-          <p>
-            <strong>港という「エネルギーと物資の出入口」が、事実上、外国の管理下に入った——<br>
-            これが「債務の罠」と呼ばれる構造の現実です。</strong>
-          </p>
-        </div>
-      </div>
-      <p>
-        エネルギーの「入口」となる港や備蓄施設が他国に握られることは、
-        単なる経済問題ではなく、安全保障上の重大リスクです。<strong>アジア各国はこの構造から抜け出す「別の選択肢」を必要としていました。</strong>
-      </p>
-    </div>
-  </div>
-
-  </div><!-- /.crisis-blocks-wrap -->
-
-  <!-- NOTE誘導ブリッジ（大型） -->
-  <div class="crisis-note-bridge">
-    <div class="container">
-      <p class="cnb-date">2025年11月 ── 一帯一路拡大会議</p>
-      <h3 class="cnb-title">中国が動いた。</h3>
-      <p class="cnb-subtitle">「アジアエネルギー共同体構想」</p>
-      <div class="cnb-points">
-        <div class="cnb-point">
-          <span class="cnb-num">①</span>
-          <span>人民元建ての石油決済</span>
-        </div>
-        <div class="cnb-point">
-          <span class="cnb-num">②</span>
-          <span>中国国家開発銀行 / 輸出入銀行のファイナンス</span>
-        </div>
-        <div class="cnb-point">
-          <span class="cnb-num">③</span>
-          <span>備蓄タンク建設をパッケージとして提供</span>
-        </div>
-      </div>
-      <p class="cnb-hook">この3点セットが意味することとは——<br>スリランカ、ザンビア、エクアドル……<br>「債務の罠」の全貌と、日本がPOWERR Asiaで<br>何を対抗しようとしているのか。</p>
-      <a href="#note" class="cnb-btn">noteで深掘りを読む →</a>
-    </div>
-  </div>
-
-  <!-- 移行ブリッジ -->
-  <div class="crisis-bridge">
-    <div class="container">
-      <p class="bridge-text">
-        ホルムズ海峡のリスク、マラッカ海峡の脆弱性、アジア各国の薄すぎる備蓄、<br>
-        ——そして中国の債務の罠——
-      </p>
-      <p class="bridge-text bridge-text--large">
-        この現実を前にして、<strong>日本が動いた。</strong>
-      </p>
-      <a href="#about" class="btn btn-primary btn-arrow">POWERR Asiaとは何か →</a>
-    </div>
-  </div>
-
-</section>
-
-<!-- ============================================ — 興味喚起の派手なフック
-     「私たちの生活がどう変わるのか？」
-     「戦後最大級の構想か？」
-     ============================================ -->
-
-<section class="about" id="about">
-  <div class="container">
-    <span class="section-eyebrow">About POWERR Asia</span>
-    <h2 class="section-title">POWERR Asiaとは</h2>
-    <p class="section-lead">
-      正式名称は「アジア・エネルギー・資源供給力強靱化パートナーシップ」。<br>
-      2026年2月の施政方針演説で、高市総理はアジアや友邦国との連携を通じた経済安全保障の強化を宣言。その流れを具体化する形で、<strong>2026年4月15日のAZEC＋オンライン首脳会合において正式に立ち上げを発表した</strong>、戦後最大級の国策構想です。
-    </p>
-  </div>
-
-  <div class="container about-blocks-wrap">
-
-    <!-- ブロック① 5者タスクフォース -->
-    <div class="crisis-block" id="about-taskforce">
-      <div class="crisis-image-wrap">
-        <img src="images/japan-energy-security-policy-framework-jbic-jica-ministries.png"
-          alt="JBIC・JICA・外務省・経産省・財務省によるアジアエネルギー安全保障タスクフォース"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">01</span>
-        <h3 class="crisis-heading">施政方針と5者タスクフォース</h3>
-        <p>2026年2月の施政方針演説で方向性を示した高市総理は、同年4月15日のAZEC＋オンライン首脳会合でPOWERR Asiaの立ち上げを正式発表。<strong>JBIC（国際協力銀行）・JICA（国際協力機構）・外務省・経産省・財務省</strong>の5者が一体となった「アジアエネルギー安全保障タスクフォース」として組織的に推進されています。</p>
-        <p>政府系金融・外交・産業・財政が一本化されることで、民間だけでは実現できない長期・大規模な資金供給が可能になります。<strong>これが中国の一帯一路との最大の違いのひとつです。</strong></p>
-      </div>
-    </div>
-
-    <!-- ブロック② 第1弾資金構造 -->
-    <div class="crisis-block crisis-block--alt" id="about-finance1">
-      <div class="crisis-image-wrap">
-        <img src="images/asia-energy-security-finance-900-billion-yen-1-2-percent-20-years.png"
-          alt="総額約100億ドル規模・JBIC POWERR Asia FASTウィンドウによる金融支援"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">02</span>
-        <h3 class="crisis-heading">段階的に広がる<br>総額約100億ドル規模の金融支援</h3>
-        <p>POWERR Asiaは、アジアのエネルギー・資源供給網を強くするため、<strong>総額約100億ドル規模の金融支援</strong>を行う枠組みです。</p>
-        <p>支援対象は、代替原油・石油製品の調達、サプライチェーン維持、備蓄タンクなどのインフラ整備、重要鉱物・LNG・バイオ燃料を含むエネルギー源の多様化など幅広い分野に及びます。JBICには<strong>「POWERR Asia FASTウィンドウ」</strong>が設けられ、緊急対応から構造的対応まで、融資・金融支援で後押しする仕組みが整えられています。</p>
-        <p>これは無償援助ではなく、<strong>各国・企業の調達力と供給網を金融面から支える実務的な協力</strong>です。特定国への過度な依存を避け、複数の調達先・複数の金融ルートを持つことが、エネルギー安全保障の新しい条件になっています。</p>
-      </div>
-    </div>
-
-    <!-- ブロック③ 備蓄3倍と商社受注 -->
-    <div class="crisis-block" id="about-storage">
-      <div class="crisis-image-wrap">
-        <img src="images/oil-storage-expansion-30-to-90-days-japan-trading-companies-plant-consortium.png"
-          alt="備蓄30日分から90日分へ3倍拡大・三井物産など日本商社プラント連合が共同受注"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">03</span>
-        <h3 class="crisis-heading">備蓄3倍と日系商社の受注</h3>
-        <p>各国の国営会社はこの融資を使って自国内の戦略備蓄タンクを増設。<strong>現状の30日分から90日分へ3倍拡大</strong>を目指します。</p>
-        <p>備蓄タンクの建設・原油調達・インフラ整備には、原油・LNG・資源分野で豊富な実績を持つ<strong>三井物産・三菱商事・伊藤忠商事などの大手商社・プラント企業群の関与が期待されています。</strong>ただし、現時点で個別企業の受注が公式発表されているわけではありません。</p>
-      </div>
-    </div>
-
-    <!-- ブロック④ JICA ODA第2弾 -->
-    <div class="crisis-block crisis-block--alt" id="about-oda">
-      <div class="crisis-image-wrap">
-        <img src="images/jica-oda-energy-infrastructure-myanmar-cambodia-laos-vietnam.png"
-          alt="JBICやODAを活用したアジアのエネルギーインフラ支援・備蓄タンク・港湾・送電網"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">04</span>
-        <h3 class="crisis-heading">ODAも活用した<br>エネルギーインフラ支援</h3>
-        <p>POWERR Asiaでは、<strong>JBICによる貸付・NEXIによる保険提供に加え、ODAも活用</strong>しながらアジア各国のエネルギー供給体制を強化していく方針が示されています。支援対象には、原油備蓄・放出システムの構築、備蓄タンク、LNG・バイオ燃料・次世代太陽光・重要鉱物・省エネ投資など幅広い分野が含まれます。</p>
-        <p>特に民間金融だけでは整備が進みにくい国・地域では、ODAによる制度整備・基盤インフラ支援が重要な役割を果たします。港湾・貯蔵設備・人材育成を組み合わせることで、エネルギーを<strong>「買う」「貯める」「運ぶ」「安定して使う」</strong>ための土台を整える——これがPOWERR Asiaを支えるもう一つの実行手段です。</p>
-      </div>
-    </div>
-
-    <!-- ブロック⑤ 中国依存からの脱却 -->
-    <div class="crisis-block" id="about-clause">
-      <div class="crisis-image-wrap">
-        <img src="images/beijing-shocked-cancellation-clauses-bri-loan-risk.png"
-          alt="中国依存を下げるエネルギー供給網の再設計・調達先多元化・日本型金融支援"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">05</span>
-        <h3 class="crisis-heading">中国依存を下げる<br>エネルギー供給網の再設計</h3>
-        <p>POWERR Asiaは、アジア各国のエネルギー供給網を、特定国への過度な依存から<strong>多元的な調達・金融・インフラ支援の仕組みへ移していく構想</strong>です。</p>
-        <p>原油・石油製品の調達、備蓄体制の整備、エネルギー源の多様化、重要鉱物の確保、サプライチェーン維持などを通じて、アジア各国がより安定した選択肢を持てるようにすることが狙いです。</p>
-        <p>この枠組みが広がれば、各国は一帯一路のような特定国主導の融資・インフラに頼るだけでなく、<strong>日本・国際金融機関・民間企業を組み合わせた別ルートを確保しやすくなります。</strong></p>
-        <p>つまり、POWERR Asiaは中国を名指しで排除する制度ではなく、<strong>アジア各国が依存先を分散し、交渉力を高めるための現実的な選択肢</strong>と見ることができます。地政学リスクが高まる時代において、エネルギーを「どこから買うか」だけでなく、「誰の金融・インフラに支えられて届けられるか」が、国家の安定性を左右する時代に入っています。</p>
-      </div>
-    </div>
-
-    <!-- ブロック⑥ 官民連携による投資支援 -->
-    <div class="crisis-block crisis-block--alt" id="about-fund">
-      <div class="crisis-image-wrap">
-        <img src="images/japan-investment-fund-muted-gold-jogmec-trading-companies.png"
-          alt="JBIC・JICA・NEXI・JOGMECによる官民連携のエネルギー資源投資支援"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">06</span>
-        <h3 class="crisis-heading">官民連携による<br>資源・エネルギー投資支援</h3>
-        <p>POWERR Asiaでは、<strong>JBICによる貸付・JICA海外投融資・NEXIによる貿易保険・JOGMECやODA</strong>などの支援手段を活用し、アジアにおける原油・石油製品の調達、サプライチェーン維持、備蓄タンク整備、重要鉱物・LNG・バイオ燃料・省エネ投資などを支援する方針です。</p>
-        <p>経産省資料では、<strong>日本の商社が調達した原油を現地企業へ販売する取引に対し、NEXIが保険を提供する</strong>例も示されています。</p>
-        <p class="about-disclaimer">※「協調投資ファンド」「農林中金・五大商社・年金基金による出資」等の具体的スキームは、現時点で公式発表が確認されていません。本サイトでは公式資料に基づく内容のみを掲載しています。</p>
-      </div>
-    </div>
-
-    <!-- ブロック⑦ シーレーン・安全保障 -->
-    <div class="crisis-block" id="about-defense">
-      <div class="crisis-image-wrap">
-        <img src="images/japan-maritime-security-defense-package-hormuz-sea-lane.png"
-          alt="海上自衛隊・シーレーン防衛・ホルムズ近海の安全保障パッケージ"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">07</span>
-        <h3 class="crisis-heading">海上交通路まで含めた<br>エネルギー安全保障の新モデル</h3>
-        <p>POWERR Asiaは、単なる資金支援の枠組みではありません。原油・石油製品の調達、備蓄制度の整備、備蓄タンクなどのインフラ支援に加え、公式資料では<strong>「安全なシーレーンの構築」</strong>も重要な要素として示されています。</p>
-        <p>日本にとって、ホルムズ海峡やマラッカ海峡を通る海上交通路はエネルギー供給を支える生命線です。POWERR Asiaは、資源・エネルギーを「買う」「貯める」だけでなく、<strong>安定して届くためのルートそのものを強くする構想</strong>ともいえます。</p>
-        <p class="about-disclaimer">※海上自衛隊の護衛艦派遣やホルムズ近海での警備活動がPOWERR Asiaの一部として正式発表されているわけではありません。公式に確認できるのは「安全なシーレーンの構築」がエネルギー供給網強化の取り組みとして位置づけられているという点です。</p>
-      </div>
-    </div>
-
-    <!-- ブロック⑧ 巡視船供与 -->
-    <div class="crisis-block crisis-block--alt" id="about-patrol">
-      <div class="crisis-image-wrap">
-        <img src="images/japan-coast-guard-patrol-vessels-philippines-vietnam-blue-sky.png"
-          alt="日本海上保安庁がフィリピンへ巡視船10隻・ベトナム海上警察へ供与・海上保安能力向上支援"
-          class="crisis-img" loading="lazy">
-      </div>
-      <div class="crisis-text">
-        <span class="crisis-num">08</span>
-        <h3 class="crisis-heading">巡視船供与と海洋権益の保全</h3>
-        <p>POWERR Asiaの背景には、日本がこれまでアジア各国と積み重ねてきた海上保安協力があります。日本はODAなどを通じて、<strong>フィリピン沿岸警備隊に44m級巡視船10隻を供与し、ベトナム海上警察に対しても巡視船供与や円借款による海上保安能力向上支援</strong>を行ってきました。</p>
-        <p>巡視船の供与は、単なる船の提供にとどまりません。<strong>運用・人材育成・維持管理・海上法執行の実務能力を含めた、長期的な能力構築支援</strong>として位置づけられます。</p>
-        <p>エネルギーや資源は、港・タンカー・海上交通路を通じて運ばれます。だからこそ、POWERR Asiaが掲げる「安全なシーレーンの構築」は、こうした海上保安協力の蓄積とも重なります。<strong>日本の支援は軍事的対立を前面に出すものではなく、各国が自国の海を法に基づいて守るための基盤づくり</strong>と見ることができます。</p>
-
-        <!-- NOTE誘導 -->
-        <div class="about-note-cta">
-          <p>POWERR Asiaの全体像と、投資家・生活者への示唆——続きは<strong>noteで公開</strong>しています。</p>
-          <a href="#note" class="cnb-btn" style="margin-top:16px; display:inline-block;">noteで続きを読む →</a>
-        </div>
-      </div>
-    </div>
-
-  </div><!-- /.about-blocks-wrap -->
-</section>
-
-<section class="hook" id="hook">
-  <!-- 大型ステートメント -->
-  <div class="hook-banner">
-    <div class="container">
-      <span class="hook-tag">SPECIAL FOCUS</span>
-      <h2>
-        <span class="gold">日本、戦後最大級</span>の国策構想！<br>日本が100億ドルを動かす。
-      </h2>
-      <p class="hook-banner-sub">
-        高度経済成長、エネルギー革命、新幹線、製造業の海外進出 ─<br>
-        日本がアジアに対して「資源・エネルギーの基盤」を提供する構想は、<br>
-        その流れに連なる、新しい時代の挑戦かもしれません。
-      </p>
-    </div>
-  </div>
-
-  <!-- 金融協力インフォグラフィック -->
-  <div class="hook-finance">
-    <div class="container">
-      <div class="hook-finance-card">
-        <div class="hook-finance-image">
-          <img src="images/power-asia-energy-financial-cooperation-oil-supply-chain.png" alt="POWERR Asiaの総額約100億ドル規模の金融協力を説明する図解。資源を買う、貯める、止まらない供給網を作るという3つの仕組みを示す。">
-        </div>
-        <div class="hook-finance-text">
-          <span class="hook-finance-label">Financial Cooperation</span>
-          <h3>日本が、アジア各国に対して、約100億ドル規模（日本円で約1.6兆円規模）の金融協力を行い、資源・エネルギー供給網の強靱化を支える。</h3>
-          <p>
-            POWERR Asiaは、原油・石油製品等の調達、サプライチェーン維持、備蓄制度・備蓄タンク、重要鉱物、バイオ燃料、省エネ、産業高度化などを対象にした金融協力の枠組みです。
-          </p>
-          <p class="note">
-            ※日本円換算は1ドル＝160円で概算。
-          </p>
-          <p>
-            外務省は、最大で約12億バレル、ASEANの約1年分の原油輸入にも相当すると説明しています。つまり、これは「資源を買う」「貯める」「止まらない供給網を作る」ための仕組みです。
-          </p>
-        </div>
-      </div>
-
-      <div class="hook-finance-card" style="margin-top: 28px;">
-        <div class="hook-finance-image">
-          <img src="images/powerr-asia-japan-flag-energy-network.png" alt="日本国旗を中心にアジア太平洋各国の国旗へ資源・エネルギー供給網が広がるPOWERR Asiaの協力・関係国イメージ">
-        </div>
-        <div class="hook-finance-text">
-          <span class="hook-finance-label">Cooperation Network</span>
-          <h3>協力・関係国イメージ（想定）</h3>
-          <p>
-            日本を中心に、アジア太平洋の各国・地域へ資源・エネルギー供給網が広がっていくイメージです。
-          </p>
-          <p>
-            POWERR Asiaは、特定の国だけを対象にした仕組みではなく、原油・石油製品等の調達、サプライチェーン維持、備蓄制度・備蓄タンク、重要鉱物、バイオ燃料、省エネ、産業高度化などを幅広く支える金融協力の枠組みです。
-          </p>
-          <p>
-            この図は、POWERR Asiaが想定するアジア地域の協力・関係国イメージです。正式な協力国を断定するものではありません。
-          </p>
-        </div>
-      </div>
-
-      <div class="hook-finance-card" style="margin-top: 28px;">
-        <div class="hook-finance-image">
-          <img src="images/powerr-asia-japan-public-private-finance-framework.png" alt="日本企業、日本の金融機関、政府系金融が一体となり、アジアの資源・エネルギー供給網を支えるPOWERR Asiaの官民金融一体モデル">
-        </div>
-        <div class="hook-finance-text">
-          <span class="hook-finance-label">Public-Private Finance Framework</span>
-          <h3>日本企業・金融機関・政府系金融が一体となり、アジアの供給網を支える。</h3>
-          <p>
-            POWERR Asiaは、単なる資金援助ではありません。日本企業、日本の金融機関、政府系金融が一体となり、アジアの資源・エネルギー供給網を、ビジネスと安全保障の両面から支える枠組みとして見ることができます。
-          </p>
-          <p>
-            日本企業は、プラント、備蓄タンク、港湾・物流、省エネ設備、重要鉱物関連設備などを実装する役割を担います。日本の金融機関は、融資、保証、決済、プロジェクトファイナンスなどで事業を支えます。政府系金融は、長期資金や信用補完によって、民間だけでは取りにくいリスクを下支えします。
-          </p>
-          <p>
-            従来のODAが道路・橋・学校・病院などの公共インフラ整備を中心としてきたのに対し、POWERR Asiaは、資源を買う、貯める、運ぶ、守るという「供給網そのもの」を、官民金融と日本企業の力で支える構想として整理できます。
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 5つの問いかけ -->
-  <div class="hook-questions">
-    <div class="container">
-      <div class="hook-section-head">
-        <div class="label">— Your Life Will Change —</div>
-        <h3>もしこの構想が進んだら、<br><span class="marker">私たちの生活は</span>どう変わる？</h3>
-      </div>
-
-      <div class="hook-question-grid">
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.1</span>
-          <h4>ガソリン代</h4>
-          <p>原油の安定供給が進めば、家計の負担はどう動くのか。</p>
-        </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.2</span>
-          <h4>電気代</h4>
-          <p>エネルギー安全保障の強化は、毎月の電力料金にも関わる論点。</p>
-        </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.3</span>
-          <h4>物価</h4>
-          <p>資源価格の変動が、食料品や日用品の値段にどう影響するか。</p>
-        </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.4</span>
-          <h4>年金・老後</h4>
-          <p>日本企業の競争力が高まれば、長期の経済基盤にも追い風に。</p>
-        </div>
-        <div class="hook-q-card">
-          <span class="hook-q-icon">Q.5</span>
-          <h4>資産形成</h4>
-          <p>新NISAで何を選ぶか。国策テーマは長期投資の判断材料に。</p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- 3つのインパクト数字 -->
-  <div class="hook-stats">
-    <div class="container">
-      <div class="hook-stats-grid">
-        <div class="hook-stat">
-          <span class="num">90<span class="unit">%以上</span></span>
-          <div class="label">原油の海外依存度</div>
-          <div class="desc">日本のエネルギーは、その大部分を海外からの輸入に支えられています。</div>
-        </div>
-        <div class="hook-stat">
-          <span class="num">40<span class="unit">億人超</span></span>
-          <div class="label">アジアの人口規模</div>
-          <div class="desc">世界人口の約半分が暮らすアジア。エネルギー需要は今後も拡大します。</div>
-        </div>
-        <div class="hook-stat">
-          <span class="num">∞</span>
-          <div class="label">国策テーマの広がり</div>
-          <div class="desc">商社・重工・海運・素材・金融 ─ 関連業界は枚挙にいとまがありません。</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     2. なぜ今、重要なのか
-     ============================================ -->
-<section class="why" id="why">
-  <div class="container">
-    <span class="section-eyebrow">Why It Matters Now</span>
-    <h2 class="section-title">なぜ今、重要なのか</h2>
-    <p class="section-lead">
-      世界情勢の変化、技術革新、産業構造の転換 ─ 複数の流れが重なるいま、エネルギーと資源の確保は、国の競争力そのものを左右する論点になっています。
-    </p>
-
-    <div class="card-grid">
-      <div class="fact-card">
-        <span class="ico">Ⅰ</span>
-        <h3>中東リスク</h3>
-        <p>原油の輸送経路や産油国の情勢は、私たちの日常生活と物価に直結します。安定供給の確保が改めて問われています。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅱ</span>
-        <h3>原油価格</h3>
-        <p>エネルギー価格の変動は、企業業績や家計、そして円安円高にも影響。長期視点での備えが重要です。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅲ</span>
-        <h3>重要鉱物</h3>
-        <p>レアアース、レアメタル、銅、ニッケル ─ EVや再エネ、半導体に欠かせない資源の確保競争が始まっています。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅳ</span>
-        <h3>半導体・EV・AI時代の資源</h3>
-        <p>これからの産業を動かす要は「資源と素材」。技術と資源、両方を握ることが国の競争力につながります。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅴ</span>
-        <h3>サプライチェーン分断</h3>
-        <p>パンデミックや地政学リスクで、供給網はもろさを露呈。複数経路の確保と備蓄の強化が課題です。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅵ</span>
-        <h3>アジアの成長</h3>
-        <p>東南アジア、南アジアは人口・市場の両面で成長中。エネルギー需要も拡大し、新しい協力関係が生まれます。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅶ</span>
-        <h3>日本企業の役割</h3>
-        <p>商社・重工・海運・素材・金融 ─ 日本企業はサプライチェーンの実装力で、長く信頼を積み上げてきました。</p>
-      </div>
-      <div class="fact-card">
-        <span class="ico">Ⅷ</span>
-        <h3>備蓄と供給網の強靱化</h3>
-        <p>非常時にも止めない仕組みづくり。備蓄、代替経路、地域連携 ─ これらが投資テーマとしても注目され始めています。</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     3. 一帯一路との違い
-     ============================================ -->
-<section class="compare" id="compare">
-  <div class="container">
-    <span class="section-eyebrow">Comparison</span>
-    <h2 class="section-title">一帯一路と何が違うのか</h2>
-    <p class="section-lead">
-      一帯一路とPOWERR Asiaは、しばしば対比的に語られます。ここでは冷静に、両者の性格の違いを整理します。<br>
-      対立を煽るのではなく、アジア各国に「選択肢を増やす」 ─ これがこの構想の本質です。
-    </p>
-
-    <div class="compare-table">
-      <div class="compare-card">
-        <div class="label">REFERENCE — 既存の構想</div>
-        <h3>一帯一路（参考）</h3>
-        <ul>
-          <li>大規模インフラ投資を通じた影響力拡大として語られることが多い</li>
-          <li>道路・港湾・鉄道などハードを軸とした展開</li>
-          <li>融資条件や債務問題が指摘されるケースもある</li>
-          <li>地政学的な影響力の議論と切り離せない</li>
+      <!-- ⑥ ページ内目次 -->
+      <nav class="page-toc">
+        <div class="page-toc-title">📋 On This Page</div>
+        <ul class="page-toc-list">
+          <li><a href="#section1">1. 新NISAをやるべき理由：非課税の利点</a></li>
+          <li><a href="#section2">2. 迷ったらこれ一択。王道のインデックス投資</a></li>
+          <li><a href="#simulation">3. 積立シミュレーション：あなたの未来を描く</a></li>
+          <li><a href="#section5">4. 資金の受取計画（出口戦略）</a></li>
+          <li><a href="#section6">5. これが「お金が増えるサイクル」の完成形</a></li>
+          <li><a href="#section7">6. 開始までの手順</a></li>
         </ul>
-      </div>
-      <div class="compare-card highlight">
-        <div class="label">PROPOSAL — 日本型の構想</div>
-        <h3>POWERR Asia（パワー・アジア）</h3>
-        <ul>
-          <li>エネルギー・資源・備蓄・供給網・金融支援を通じた支援構想として見ることができる</li>
-          <li>日本が培ってきた信頼・技術・運用力を強みに</li>
-          <li>アジア各国に「選択肢」を増やすことが目的</li>
-          <li>対立ではなく、共に強くなる枠組みを志向</li>
-        </ul>
-      </div>
-    </div>
+      </nav>
 
-    <div class="compare-note">
-      重要なのは、どちらかを否定することではありません。アジアの国々が、状況に応じて複数のパートナーから選べる ─ そうした多様性こそが、長期的な安定につながると考えられています。
-    </div>
-  </div>
-</section>
+      <!-- ほっとけ投資セクション -->
+      <div class="hottoke-section">
 
-<!-- ============================================
-     4. 日本株への期待
-     ============================================ -->
-<section class="stocks" id="stocks">
-  <div class="container">
-    <span class="section-eyebrow">Japan Equities — Long-term Themes</span>
-    <h2 class="section-title">日本株への期待</h2>
-    <p class="section-lead">
-      POWERR Asiaが進むとすれば、関連業界として注目される可能性があるテーマを整理しました。<br>
-      ※特定の銘柄を推奨するものではありません。長期テーマとしての全体像をつかむための整理です。
-    </p>
-
-    <div class="theme-grid">
-      <div class="theme-tag"><div class="theme-name">総合商社</div><div class="theme-en">Trading Houses</div></div>
-      <div class="theme-tag"><div class="theme-name">エネルギー</div><div class="theme-en">Energy</div></div>
-      <div class="theme-tag"><div class="theme-name">重工業</div><div class="theme-en">Heavy Industry</div></div>
-      <div class="theme-tag"><div class="theme-name">プラント</div><div class="theme-en">Plant Engineering</div></div>
-      <div class="theme-tag"><div class="theme-name">海運</div><div class="theme-en">Shipping</div></div>
-      <div class="theme-tag"><div class="theme-name">素材</div><div class="theme-en">Materials</div></div>
-      <div class="theme-tag"><div class="theme-name">金融</div><div class="theme-en">Finance</div></div>
-      <div class="theme-tag"><div class="theme-name">インフラ</div><div class="theme-en">Infrastructure</div></div>
-      <div class="theme-tag"><div class="theme-name">重要鉱物</div><div class="theme-en">Critical Minerals</div></div>
-      <div class="theme-tag"><div class="theme-name">省エネ技術</div><div class="theme-en">Energy Saving Tech</div></div>
-    </div>
-
-    <div class="disclaimer-box">
-      ※このサイトは特定銘柄の売買を推奨するものではありません。投資判断は自己責任でお願いします。各テーマは「今後注目される可能性のある業界」として整理したものであり、将来の値動きを保証するものではありません。
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     5. 新NISAとのつながり
-     ============================================ -->
-<section class="nisa" id="nisa">
-  <div class="container">
-    <span class="section-eyebrow">Connecting with New NISA</span>
-    <h2 class="section-title">新NISAとのつながり</h2>
-    <p class="section-lead">
-      新NISAは、長期の資産形成のために用意された「器」です。何を、どう積み立てていくか ─ その視点づくりに、国策テーマの理解が役立ちます。
-    </p>
-
-    <div class="nisa-grid">
-      <ul class="nisa-list">
-        <li>新NISAは、長期で資産を育てるための制度の枠組みです。</li>
-        <li>国策テーマを学ぶことは、長期投資の視点を持つきっかけになります。</li>
-        <li>どの国・どの産業・どの企業が伸びるかを、自分なりに考える力が大切です。</li>
-        <li>POWERR Asiaは、日本株や国策テーマを学ぶ「入口」のひとつとして捉えられます。</li>
-        <li>仕組みを理解したうえで、無理のない積立から始めるのがおすすめです。</li>
-      </ul>
-
-      <div class="nisa-card">
-        <div class="label">FOR BEGINNERS</div>
-        <h3>はじめての方へ ─<br>長期視点の入口として</h3>
-        <p>
-          新NISAの基本、長期投資の考え方、国策テーマの読み方 ─ ステップごとに整理した記事を用意していきます。<br>
-          急ぐ必要はありません。少しずつ理解を深めながら、自分のペースで考えていきましょう。
-        </p>
-        <div class="nisa-buttons">
-          <!-- AFFILIATE PLACEHOLDER: 証券会社・新NISA記事へ差し替え -->
-          <a href="#" class="nisa-btn">新NISAの始め方を見る</a>
-          <!-- AFFILIATE PLACEHOLDER: 長期投資基礎記事へ差し替え -->
-          <a href="#" class="nisa-btn">長期投資の基本を学ぶ</a>
+        <div class="hottoke-catchcopy">
+          やるべきは新NISAを満額にして、放置。
         </div>
-      </div>
-    </div>
-  </div>
-</section>
+        <div class="hottoke-subcopy" style="color: #d4af37; font-weight: 700;">
+          ドキドキしない。ハラハラしない。フルオートで資産を育てる。
+        </div>
 
-<!-- ============================================
-     6. YouTube展開セクション
-     ============================================ -->
-<section class="youtube" id="youtube">
-  <div class="container">
-    <span class="section-eyebrow">Video Series</span>
-    <h2 class="section-title">動画でわかるPOWERR Asia</h2>
-    <p class="section-lead">
-      難しい国際情勢・エネルギー・資源・日本株テーマを、動画でもわかりやすく解説していきます。<br>
-      文字を読むのが疲れる時間帯にも、耳から学べるシリーズを準備中です。
-    </p>
+        <div class="hottoke-body">
+          <p>結論はシンプルです。新NISAは、早く満額にして、ほっておく。<strong>これだけです。</strong></p>
 
-    <div class="video-grid">
-      <!-- VIDEO PLACEHOLDER 1: YouTube動画URLへ差し替え -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <span class="badge">準備中</span>
-          <div class="play"></div>
-        </div>
-        <div class="video-info">
-          <div class="ep">Episode 01</div>
-          <h3>POWERR Asiaとは何か？<br>日本がアジアを支える新構想</h3>
-        </div>
-      </div>
-      <!-- VIDEO PLACEHOLDER 2 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <span class="badge">準備中</span>
-          <div class="play"></div>
-        </div>
-        <div class="video-info">
-          <div class="ep">Episode 02</div>
-          <h3>一帯一路とPOWERR Asiaは<br>何が違うのか</h3>
-        </div>
-      </div>
-      <!-- VIDEO PLACEHOLDER 3 -->
-      <div class="video-card">
-        <div class="video-thumb">
-          <span class="badge">準備中</span>
-          <div class="play"></div>
-        </div>
-        <div class="video-info">
-          <div class="ep">Episode 03</div>
-          <h3>日本株に追い風？<br>商社・重工・海運を読む</h3>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+          <!-- メッセージ：1つの角丸ボックス -->
+          <div class="hottoke-message-box">
+            <p>新NISA。運用益、すべて非課税。</p>
+            <p>スマホ、AI、クラウド、動画配信。<br>あなたの生活から消えることが想像できますか？<br>今後10年、その企業の衰退は考えられない。<br>その成長のど真ん中に、乗る。<span class="hottoke-note">🏷 その企業の株を買います</span></p>
+            <p>でも、やり方はシンプル。<br>インデックスで、分散して持つだけ。<br>当てにいかない。外さない。<br>1社が潰れても、関係ない。<br>経済そのものを、丸ごと買う。<span class="hottoke-note">🏷 インデックス投資と呼びます</span></p>
+            <p>増える。複利で増える。<span class="hottoke-note">🏷 利息が利息を生み出します</span><br>しかも、税金ゼロ。<span class="hottoke-note">🏷 国が作った唯一の合法的な節税</span><br>これを、ほっとくだけ。<br><strong class="hottoke-strong">最強です。</strong></p>
+            <p>このまま何もしなければ、<br>インフレがあなたのお金を静かに減らし続けます。<br>でも、<strong class="hottoke-strong">今日始めた人が、10年後に笑います。</strong></p>
+            <p>難しくない。怖くない。<br><strong class="hottoke-strong">ただ、始めるだけでいい。</strong></p>
+          </div>
 
-<!-- ============================================
-     7. ブログ記事一覧
-     ============================================ -->
-<section class="articles" id="articles">
-  <div class="container">
-    <div class="articles-head">
-      <div class="text-block">
-        <span class="section-eyebrow">Latest Articles</span>
-        <h2 class="section-title">記事一覧</h2>
-        <p class="section-lead">
-          基礎の解説から、業界の読み方、長期投資の視点まで。<br>
-          ニュースと自分の生活・資産をつなぐ記事を、順次公開していきます。
-        </p>
-      </div>
-    </div>
+          <!-- 横長バナー：私についてはこちら -->
+          <a href="./about.html" class="hottoke-about-banner">
+            <img src="img/chara-smile.png" alt="運営者" class="hottoke-about-icon" loading="lazy">
+            <div class="hottoke-about-text">
+              <strong>真-SHIN-　61歳・IT企業PM ／ 私が本気で勧める理由</strong>
+              <small>FXで数百万失った私が、今これしかやっていない理由を話しています。</small>
+            </div>
+            <span class="hottoke-about-arrow">▶ 私についてはこちら</span>
+          </a>
 
-    <!-- 6分野インフォグラフィック -->
-    <div class="hook-finance-card" style="margin-bottom: 48px; background: rgba(255,255,255,0.03);">
-      <div class="hook-finance-image" style="background:#fff;">
-        <img src="images/powerr-asia-six-support-fields-infographic.png" alt="POWERR Asiaの6つの支援分野インフォグラフィック：石油調達、備蓄、サプライチェーン、重要鉱物、バイオ燃料、省エネ・産業高度化">
-      </div>
-      <div class="hook-finance-text" style="color: var(--c-text);">
-        <span class="hook-finance-label" style="color: var(--c-gold);">Six Support Fields</span>
-        <h3 style="color: var(--c-navy);">POWERR Asiaが支える6つの分野</h3>
-        <p style="color: var(--c-text-2);">
-          原油・石油製品の調達、備蓄制度・備蓄タンク、サプライチェーン維持——の3本柱に加え、重要鉱物、バイオ燃料、省エネ・産業高度化まで幅広くカバーします。
-        </p>
-        <p style="color: var(--c-text-2);">
-          各分野が連動することで、「資源を買う」「貯める」「止まらない供給網を作る」という3つのミッションが実現されます。
-        </p>
-      </div>
-    </div>
-
-    <div class="article-grid">
-      <!-- ARTICLE LINK PLACEHOLDER 1: ブログ記事URLへ差し替え -->
-      <a href="#" class="article-card">
-        <div class="article-cover c1"><span class="article-num">01</span></div>
-        <div class="article-body">
-          <span class="article-cat">Basics</span>
-          <h3>POWERR Asiaとは何か？日本がアジアを支える新構想</h3>
-          <p>正式名称、目的、注目すべきポイントを初心者向けに整理します。</p>
-          <div class="article-read">読む</div>
+          <div class="hottoke-cta-text">
+            さあ一緒に「ほっとけ投資」へ。まずは新NISA満額を目指しましょう。
+          </div>
         </div>
-      </a>
 
-      <!-- ARTICLE LINK PLACEHOLDER 2 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c2"><span class="article-num">02</span></div>
-        <div class="article-body">
-          <span class="article-cat">Compare</span>
-          <h3>一帯一路とPOWERR Asiaは何が違うのか</h3>
-          <p>性格の違いを冷静に比較し、なぜ「選択肢を増やす」発想が大切なのかを解説します。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-
-      <!-- ARTICLE LINK PLACEHOLDER 3 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c3"><span class="article-num">03</span></div>
-        <div class="article-body">
-          <span class="article-cat">Resources</span>
-          <h3>なぜ重要鉱物がこれからの投資テーマになるのか</h3>
-          <p>EV、半導体、AI時代の根っこにある資源と、その確保競争の構図を読み解きます。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-
-      <!-- ARTICLE LINK PLACEHOLDER 4 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c4"><span class="article-num">04</span></div>
-        <div class="article-body">
-          <span class="article-cat">Japan Equities</span>
-          <h3>日本株に追い風？商社・重工・海運に注目する理由</h3>
-          <p>国策テーマに関連しやすい業界の特徴と、長期視点での見方を整理します。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-
-      <!-- ARTICLE LINK PLACEHOLDER 5 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c5"><span class="article-num">05</span></div>
-        <div class="article-body">
-          <span class="article-cat">New NISA</span>
-          <h3>新NISAで国策テーマを考える意味</h3>
-          <p>制度の特徴と、長期視点でテーマを理解することのつながりを、やさしく解説します。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-
-      <!-- ARTICLE LINK PLACEHOLDER 6 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c6"><span class="article-num">06</span></div>
-        <div class="article-body">
-          <span class="article-cat">Life & Money</span>
-          <h3>60代からでも遅くない、年金と投資の考え方</h3>
-          <p>シニア世代が無理のない範囲で資産形成を考えるための、現実的な視点をまとめます。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-
-      <!-- ARTICLE LINK PLACEHOLDER 7 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c7"><span class="article-num">07</span></div>
-        <div class="article-body">
-          <span class="article-cat">Energy Security</span>
-          <h3>エネルギー安全保障とは何か？生活と投資への影響</h3>
-          <p>専門用語をかみ砕いて、日々の暮らしや家計とのつながりを丁寧に説明します。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-
-      <!-- ARTICLE LINK PLACEHOLDER 8 -->
-      <a href="#" class="article-card">
-        <div class="article-cover c8"><span class="article-num">08</span></div>
-        <div class="article-body">
-          <span class="article-cat">Perspective</span>
-          <h3>POWERR Asiaは日本の歴史的構想になるのか</h3>
-          <p>長い時間軸で構想の意味を読み解き、これからの数年で見るべき論点を整理します。</p>
-          <div class="article-read">読む</div>
-        </div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ============================================
-     8. note誘導セクション
-     ============================================ -->
-<section class="note-section" id="note">
-  <div class="container">
-    <div class="note-grid">
-      <div class="note-text">
-        <span class="section-eyebrow">Deep Dive on note</span>
-        <h2 class="section-title">無料記事では伝えきれない<br>深掘りをnoteへ</h2>
-        <p class="section-lead">
-          ブログでは基礎をわかりやすく解説し、noteでは図解、企業テーマ整理表、国策投資の読み方、動画台本、学習メモなどを深掘りしていく予定です。<br>
-          じっくり腰を据えて学びたい方のための場所として、少しずつ整えていきます。
-        </p>
-        <div class="note-cta">
-          <!-- NOTE LINK PLACEHOLDER: noteのプロフィールURLへ差し替え -->
-          <a href="#" class="btn btn-primary btn-arrow">noteで深掘り記事を見る</a>
-        </div>
       </div>
 
-      <ul class="note-list">
-        <li>POWERR Asia 図解資料</li>
-        <li>関連業界マップ</li>
-        <li>日本株テーマ整理表</li>
-        <li>新NISAで国策テーマを考える手順</li>
-        <li>初心者向けPDF</li>
-        <li>動画台本・学習メモ</li>
-      </ul>
-    </div>
-  </div>
-</section>
+      <div class="age-input-section" id="target-section">
+          <div class="age-input-heading">あなたに合った「ほっとけ投資」の始め方。</div>
+          <div class="age-input-sub">世代別・新NISA活用プランを見てみましょう。</div>
+          <span class="age-input-label">あなたの世代を選んでください。</span>
+          <div class="target-selector">
+              <button id="btn-kid" class="target-btn" onclick="setTarget('kid')" data-age-group="kid"><span class="btn-icon">👶</span>子供<br><small>（教育・将来）</small></button>
+              <button id="btn-20"  class="target-btn" onclick="setTarget('20')"  data-age-group="20"><span class="btn-icon">🌱</span>20代</button>
+              <button id="btn-30"  class="target-btn" onclick="setTarget('30')"  data-age-group="30"><span class="btn-icon">🏃</span>30代</button>
+              <button id="btn-40"  class="target-btn" onclick="setTarget('40')"  data-age-group="40"><span class="btn-icon">💼</span>40代</button>
+              <button id="btn-50"  class="target-btn" onclick="setTarget('50')"  data-age-group="50"><span class="btn-icon">🎯</span>50代</button>
+              <button id="btn-60"  class="target-btn" onclick="setTarget('60')"  data-age-group="60"><span class="btn-icon">🏖️</span>60代以上</button>
+          </div>
+          <div class="age-input-guide">
+            世代を選ぶと、積立期間が自動で設定されます。<br>
+            <a href="#simulation" class="age-input-guide-link">👇 「3. 資産推移（積立シミュレーション）」で、あなたの未来の資産額を確認してみましょう。</a>
+          </div>
+      </div>
 
-<!-- ============================================
-     9. 収益導線（控えめ）
-     ============================================ -->
-<section class="funnel" id="funnel">
-  <div class="container">
-    <div class="funnel-eyebrow-wrap">
-      <span class="section-eyebrow">From Learning to Action</span>
-    </div>
-    <h2 class="section-title">学びを、行動につなげる</h2>
-    <p class="section-lead">
-      ニュースを知るだけでは、なかなか日々の暮らしや資産には結びつきません。<br>
-      情報の整理 → 自分なりの考え → 小さな実行へ。長く続けられる学びの動線を、これから少しずつ整えていきます。
-    </p>
+      <!-- =====================================================
+           ② アドバイスボックス
+           data-gen 属性を JS で付与 → CSS で世代別カラー適用
+           ===================================================== -->
+      <div id="target-advice">
+          <!-- JS の setTarget() が innerHTML と data-gen を書き換える -->
+          世代を選ぶと、あなたへのアドバイスが表示されます。
+      </div>
 
-    <div class="funnel-flow">
-      <div class="funnel-step">
-        <div class="stepnum">Step 01</div>
-        <h3>知る</h3>
-        <p>ニュース、構想、業界の基礎を、初心者向けの記事と動画で押さえます。</p>
-      </div>
-      <div class="funnel-step">
-        <div class="stepnum">Step 02</div>
-        <h3>整理する</h3>
-        <p>図解、テーマ整理表、PDFなどで、自分の頭の中を見える化します。</p>
-      </div>
-      <div class="funnel-step">
-        <div class="stepnum">Step 03</div>
-        <h3>考える</h3>
-        <p>新NISA、長期投資、生活設計とどう結びつけるか。自分の判断軸を育てます。</p>
-      </div>
-      <div class="funnel-step">
-        <div class="stepnum">Step 04</div>
-        <h3>動き出す</h3>
-        <p>口座開設、積立、学習継続 ─ 無理のない一歩を、自分のペースで。</p>
-      </div>
-    </div>
-  </div>
-</section>
+      <!-- ===================================================== -->
 
-<!-- ============================================
-     10. プロフィール
-     ============================================ -->
-<section class="profile" id="profile">
-  <div class="container">
-    <div class="profile-card">
-      <div class="profile-label">About the Author</div>
-      <h2>運営者について</h2>
-      <p>
-        60代のシステムエンジニア／プロジェクトマネージャー。大手企業や官公庁系プロジェクトで、PM・QA・リスク管理・サプライチェーン管理を経験してきました。
+      <h2 id="section1">1. 新NISAをやるべき理由：非課税の利点</h2>
+      <p style="font-size: 16px; line-height: 1.9;">
+          銀行に貯蓄をした場合、現在の超低金利下では<span class="emphasis">資産はほとんど増えません。</span><br>
+          むしろ物価上昇（インフレ）が続けば、お金の価値は相対的に下がり、<strong style="color: var(--tax-red); font-size: 1.1em;">実質的なマイナス</strong>となってしまうリスクがあります。<br>
+          <span class="emphasis">ただ貯金しているだけでは資産を守れない時代です。</span>
       </p>
-      <p>
-        現役時代に培った視点から、エネルギー・資源・国策テーマを整理し、難しいニュースを「普通の生活と投資」に結びつけて考えることを目的にしています。
+
+      <!-- キャラ吹き出し：ポイント -->
+      <div class="chara-balloon right type-point">
+          <img src="img/chara-point.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
+          <div class="chara-balloon-body">
+              <span class="balloon-label">ポイント</span><br>
+              銀行にお金を置いておくだけでは、<strong>インフレで実質的に目減り</strong>しています。これが「貯金だけでは老後が不安」な本当の理由です。
+          </div>
+      </div>
+
+      <p style="font-size: 16px; font-weight: bold; color: var(--primary-dark); margin: 30px 0 20px;">
+          資産運用には様々な形がありますが、代表的な例として以下のものが挙げられます：
       </p>
+
+      <div class="invest-grid">
+          <div class="invest-item fx">
+              <div class="invest-icon">📈</div>
+              <strong>FX・株式</strong>
+              <p>為替や株価の変動を利用して利益を得る、代表的な投資手法です。</p>
+          </div>
+          <div class="invest-item gold">
+              <div class="invest-icon">🏆</div>
+              <strong>金（ゴールド）</strong>
+              <p>「有事の金」と呼ばれ、現物資産としての守りに適しています。</p>
+          </div>
+          <div class="invest-item estate">
+              <div class="invest-icon">🏢</div>
+              <strong>不動産</strong>
+              <p>家賃収入や売却益を目的とし、現物として残る実物資産投資です。</p>
+          </div>
+          <div class="invest-item fund">
+              <div class="invest-icon">💼</div>
+              <strong>投資信託</strong>
+              <p>プロに運用を任せ、多くの企業へ分散投資する初心者向けの選択肢です。</p>
+          </div>
+      </div>
+
       <p>
-        個人としても、年金・投資・副業・自営業化を実践中。 ─ 同世代、そして次の世代にとって、少しでも参考になる「考え方の整理場所」を目指しています。
+          これらFXや株等の投資で得られた利益には、通常 20.315% の税金が課されます。<br>
+          例えば、<strong>投資で100万円の利益が出たとします。</strong>すると、<strong>203,150円（約20万円）もの税金</strong>を支払わなければなりません。<br><br>
+          <strong>しかし、新NISA制度を利用することで、この税負担を 0円 にすることが可能です。</strong><br>
+          <strong>これは、効率的な資産形成において極めて重要な役割を果たします。</strong>
       </p>
+
+      <div class="nisa-comparison">
+          <div class="comp-card taxed">
+              <div class="comp-card-title">❌ 通常の課税口座</div>
+              <div class="comp-card-content">利益100万 → 受取 <strong>約80万円</strong></div>
+              <div class="comp-card-footer">約20%は税金がかかります</div>
+          </div>
+          <div class="comp-card nisa">
+              <div class="comp-card-title">✅ 新NISAの場合</div>
+              <div class="comp-card-content">利益100万 → 受取 <strong>100万円</strong></div>
+              <div class="comp-card-footer">利益は100％受け取れます</div>
+          </div>
+      </div>
+
+      <figure class="nisa-1800-figure">
+          <img src="img/nisa-1800man-taxfree-vs-tax-account.png" loading="lazy" alt="1800万円の枠の中で増えた利益はすべて非課税・課税口座との比較図">
+          <figcaption>新NISAは1,800万円を上限に投資でき、その枠内で生まれた運用益はいくら大きくなっても非課税。1,800万円を超える投資は課税口座となり、利益の約20%が税金として差し引かれます。</figcaption>
+      </figure>
+
+      <h2 id="section2">2. 迷ったらこれ一択。王道のインデックス投資</h2>
+      <p>
+          投資には特定の1社に投資する「個別株」もありますが、予測が難しくリスクも高くなります。<br>
+          そのため現在は、特定の指数に連動する<strong>「インデックス投資」</strong>が主流となっています。
+      </p>
+
+      <p style="font-size: 14px; color: #4a5568; background: #edf2f7; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+          <strong>※インデックス投資とは</strong><br>
+          日経平均株価やS&P500といった「市場の平均値（指数）」と同じ値動きを目指す、分散投資の王道手法のことです。1社が潰れても影響は軽微。経済そのものを丸ごと買うイメージです。
+      </p>
+
+      <!-- 王道2択カード -->
+      <div class="orthodox-grid">
+          <div class="orthodox-card recommended">
+              <div class="orthodox-badge">🌍 究極の分散</div>
+              <div class="orthodox-name">オルカン</div>
+              <div class="orthodox-desc">全世界約2,800社に分散投資。「どこの国が伸びるかわからない」という不安をまるごと解消。初心者に最もおすすめの一択。</div>
+              <div class="orthodox-rate">過去10年：約<strong>12.8</strong>%</div>
+          </div>
+          <div class="orthodox-card recommended">
+              <div class="orthodox-badge">🇺🇸 安定成長</div>
+              <div class="orthodox-name">S&P500</div>
+              <div class="orthodox-desc">米国主要500社に分散投資。アメリカ経済の成長にそのまま乗る。過去の実績は世界トップクラス。王道中の王道。</div>
+              <div class="orthodox-rate">過去10年：約<strong>16.3</strong>%</div>
+          </div>
+      </div>
+
+      <div class="orthodox-note">
+          💡 <strong>迷ったらS&P500かオルカンの一択です。</strong>どちらも長期積立に最適で、新NISAとの相性も抜群です。
+      </div>
+
+      <!-- ── FANG+ コンパクトカード ── -->
+      <div style="margin:0 0 2rem; background:linear-gradient(135deg,#1a202c 0%,#1a4a35 100%); border-radius:14px; padding:22px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+        <div style="flex:1; min-width:200px;">
+          <div style="font-size:11px; font-weight:700; letter-spacing:.1em; color:#fcd34d; margin-bottom:8px;">私の個人的な選択 ／ NYSE FANG+</div>
+          <div style="font-size:clamp(1rem,2.5vw,1.25rem); font-weight:900; color:#fff; margin-bottom:6px; line-height:1.4;">
+            銀行預金の280倍？<br>過去10年の実績を見てみましょう。
+          </div>
+          <div style="font-size:13px; color:#a0aec0; line-height:1.7;">
+            Meta・Apple・NVIDIA・Googleなど10社。<br>
+            過去10年の年平均リターン<strong style="color:#fcd34d;">約28%</strong>の実績データと暴落シミュレーションを確認できます。
+          </div>
+        </div>
+        <a href="./crash-strategy.html" style="flex-shrink:0; display:inline-block; background:#d4af37; color:#1a202c; font-weight:700; font-size:14px; padding:11px 24px; border-radius:8px; text-decoration:none; white-space:nowrap;">
+          📊 実績データを見る →
+        </a>
+      </div>
+
+      <h2 id="simulation">3. 資産推移（積立シミュレーション）</h2>
+      <div class="back-to-target">
+          <a href="#target-section">↑ 世代選択に戻る</a>
+      </div>
+      <div class="simulation-box">
+          <div class="sim-instruction">あなたなら、いくら・何年・何％で投資しますか？<br>下のスライダーを動かして、あなただけの未来を描いてみましょう。</div>
+
+          <!-- キャラ吹き出し：アイデア -->
+          <div class="chara-balloon right type-idea">
+              <img src="img/chara-idea.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">アドバイス</span><br>
+                  スライダーを動かして、<strong>「もし月3万円積み立てたら？」「年利10%なら？」</strong>と色々試してみてください。数字が変わるたびに未来が見えてきます。
+              </div>
+          </div>
+
+          <div id="accumulation-suggestion" class="suggestion-box"></div>
+
+          <div class="control-panel">
+
+              <!-- 初期投資額 -->
+              <div class="input-group">
+                  <label>初期投資額</label>
+                  <span class="input-val-badge" id="initialDisplay">0万円</span>
+                  <input type="range" id="initialSlider" min="0" max="500" step="10" value="0" oninput="syncSlider('initial')">
+                  <input type="number" id="initialInput" min="0" max="500" step="10" value="0" oninput="syncNumber('initial')">
+              </div>
+
+              <!-- 毎月の積立額 -->
+              <div class="input-group">
+                  <label>毎月の積立額</label>
+                  <span class="input-val-badge" id="monthlyDisplay">0万円</span>
+                  <span class="input-sub">MAX30万円 / 年間360万円（新NISA上限）</span>
+                  <input type="range" id="monthlySlider" min="0" max="30" step="0.5" value="0" oninput="syncSlider('monthly')">
+                  <input type="number" id="monthlyInput" min="0" max="30" step="0.5" value="0" oninput="syncNumber('monthly')">
+              </div>
+
+              <!-- 積立期間 -->
+              <div class="input-group">
+                  <label>積立期間</label>
+                  <span class="input-val-badge" id="yearsDisplay">35年</span>
+                  <input type="range" id="yearsSlider" min="1" max="35" step="1" value="35" oninput="syncSlider('years')">
+                  <input type="number" id="yearsInput" min="1" max="65" step="1" value="35" oninput="syncNumber('years')">
+              </div>
+
+              <!-- 想定年利 -->
+              <div class="input-group">
+                  <label>想定年利</label>
+                  <span class="input-val-badge" id="rateDisplay">7%</span>
+                  <span class="input-sub">FANG+過去10年実績：約28%</span>
+                  <input type="range" id="rateSlider" min="1" max="30" step="0.5" value="7" oninput="syncSlider('rate')">
+                  <input type="number" id="rateInput" min="1" max="30" step="0.5" value="7" oninput="syncNumber('rate')">
+              </div>
+
+          </div>
+
+          <div class="result-display">
+              <div id="finalAmount" style="font-size: 26px; font-weight: bold; color: var(--nisa-green);"></div>
+              <div id="breakdownText" style="font-size: 18px; margin-top: 8px; color: #4a5568;"></div>
+              <div class="nisa-limit-note">※新NISAの非課税投資枠は生涯1,800万円までです。枠を超えた運用益には通常通り約20%の税金がかかります。このシミュレーションは簡略化のため全額非課税として計算しています。</div>
+          </div>
+          <div class="chart-container"><canvas id="accumulationChart"></canvas></div>
+          <!-- 免責注記：グラフ直下・見える位置 -->
+          <div style="background:#fff8e1; border-left:3px solid #f6ad55; border-radius:6px; padding:10px 14px; margin-top:16px; font-size:12px; color:#744210; line-height:1.7;">
+              ⚠️ <strong>シミュレーションについて</strong><br>
+              表示される数値は過去の実績をもとにした試算です。将来の運用成果を保証するものではありません。実際の運用結果は市場環境により大きく異なる場合があります。
+          </div>
+          <!-- 免責注記：結果直下・見える位置 -->
+          <div style="background:#fff8e1; border-left:3px solid #f6ad55; border-radius:6px; padding:10px 14px; margin-top:16px; font-size:12px; color:#744210; line-height:1.7;">
+              ⚠️ <strong>シミュレーションについて</strong><br>
+              表示される年数は過去の運用実績をもとにした試算です。将来の資産寿命を保証するものではありません。実際の運用結果・受取期間は市場環境により大きく異なる場合があります。
+          </div>
+          <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:14px;">
+              参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 5px; line-height: 1.5;">
+              ※楽観的数値の為、正確な数値（完全な精度）はこちらを参照ください。
+          </div>
+          <div class="disclaimer-text">
+              ※本シミュレーションは、新NISAの生涯投資枠（1,800万円）を超過した分も非課税として簡易計算しています。実運用では、資産を売却すると翌年にその元本分の枠が復活します（新NISA枠の再利用）。この仕組みを活用すれば、生涯累積で1,800万円以上の非課税投資が可能となります。
+          </div>
+      </div>
+
+      <h2 id="section5">4. 資金の受取計画（出口戦略）</h2>
+      <div class="simulation-box">
+
+          <!-- 導入文言 -->
+          <div class="sim-instruction">家や車・教育資金としても活用できますが、<br>老後資金とするなら―<br><span class="sim-instruction-sub">あなたの資産が何年持つか、計算してみましょう。</span></div>
+
+          <!-- キャラ吹き出し：疑問 -->
+          <div class="chara-balloon right type-question">
+              <img src="img/chara-question.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">よくある疑問</span><br>
+                  「積み立てた後、どうやって使うの？」という疑問、実は多いんです。<strong>運用しながら取り崩す</strong>と、現金だけの場合と比べて資産寿命が大きく変わります。
+              </div>
+          </div>
+
+          <!-- ① 予想資産（最上部） -->
+          <div class="dec-assets-display">
+              <div class="dec-assets-label" id="decAssetsLabel">あなたの予想資産</div>
+              <div class="dec-assets-row">
+                  <input type="number" id="decAssets" class="dec-assets-input" value="0" oninput="syncDecNumber('decAssets')">
+                  <span class="dec-assets-unit">万円</span>
+              </div>
+              <div class="dec-assets-note">※上の積立シミュレーションの結果が自動で入ります。直接変更もできます。</div>
+          </div>
+
+          <!-- 入力パネル（1枠にまとめる） -->
+          <div class="dec-input-panel">
+
+              <!-- 毎月いくらほしいか -->
+              <div class="dec-monthly-hero">
+                  <div class="dec-monthly-hero-label">老後、毎月いくら受け取りたいですか？</div>
+                  <div class="dec-monthly-hero-row">
+                      <span class="dec-monthly-hero-prefix">月</span>
+                      <input type="number" id="decMonthly" min="0" max="50" step="0.5"
+                             class="dec-monthly-hero-input" placeholder="0"
+                             oninput="syncDecNumber('decMonthly')">
+                      <span class="dec-monthly-hero-unit">万円</span>
+                  </div>
+                  <input type="range" id="decMonthlySlider" min="0" max="50" step="0.5" value="0"
+                         class="dec-monthly-hero-slider" oninput="syncDecSlider('decMonthly')">
+                  <div id="decInputError" class="input-error-msg" style="text-align:center; margin-top:4px;">毎月に必要な額を入力してください</div>
+              </div>
+
+              <div class="dec-panel-divider"></div>
+
+              <!-- 開始年齢・想定リターン -->
+              <div class="control-panel dec-control-compact">
+                  <div class="input-group">
+                      <label>開始年齢</label>
+                      <span class="input-val-badge" id="decStartAgeDisplay">65歳</span>
+                      <input type="range" id="decStartAgeSlider" min="50" max="80" step="1" value="65" oninput="syncDecSlider('decStartAge')">
+                      <input type="number" id="decStartAge" min="50" max="80" value="65" oninput="syncDecNumber('decStartAge')">
+                  </div>
+                  <div class="input-group">
+                      <label>想定リターン</label>
+                      <span class="input-val-badge" id="decRateDisplay">7%</span>
+                      <span class="input-sub">運用しながら取り崩す場合の年利</span>
+                      <input type="range" id="decRateSlider" min="0" max="20" step="0.5" value="7" oninput="syncDecSlider('decRate')">
+                      <input type="number" id="decRate" min="0" max="20" step="0.5" value="7" oninput="syncDecNumber('decRate')">
+                  </div>
+              </div>
+
+          </div>
+
+          <div id="impactMessage" class="impact-banner"></div>
+          <div id="increaseAdvice" class="increase-advice" style="text-align:center;">月の取崩額をもっと増やしてみてください。</div>
+
+          <div class="chart-container" id="decChartContainer">
+              <div class="chart-placeholder">毎月の取崩額を入力してください。</div>
+          </div>
+
+          <div class="summary-card">
+              <div class="summary-item">
+                  <span class="summary-label">資産を運用しながら取り崩した場合</span>
+                  <div id="lifeWithInvest" class="summary-value">計算中...</div>
+              </div>
+              <div class="summary-item">
+                  <span class="summary-label">現金のみ（運用なし）の場合</span>
+                  <div id="lifeWithCash" class="summary-value">計算中...</div>
+              </div>
+          </div>
+          <!-- 免責注記：結果直下・見える位置 -->
+          <div style="background:#fff8e1; border-left:3px solid #f6ad55; border-radius:6px; padding:10px 14px; margin-top:16px; font-size:12px; color:#744210; line-height:1.7;">
+              ⚠️ <strong>シミュレーションについて</strong><br>
+              表示される年数は過去の運用実績をもとにした試算です。将来の資産寿命を保証するものではありません。実際の運用結果・受取期間は市場環境により大きく異なる場合があります。
+          </div>
+          <div style="font-size: 13px; color: var(--text-muted); text-align: center; margin-top:14px;">
+              参照：<a href="https://www.am.mufg.jp/tool/tsumitate/" target="_blank">三菱UFJアセットマネジメント 公式ツール</a>
+          </div>
+          <div style="font-size: 12px; color: var(--text-muted); text-align: center; margin-top: 5px; line-height: 1.5;">
+              ※楽観的数値の為、正確な数値（完全な精度）はこちらを参照ください。
+          </div>
+          <div class="disclaimer-text">
+              ※本シミュレーションは、新NISAの生涯投資枠（1,800万円）を超過した分も非課税として簡易計算しています。実運用では、資産を売却すると翌年にその元本分の枠が復活します（新NISA枠の再利用）。この仕組みを活用すれば、生涯累積で1,800万円以上の非課税投資が可能となります。
+          </div>
+      </div>
+
+      <div class="cta-container">
+          <p class="cta-push">口座開設は無料。利益は非課税。<br>貯金しているだけでは届かない未来が、ここにあります。</p>
+          <a href="./nisa-guide.html" class="cta-button">
+              🆓 無料で始める ｜ 口座開設の手順を確認する
+          </a>
+          <span class="cta-subtext-strong">SBI証券での口座開設を、画面を見ながら順番にご案内します</span>
+      </div>
+
+            <!-- ── 暴落・出口戦略リンクカード ── -->
+      <div id="section-links" style="margin:2rem 0; background:#1a202c; border-radius:14px; padding:24px 28px;">
+        <div style="font-size:12px; font-weight:700; letter-spacing:.1em; color:#fcd34d; margin-bottom:10px;">CRASH &amp; EXIT STRATEGY</div>
+        <div style="font-size:clamp(1.1rem,3vw,1.4rem); font-weight:900; color:#fff; margin-bottom:8px; line-height:1.4;">
+          暴落は誰もが怖い。<br>それでもほっとく理由は？
+        </div>
+        <div style="font-size:14px; color:#e2e8f0; line-height:1.85; margin-bottom:16px;">
+          暴落シミュレーション・積立継続 vs 停止の差・出口の3原則。<br>「ほっとく」を最後まで貫くための知識と備えをまとめました。
+        </div>
+        <a href="./crash-strategy.html" style="display:inline-block; background:#d4af37; color:#1a202c; font-weight:700; font-size:14px; padding:11px 28px; border-radius:8px; text-decoration:none;">
+          📉 暴落対策・出口戦略を見る →
+        </a>
+      </div>
+
+
+      <h2 id="section6">5. これが「お金が増えるサイクル」の完成形</h2>
+
+      <div class="cycle-section">
+
+          <p class="cycle-lead">
+              新NISAで積み立てるだけでも十分強力ですが、<strong>OLIVEフレックスカード（三井住友銀行）とSBI証券を組み合わせる</strong>ことで、さらに強力な仕組みが完成します。
+          </p>
+
+          <figure class="cycle-figure">
+              <img src="img/nisa-olive-sbi-vpoint-tsumitate-cycle.png" loading="lazy" alt="OLIVE口座＋SBI証券口座でVポイントが貯まるサイクル図">
+          </figure>
+
+          <!-- なぜほっとけるのかの説明 -->
+          <div class="hottoke-reason-box">
+              <div class="hottoke-reason-title">💡 なぜ「ほっとけ」るのか？</div>
+              <p>
+                  一度クレジットカード積立を設定すれば、<strong>毎月自動でカードから引き落とされ、積立が実行されます。</strong><br>
+                  入金の手間も、操作も、確認も不要。画面すら見なくていい。
+              </p>
+              <p>
+                  これが「ほっとけ投資」を可能にしている仕組みの正体です。<br>
+                  <strong>設定は一度だけ。あとは時間に働いてもらう。</strong>
+              </p>
+          </div>
+
+          <!-- キャラ吹き出し：私の理想形 -->
+          <div class="chara-balloon right type-point">
+              <img src="img/chara-smile.png" alt="キャラクター" class="chara-balloon-icon" loading="lazy">
+              <div class="chara-balloon-body">
+                  <span class="balloon-label">私が考える理想形</span><br>
+                  正直に言います。<strong>これが私自身が構築しようとしているサイクルです。</strong>毎月の積立がVポイントを生み、そのポイントがまた投資に回る。人生で一番早く始めればよかったと思っている仕組みです。<strong>一度作るだけで、自動的に回り続けます。</strong>
+              </div>
+          </div>
+
+          <div class="cycle-steps">
+              <div class="cycle-step">
+                  <span class="cycle-num">1</span>
+                  <div class="cycle-step-body">
+                      <strong>OLIVE口座を開設する</strong>
+                      <p>三井住友銀行のOLIVEフレックスカードは、銀行口座・クレジットカード・ポイントがひとつになったサービスです。</p>
+                  </div>
+              </div>
+              <div class="cycle-step">
+                  <span class="cycle-num">2</span>
+                  <div class="cycle-step-body">
+                      <strong>SBI証券口座と連携する</strong>
+                      <p>OLIVEカードをSBI証券のクレカ積立に設定します。毎月の積立がカード決済になります。</p>
+                  </div>
+              </div>
+              <div class="cycle-step">
+                  <span class="cycle-num">3</span>
+                  <div class="cycle-step-body">
+                      <strong>毎月自動でクレカ決済される</strong>
+                      <p>設定さえすれば、あとは何もしなくても毎月自動で積立が実行されます。入金の手間は一切不要です。</p>
+                  </div>
+              </div>
+              <div class="cycle-step">
+                  <span class="cycle-num">4</span>
+                  <div class="cycle-step-body">
+                      <strong>Vポイントが自動で貯まり続ける</strong>
+                      <p>積立額に応じてVポイントが毎月貯まります。貯まったポイントは<strong>再投資にも、お買い物にも</strong>使えます。</p>
+                  </div>
+              </div>
+          </div>
+
+          <!-- 強調ボックス -->
+          <div class="cycle-goal">
+              <div class="cycle-goal-title">このサイクルを作ることが、このサイトの最終ゴールです。</div>
+              <p>一度仕組みを作れば、あとは自動で資産が育ち続けます。<br>毎月の手間はゼロ。積立もポイントも、すべてが自動で回り続けます。</p>
+          </div>
+
+          <!-- 補足：OLIVEなしでも可 -->
+          <div class="cycle-note">
+              <strong>💡 OLIVEがなくても大丈夫です</strong><br>
+              三井住友銀行のOLIVE口座をお持ちでない方も、通常の<strong>三井住友カード</strong>があればSBI証券のクレカ積立（Vポイント還元）は利用できます。まずは持っているカードで始めてみましょう。
+          </div>
+
+      </div>
+
+      <!-- 他社比較セクション -->
+      <div class="compare-section">
+
+          <div class="compare-header">
+              <div class="compare-header-icon">🔍</div>
+              <div>
+                  <div class="compare-header-title">正直にお伝えします：他の選択肢との比較</div>
+                  <div class="compare-header-sub">このサイトはSBI証券を推していますが、他の選択肢も正直にご紹介します。あなたの状況に合った選択をしてください。</div>
+              </div>
+          </div>
+
+          <div class="table-scroll">
+              <table class="compare-table">
+                  <thead>
+                      <tr>
+                          <th>証券会社</th>
+                          <th>クレカ</th>
+                          <th>還元率</th>
+                          <th>向いている人</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr class="compare-recommend">
+                          <td><strong>SBI証券</strong><span class="compare-badge">当サイト推奨</span></td>
+                          <td>三井住友ゴールド(NL)</td>
+                          <td class="compare-rate">1.0%</td>
+                          <td>口座数No.1の安心感・商品の豊富さを重視する方</td>
+                      </tr>
+                      <tr>
+                          <td><strong>SBI証券</strong></td>
+                          <td>三井住友カード(NL)</td>
+                          <td class="compare-rate">0.5%</td>
+                          <td>年会費無料で始めたい方</td>
+                      </tr>
+                      <tr class="compare-top">
+                          <td><strong>マネックス証券</strong></td>
+                          <td>マネックスカード</td>
+                          <td class="compare-rate top">1.1% 👑</td>
+                          <td>還元率だけを最優先したい方</td>
+                      </tr>
+                      <tr>
+                          <td><strong>楽天証券</strong></td>
+                          <td>楽天カード</td>
+                          <td class="compare-rate">0.5〜1%</td>
+                          <td>楽天市場・楽天ポイントをすでに使っている方</td>
+                      </tr>
+                      <tr>
+                          <td><strong>auカブコム証券</strong></td>
+                          <td>au PAYカード</td>
+                          <td class="compare-rate">1.0%</td>
+                          <td>auユーザー・au経済圏を使っている方</td>
+                      </tr>
+                  </tbody>
+              </table>
+          </div>
+
+          <div class="compare-conclusion">
+              <p>
+                  <strong>還元率だけを追うならマネックスカードが現状トップ（1.1%）です。</strong><br>
+                  楽天経済圏をすでに使っている方には楽天証券の方が向いている場合もあります。
+              </p>
+              <p>
+                  それでもこのサイトがSBI証券を推す理由は3つです。
+              </p>
+              <div class="compare-reasons">
+                  <div class="compare-reason">
+                      <span class="compare-reason-num">①</span>
+                      <div>
+                          <strong>口座数No.1の信頼感</strong>
+                          <p>国内最大手のネット証券。サポート体制・安定性ともに実績があります。</p>
+                      </div>
+                  </div>
+                  <div class="compare-reason">
+                      <span class="compare-reason-num">②</span>
+                      <div>
+                          <strong>取扱商品の豊富さ</strong>
+                          <p>投資信託・株式・ETFなど選択肢が多く、将来的に投資の幅を広げやすい。</p>
+                      </div>
+                  </div>
+                  <div class="compare-reason">
+                      <span class="compare-reason-num">③</span>
+                      <div>
+                          <strong>三井住友系との連携のわかりやすさ</strong>
+                          <p>OLIVE・三井住友カード・SBI証券の連携はシンプルで、初心者でも迷いにくい設計です。</p>
+                      </div>
+                  </div>
+              </div>
+              <p class="compare-honest">
+                  ※ 還元率・サービス内容は変更される場合があります。最新情報は各社の公式サイトでご確認ください。
+              </p>
+          </div>
+
+      </div>
+
+      <h2 id="section7">6. 開始までの手順</h2>
+      <div class="free-notice">
+          🆓 <strong>SBI証券の口座開設は完全無料です。</strong>費用は一切かかりません。スマホで20〜30分で申込完了します。
+      </div>
+      <div class="steps" style="margin-top: 30px;">
+          <div class="step-card">
+              <div class="step-number">1</div>
+              <div class="step-content">
+                  <h4>証券口座の開設申し込み</h4>
+                  <p>まずはSBI証券の公式サイトへアクセスし、メールアドレスを登録して認証コードを受け取ります。スマホで完結できます。</p>
+              </div>
+          </div>
+          <div class="step-card">
+              <div class="step-number">2</div>
+              <div class="step-content">
+                  <h4>本人確認書類の提出</h4>
+                  <p><strong>マイナンバーカード</strong>を用意し、スマホのカメラで撮影して提出します。これなら郵送不要で、最短翌営業日から取引可能です。</p>
+              </div>
+          </div>
+          <div class="step-card" style="border: 2px solid var(--nisa-green); background: #f0fff4;">
+              <div class="step-number">3</div>
+              <div class="step-content">
+                  <h4>【重要】口座種別の選択</h4>
+                  <p>初期設定時に、納税方法を選択する項目があります。<br>
+                  必ず <span class="highlight-red">「特定口座（源泉徴収あり）」</span> を選択してください。<br>
+                  <small>※これを選べば、確定申告が原則不要になり、手間がかかりません。</small></p>
+              </div>
+          </div>
+          <div class="step-card">
+              <div class="step-number">4</div>
+              <div class="step-content">
+                  <h4>Vポイント設定の連携</h4>
+                  <p>口座開設後、初期設定画面で「Vポイント」などのポイントサービスを連携させます。これで投資信託の保有額に応じて毎月ポイントが貯まります。</p>
+              </div>
+          </div>
+          <div class="step-card">
+              <div class="step-number">5</div>
+              <div class="step-content">
+                  <h4>積立設定（クレカ積立）</h4>
+                  <p>最後に「クレジットカード積立」の設定を行います。毎月の入金手間がなくなり、ポイントも二重取りできる最もお得な方法です。</p>
+              </div>
+          </div>
+      </div>
+
+      <div class="cta-container">
+          <p class="cta-push">今日始めた人が、10年後に笑います。</p>
+          <a href="./nisa-guide.html" class="cta-button">
+              🆓 無料で始める ｜ 口座開設の手順を確認する
+          </a>
+          <span class="cta-subtext-strong">スマホで20〜30分・完全無料で口座開設できます</span>
+      </div>
+
+      <div style="height: 40px;"></div>
+  </div><!-- /.container -->
+
+  <!-- ⑤ フッター -->
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <div class="site-footer-top">
+        <div class="site-footer-brand">
+          <img src="img/chara-smile.png" alt="運営者" class="site-footer-icon" loading="lazy">
+          <div>
+            <div class="site-footer-title">ほっとけ投資</div>
+            <div class="site-footer-sub">新NISAを満額にして、あとは放置。</div>
+          </div>
+        </div>
+        <nav class="site-footer-nav">
+          <a href="./index.html">トップ</a>
+          <a href="./about.html">私について</a>
+          <a href="./crash-strategy.html">暴落・実績データ</a>
+          <a href="./nisa-guide.html">口座開設ガイド</a>
+          <a href="./olive-guide.html">OLIVE設定ガイド</a>
+        </nav>
+      </div>
+      <div class="site-footer-disclaimer">
+        ※当サイトは投資の勧誘・助言を目的としたものではありません。投資はご自身の判断と責任のもとで行ってください。掲載情報の正確性には努めていますが、内容の完全性・最新性を保証するものではありません。最新情報は各金融機関の公式サイトをご確認ください。
+      </div>
+      <div class="site-footer-copy">
+        &copy; <span id="copy-year">2025</span> ほっとけ投資 ／ 運営：真-SHIN-（CrossOver）
+        <span class="site-footer-update">最終更新：2025年4月</span>
+      </div>
     </div>
-  </div>
-</section>
+  </footer>
+  <script>document.getElementById("copy-year").textContent = new Date().getFullYear();</script>
 
-<!-- ============================================
-     11. 免責事項
-     ============================================ -->
-<section class="disclaimer" id="disclaimer">
-  <div class="container">
-    <h2>免責事項</h2>
-    <ul>
-      <li>このサイトは情報提供を目的としています。</li>
-      <li>特定銘柄の売買を推奨するものではありません。</li>
-      <li>投資判断はご自身の責任において行ってください。</li>
-      <li>情報は可能な限り正確性を重視していますが、最新情報は必ず公式情報をご確認ください。</li>
-      <li>記事内にアフィリエイトリンクを含む場合があります。</li>
-      <li>国際情勢や政策は今後変更される可能性があります。記載内容は執筆時点のものです。</li>
-    </ul>
-  </div>
-</section>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // ── 暴落シミュレーション（5-2セクション） ──
+  (function() {
+    const MONTHLY    = 3;
+    const RATE_NORM  = 0.07;
+    const RATE_CRASH = -0.50;
+    const RATE_REC   = 0.10;
+    const YEARS      = 15;
+    const CRASH_YEAR = 5;
+    const STOP_YEARS = 3;
 
-<!-- ============================================
-     FOOTER
-     ============================================ -->
-<footer class="site-footer">
-  <div class="container">
-    <div class="footer-top">
-      <div class="footer-brand">
-        <span class="brand-mark">POWERR<span class="dot" style="color:var(--c-gold);">·</span>Asia Lab</span>
-        <span class="brand-sub">パワーアジア研究室</span>
-        <p class="footer-tagline">
-          日本が、アジアのエネルギーと資源を支える時代へ。<br>
-          国策テーマと資産形成を、わかりやすく。
-        </p>
-      </div>
+    function simulate() {
+      const cont = [], stop = [], principal = [];
+      let vCont = 0, vStop = 0, prin = 0;
+      for (let y = 1; y <= YEARS; y++) {
+        const isStop = (y > CRASH_YEAR && y <= CRASH_YEAR + STOP_YEARS);
+        let rate;
+        if (y === CRASH_YEAR)                    rate = RATE_CRASH;
+        else if (y <= CRASH_YEAR + STOP_YEARS)   rate = RATE_REC;
+        else                                     rate = RATE_NORM;
+        for (let m = 0; m < 12; m++) {
+          vCont += MONTHLY;
+          if (!isStop) vStop += MONTHLY;
+          prin  += MONTHLY;
+        }
+        vCont = vCont * (1 + rate);
+        vStop = vStop * (1 + rate);
+        cont.push(Math.round(vCont));
+        stop.push(Math.round(vStop));
+        principal.push(prin);
+      }
+      return { cont, stop, principal };
+    }
 
-      <div class="footer-col">
-        <h4>About</h4>
-        <ul>
-          <li><a href="#about">POWERR Asiaとは</a></li>
-          <li><a href="#why">なぜ重要か</a></li>
-          <li><a href="#compare">一帯一路との違い</a></li>
-          <li><a href="#profile">運営者について</a></li>
-        </ul>
-      </div>
+    const { cont, stop, principal } = simulate();
+    const labels = Array.from({length: YEARS}, (_, i) => i+1 + "年目");
 
-      <div class="footer-col">
-        <h4>Contents</h4>
-        <ul>
-          <li><a href="#stocks">日本株テーマ</a></li>
-          <li><a href="#nisa">新NISAで考える</a></li>
-          <li><a href="#articles">記事一覧</a></li>
-          <li><a href="#disclaimer">免責事項</a></li>
-        </ul>
-      </div>
+    // グラフ
+    const ctx = document.getElementById("crashSimChart");
+    if (ctx) {
+      new Chart(ctx, {
+        type: "line",
+        data: {
+          labels,
+          datasets: [
+            { label:"ほっとき続けた", data:cont,
+              borderColor:"#38a169", backgroundColor:"rgba(56,161,105,0.08)",
+              borderWidth:3, pointRadius:4, fill:true, tension:0.3 },
+            { label:"暴落時に積立停止", data:stop,
+              borderColor:"#e53e3e", backgroundColor:"rgba(229,62,62,0.04)",
+              borderWidth:2, pointRadius:3, fill:false, tension:0.3 },
+            { label:"元本", data:principal,
+              borderColor:"#a0aec0", borderWidth:1.5,
+              pointRadius:0, fill:false, borderDash:[5,4], tension:0 }
+          ]
+        },
+        options: {
+          responsive:true, maintainAspectRatio:false,
+          plugins: {
+            legend:{ display:false },
+            tooltip:{ callbacks:{ label: c => " " + c.dataset.label + "：" + c.parsed.y.toLocaleString() + "万円" } }
+          },
+          scales: {
+            y:{ ticks:{ callback: v => v.toLocaleString()+"万" }, grid:{ color:"rgba(0,0,0,0.06)" } },
+            x:{ grid:{ display:false } }
+          }
+        }
+      });
+    }
 
-      <div class="footer-col">
-        <h4>Follow</h4>
-        <ul>
-          <!-- EXTERNAL LINK PLACEHOLDER -->
-          <li><a href="#note">note</a></li>
-          <li><a href="#youtube">YouTube</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer-bottom">
-      <p>&copy; 2026 POWERR Asia Lab — パワーアジア研究室. All rights reserved.</p>
-      <p class="footer-meta">Partnership on Wide Energy and Resources Resilience Asia</p>
-    </div>
-  </div>
-</footer>
-
-<script>
-  // モバイルナビゲーションの開閉
-  const toggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen);
-  });
-  // ナビゲーションリンクをクリックしたら自動で閉じる
-  nav.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      nav.classList.remove('open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-
-  // 上部の更新日表示
-  const today = new Date();
-  const y = today.getFullYear();
-  const m = String(today.getMonth() + 1).padStart(2, '0');
-  const d = String(today.getDate()).padStart(2, '0');
-  document.getElementById('today').textContent = `Updated · ${y}.${m}.${d}`;
-</script>
-
+    // 表
+    const tbody = document.getElementById("crashSimTable");
+    if (tbody) {
+      [1,3,5,8,10,15].forEach(y => {
+        const i = y - 1;
+        const diff = cont[i] - stop[i];
+        const bg = y === 5 ? "background:#fff5f5;" : "";
+        const tr = document.createElement("tr");
+        tr.innerHTML =
+          "<td style='padding:9px 12px;" + bg + "font-weight:700;'>" + y + "年目" + (y===5?" 📉暴落":"") + "</td>" +
+          "<td style='padding:9px 12px;text-align:right;" + bg + "'>" + principal[i].toLocaleString() + "万円</td>" +
+          "<td style='padding:9px 12px;text-align:right;color:#276749;font-weight:700;" + bg + "'>" + cont[i].toLocaleString() + "万円</td>" +
+          "<td style='padding:9px 12px;text-align:right;color:#c53030;" + bg + "'>" + stop[i].toLocaleString() + "万円</td>" +
+          "<td style='padding:9px 12px;text-align:right;font-weight:700;color:#b8860b;" + bg + "'>+" + diff.toLocaleString() + "万円</td>";
+        tbody.appendChild(tr);
+      });
+    }
+  })();
+  }); // DOMContentLoaded
+  </script>
 </body>
 </html>
